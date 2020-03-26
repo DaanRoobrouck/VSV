@@ -1,0 +1,127 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &8135661631342406281
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5097218253313710234}
+  - component: {fileID: 4316685132429370028}
+  - component: {fileID: 7555768222736342613}
+  - component: {fileID: 271975404323875189}
+  - component: {fileID: 271975404323875191}
+  m_Layer: 0
+  m_Name: Stoplicht2_Export
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5097218253313710234
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8135661631342406281}
+  m_LocalRotation: {x: 0.00000013240823, y: -0.7071068, z: -0.7071068, w: -0.00000013240823}
+  m_LocalPosition: {x: 12.950407, y: 0, z: -2.67816}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: -90.00001, y: 0, z: -180.00002}
+--- !u!33 &4316685132429370028
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8135661631342406281}
+  m_Mesh: {fileID: 2111442273520802795, guid: 723d181069fa38f478b640c8b37b052e, type: 3}
+--- !u!23 &7555768222736342613
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8135661631342406281}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: 413c8f497b68d69478f524c6fdb8e9b0, type: 2}
+  - {fileID: 2100000, guid: 7b830f54db84ef24fa9336147839ee59, type: 2}
+  - {fileID: 2100000, guid: 4bd156e8f415e95448188ef43c982dc8, type: 2}
+  - {fileID: 2100000, guid: 4bd156e8f415e95448188ef43c982dc8, type: 2}
+  - {fileID: 2100000, guid: 1b84de8e19711184f90540735c201d56, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+--- !u!65 &271975404323875189
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8135661631342406281}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 10, y: 10, z: 2}
+  m_Center: {x: 0, y: -5, z: 1}
+--- !u!114 &271975404323875191
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8135661631342406281}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cc91579c99534e44a8f16cba291cf6db, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MaterialRedLight: {fileID: 2100000, guid: 56da002fdc5ca264fad749e0649b04e6, type: 2}
+  MaterialGreenLight: {fileID: 2100000, guid: 1b84de8e19711184f90540735c201d56, type: 2}
+  MaterialOrangeLight: {fileID: 2100000, guid: 921ad58984d5a4b48a92b02dc5c7022c, type: 2}
+  MaterialBlackLight: {fileID: 2100000, guid: 4bd156e8f415e95448188ef43c982dc8, type: 2}
+  currentLight: 0
+  _redTimer: 8
+  _orangeTimer: 3
+  _greenTimer: 10
+  _renderer: {fileID: 7555768222736342613}
+  _currentLightMaterials:
+  - {fileID: 2100000, guid: f01f15c9b642beb4eb035d32d745abb5, type: 2}
+  - {fileID: 2100000, guid: 90183806578681f408d7da783d2eb83c, type: 2}
+  - {fileID: 2100000, guid: 4bd156e8f415e95448188ef43c982dc8, type: 2}
+  - {fileID: 2100000, guid: 4bd156e8f415e95448188ef43c982dc8, type: 2}
+  - {fileID: 2100000, guid: 4bd156e8f415e95448188ef43c982dc8, type: 2}
