@@ -7,6 +7,9 @@ public class CardController : MonoBehaviour
     [SerializeField] private GameObject _cardHolder;
     private FirstPersonAIO _player;
 
+    [SerializeField] private List<int> _cardIndexOrder;
+    public List<Card> PlayerOrder;
+
     private void Start()
     {
         _player = FindObjectOfType<FirstPersonAIO>();
@@ -38,6 +41,31 @@ public class CardController : MonoBehaviour
             _player.lockAndHideCursor = true;
 
             Cursor.visible = false;
+        }
+    }
+
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            CheckOrder();
+        }
+    }
+
+    public void CheckOrder()
+    {
+        for (int i = 0; i < PlayerOrder.Count; i++)
+        {
+            if (PlayerOrder[i].Index == _cardIndexOrder[i])
+            {
+                Debug.Log("Juiste selectie");
+                PlayerOrder[i].Btn.image.color = Color.green;
+            }
+            else
+            {
+                Debug.Log("Onjuiste selectie");
+                PlayerOrder[i].Btn.image.color = Color.red;
+            }
         }
     }
 }
