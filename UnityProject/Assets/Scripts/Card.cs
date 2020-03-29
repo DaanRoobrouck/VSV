@@ -15,7 +15,7 @@ public class Card : MonoBehaviour
     private int _index;
     public int Index { get => _index;}
 
-    [SerializeField] private CardController _controller;
+    public CardController Controller;
 
     private void Start()
     {
@@ -50,13 +50,13 @@ public class Card : MonoBehaviour
         {
             _selected = true;
             LeanTween.moveY(this.gameObject, 200, 0.25f);
-            _controller.PlayerOrder.Add(this);
+            Controller.PlayerOrder.Add(this);
         }
         else
         {
             _selected = false;
             LeanTween.moveY(this.gameObject, 125, 0.5f);
-            _controller.PlayerOrder.Remove(this);
+            Controller.PlayerOrder.Remove(this);
         }
     }
 }
