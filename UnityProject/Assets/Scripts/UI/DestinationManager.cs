@@ -1,8 +1,10 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Random = System.Random;
 using System.Linq;
+using Assets.Scripts.UI;
 
 
 public class DestinationManager : MonoBehaviour
@@ -14,20 +16,19 @@ public class DestinationManager : MonoBehaviour
 
     private Random _random;
 
+    public event EventHandler<DestinationEventArgs> UpdateDestination;
+    [SerializeField] private UIManager _uiListener;
+
 
     // Start is called before the first frame update
     void Start()
     {
+        this.UpdateDestination += (sender, args) => _uiListener.UpdateText(CurrentDestination);
         _random = new Random();
         GetRandomDestinations(_destinations, 3);
         SetDestination();
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 
     private void GetRandomDestinations(BoxCollider[] destinations, int amountOfDestinations)
     {
@@ -48,6 +49,7 @@ public class DestinationManager : MonoBehaviour
     private void SetDestination()
     {
         CurrentDestination = CurrentDestinations[_currentDestinationIndex].transform;
+        UpdateDestination?.Invoke(this, new DestinationEventArgs(CurrentDestination) );
         //event to update UI (also call it when updating the destination)
     }
 }
