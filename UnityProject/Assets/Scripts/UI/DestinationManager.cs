@@ -12,7 +12,7 @@ public class DestinationManager : MonoBehaviour
     [SerializeField] private BoxCollider[] _destinations;
     public BoxCollider[] CurrentDestinations { get; set; }
     public Transform CurrentDestination { get; set; }
-    private int _currentDestinationIndex = 0; 
+    public int CurrentDestinationIndex = 0; 
 
     private Random _random;
 
@@ -46,9 +46,14 @@ public class DestinationManager : MonoBehaviour
         Debug.Log(CurrentDestinations);
     }
 
-    private void SetDestination()
+    public void SetDestination()
     {
-        CurrentDestination = CurrentDestinations[_currentDestinationIndex].transform;
+        if (CurrentDestinationIndex == CurrentDestinations.Length)
+        {
+            //End game
+        }
+        CurrentDestination = CurrentDestinations[CurrentDestinationIndex].transform;
+        CurrentDestination.GetComponent<BoxCollider>().enabled = true;
         UpdateDestination?.Invoke(this, new DestinationEventArgs(CurrentDestination) );
         //event to update UI (also call it when updating the destination)
     }
