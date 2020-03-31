@@ -25,6 +25,6 @@ public class UIManager : MonoBehaviour
 
     public void UpdateText(Transform transform)
     {
-        Debug.Log(transform.name);
+        _destinationText.text = string.Format("GA NAAR {0}", transform.name.ToString());
     }
 }
