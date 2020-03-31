@@ -11,6 +11,8 @@ GameObject:
   - component: {fileID: 7702834519408577487}
   - component: {fileID: 1711070509396406777}
   - component: {fileID: 4936641162173992192}
+  - component: {fileID: 1767484850}
+  - component: {fileID: 8933352025745654805}
   m_Layer: 0
   m_Name: Stoplicht1_Export
   m_TagString: Untagged
@@ -60,8 +62,8 @@ MeshRenderer:
   m_Materials:
   - {fileID: 2100000, guid: 413c8f497b68d69478f524c6fdb8e9b0, type: 2}
   - {fileID: 2100000, guid: 7b830f54db84ef24fa9336147839ee59, type: 2}
-  - {fileID: 2100000, guid: 56da002fdc5ca264fad749e0649b04e6, type: 2}
-  - {fileID: 2100000, guid: 921ad58984d5a4b48a92b02dc5c7022c, type: 2}
+  - {fileID: 2100000, guid: 4bd156e8f415e95448188ef43c982dc8, type: 2}
+  - {fileID: 2100000, guid: 4bd156e8f415e95448188ef43c982dc8, type: 2}
   - {fileID: 2100000, guid: 1b84de8e19711184f90540735c201d56, type: 2}
   - {fileID: 2100000, guid: 7b830f54db84ef24fa9336147839ee59, type: 2}
   - {fileID: 2100000, guid: f01f15c9b642beb4eb035d32d745abb5, type: 2}
@@ -85,3 +87,43 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!114 &1767484850
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6682971277027834332}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cc91579c99534e44a8f16cba291cf6db, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MaterialRedLight: {fileID: 2100000, guid: 56da002fdc5ca264fad749e0649b04e6, type: 2}
+  MaterialGreenLight: {fileID: 2100000, guid: 1b84de8e19711184f90540735c201d56, type: 2}
+  MaterialOrangeLight: {fileID: 2100000, guid: 921ad58984d5a4b48a92b02dc5c7022c, type: 2}
+  MaterialBlackLight: {fileID: 2100000, guid: 4bd156e8f415e95448188ef43c982dc8, type: 2}
+  _redTimer: 8
+  _orangeTimer: 3
+  _renderer: {fileID: 4936641162173992192}
+  _currentLightMaterials:
+  - {fileID: 2100000, guid: 413c8f497b68d69478f524c6fdb8e9b0, type: 2}
+  - {fileID: 2100000, guid: 7b830f54db84ef24fa9336147839ee59, type: 2}
+  - {fileID: 2100000, guid: 4bd156e8f415e95448188ef43c982dc8, type: 2}
+  - {fileID: 2100000, guid: 4bd156e8f415e95448188ef43c982dc8, type: 2}
+  - {fileID: 2100000, guid: 1b84de8e19711184f90540735c201d56, type: 2}
+  - {fileID: 2100000, guid: 7b830f54db84ef24fa9336147839ee59, type: 2}
+  - {fileID: 2100000, guid: f01f15c9b642beb4eb035d32d745abb5, type: 2}
+--- !u!65 &8933352025745654805
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6682971277027834332}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 10, y: 10, z: 2}
+  m_Center: {x: 0, y: -5, z: 1}
