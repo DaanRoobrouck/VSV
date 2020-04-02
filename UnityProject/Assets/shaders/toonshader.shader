@@ -3,7 +3,6 @@
     Properties
     {
      //  [HDR] _Color("Color", Color) = (1,1,1,1)
-       _BaseMap("Texture", 2D) = "white" {}
 
         _Specular("Intensity Specular", Color) = (1,1,1,1)
         _RatioSpecular("Ratio Specular", Range(0,1)) = 1
@@ -48,9 +47,6 @@
 
             float4 _Specular;
             float _RatioSpecular;
-                
-
-            float4 _BaseMap_ST;
 
             float4 _AmbientColor;
             float _AmbientIntensity;
@@ -64,9 +60,6 @@
          CBUFFER_END
 
 
-          TEXTURE2D(_BaseMap);
-          SAMPLER(sampler_BaseMap);
-
           //    Attributes, struct voor vert shader
 
            struct Attributes
@@ -74,18 +67,17 @@
              float4 positionOS : POSITION0;
              float3 color : COLOR0;
              float3 normalWS: NORMAL0;
-             float3 texCoord : TEXCOORD0;
            };
 
            //Attributs, struct voor frag shader
 
            struct Varyings  
            {
-              float4 positionCS : SV_POSITION;
-              float3 positionWS: TEXCOORD0;
-              float3 normalWS: TEXCOORD1;
-              float3 color : COLOR0;
-              float3 normal : NORMAL0;
+                float4 positionCS : SV_POSITION;
+                float3 positionWS: TEXCOORD0;
+                float3 normalWS: TEXCOORD1;
+                float3 color : COLOR0;
+                float3 normal : NORMAL0;
                 
            };
 
@@ -103,8 +95,7 @@
        //        // float3 wordt geconvert naar een float4
        //
               o.normalWS = float4( TransformObjectToWorldNormal(i.normalWS.xyz),1);
-              o.positionWS = float4(TransformObjectToWorld(i.positionOS.xyz), 1);
-       //
+              o.positionWS = float4(TransformObjectToWorld(i.positionOS.xyz), 1);     //
        //        o.uv = TRANSFORM_TEX(i.texCoord, _BaseMap);
        //        o.uv += _Time.x;
        //
