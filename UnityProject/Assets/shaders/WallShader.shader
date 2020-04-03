@@ -139,7 +139,7 @@
 
                 float3 d = saturate(_DiffuseIntensity *  dot(light, i.normalWS) * _DiffuseColor);
 
-                float3 s = saturate(_RatioSpecular * pow(dot(reflection,v), Shiness) * _Specular);
+                float3 s = saturate(_RatioSpecular * pow(dot(reflection,v), _Specular) * _Specular);
 
                 float3 c = a + d + s;
                 float3 b = c - fmod(c, 0.1);
