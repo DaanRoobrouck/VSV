@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class Card : MonoBehaviour
 {
-    [SerializeField] private CardCreator _card;
+    public CardCreator ScriptableCard;
     private bool _selected = false;
 
     private Image _icon;
@@ -22,11 +22,11 @@ public class Card : MonoBehaviour
         _icon = transform.GetChild(1).GetComponent<Image>();
         _description = GetComponentInChildren<Text>();
         
-        _index = _card.Index;
+        _index = ScriptableCard.Index;
         Btn = GetComponent<Button>();
 
-        _icon.sprite = _card.Icon;
-        _description.text = _card.Description;
+        _icon.sprite = ScriptableCard.Icon;
+        _description.text = ScriptableCard.Description;
     }
     public void OnMouseEnter()
     {

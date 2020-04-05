@@ -34,7 +34,6 @@ public class SituationController : MonoBehaviour
     void Start()
     {
         _cardController = this.GetComponent<CardController>();
-        Debug.Log("name: " + _cardController.gameObject.name);
         _fpsController = FindObjectOfType<FirstPersonAIO>();
         _distanceGO = transform.GetChild(0).gameObject;
         _endGO = transform.GetChild(1).gameObject;
@@ -193,6 +192,8 @@ public class SituationController : MonoBehaviour
         CorrectSequence = false;
 
         _timer = 0;
+
+        _cardController.Collider.enabled = true;
 
         DeactivateCheck(_distanceGO);
     }
