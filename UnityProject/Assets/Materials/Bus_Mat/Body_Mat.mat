@@ -8,7 +8,7 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: Body_Mat
-  m_Shader: {fileID: 4800000, guid: 75d8a8f76b15c4942881211f2ebdce79, type: 3}
+  m_Shader: {fileID: 4800000, guid: afa4bbb5f18bb6d45804d2f3e1bc80fe, type: 3}
   m_ShaderKeywords: 
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
@@ -66,6 +66,8 @@ Material:
     - _QueueOffset: 0
     - _RatioSpecular: 0
     - _ReceiveShadows: 1
+    - _RimAmount: 0.716
+    - _RimTreshold: 0
     - _Smoothness: 0.5
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
@@ -74,13 +76,16 @@ Material:
     - _WorkflowMode: 1
     - _ZWrite: 1
     m_Colors:
-    - _AmbientColor: {r: 1, g: 0.6875214, b: 0.0990566, a: 1}
+    - _AmbientColor: {r: 0.5, g: 0.15612781, b: 0.049019605, a: 1}
     - _BaseColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
     - _Color: {r: 0.5, g: 0.5, b: 0.5, a: 1}
     - _DiffuseColor: {r: 0.745283, g: 0.6418234, b: 0.28475437, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
+    - _LightColor: {r: 0.5566038, g: 0, b: 0.05148358, a: 1}
+    - _RimColor: {r: 0.9056604, g: 0.27145377, b: 0, a: 1}
     - _SpecColor: {r: 0.19999996, g: 0.19999996, b: 0.19999996, a: 1}
     - _Specular: {r: 1, g: 1, b: 1, a: 1}
+    - _SpecularColor: {r: 0.6603774, g: 0.28878397, b: 0.12771448, a: 1}
 --- !u!114 &38737280526082536
 MonoBehaviour:
   m_ObjectHideFlags: 11

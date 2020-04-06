@@ -95,7 +95,7 @@
        //        // float3 wordt geconvert naar een float4
        //
               o.normalWS = float4( TransformObjectToWorldNormal(i.normalWS.xyz),1);
-              o.positionWS = float4(TransformObjectToWorld(i.positionOS.xyz), 1);     //
+              o.positionWS = float4(TransformObjectToWorld(i.positionOS.xyz), 1);
        //        o.uv = TRANSFORM_TEX(i.texCoord, _BaseMap);
        //        o.uv += _Time.x;
        //
@@ -137,6 +137,7 @@
             //  i.PositionCS ligt over scherm gestretcht, moet gedeeld worden door _ScreenParams want wordt behind the screens terug vermenigvuldigd door de afbeeldingswidth
             //  return SAMPLE_TEXTURE2D(_BaseMap, sampler_BaseMap, i.positionCS / _ScreenParams.xy);
             }
+
 
             ENDHLSL
         }

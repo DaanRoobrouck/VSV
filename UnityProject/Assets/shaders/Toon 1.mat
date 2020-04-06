@@ -24,7 +24,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _NormalMap:
-        m_Texture: {fileID: 2800000, guid: d1e04f5d67ff3ce4cb45135f19f8a8a2, type: 3}
+        m_Texture: {fileID: 2800000, guid: 0f4b6f6731810ed408aec53044fe5daa, type: 3}
         m_Scale: {x: 0.3, y: 0.3}
         m_Offset: {x: 0, y: 0}
     - _normalMap:
@@ -37,6 +37,6 @@ Material:
     - _RimTreshold: 0
     m_Colors:
     - _AmbientColor: {r: 0.15686275, g: 0.045755465, b: 0.031372547, a: 1}
-    - _LightColor: {r: 0.2264151, g: 0.09358623, b: 0.022427911, a: 1}
+    - _LightColor: {r: 0.45490196, g: 0.1882353, b: 0.047058824, a: 1}
     - _RimColor: {r: 0.17906183, g: 0.08221077, b: 0.0315329, a: 1}
-    - _SpecularColor: {r: 0.25, g: 0.09411765, b: 0.012745098, a: 1}
+    - _SpecularColor: {r: 0.1254902, g: 0.047058824, b: 0.005882353, a: 1}
