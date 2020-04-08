@@ -64,7 +64,7 @@ MeshRenderer:
   - {fileID: 2100000, guid: 7b830f54db84ef24fa9336147839ee59, type: 2}
   - {fileID: 2100000, guid: 4bd156e8f415e95448188ef43c982dc8, type: 2}
   - {fileID: 2100000, guid: 4bd156e8f415e95448188ef43c982dc8, type: 2}
-  - {fileID: 2100000, guid: 1b84de8e19711184f90540735c201d56, type: 2}
+  - {fileID: 2100000, guid: 4bd156e8f415e95448188ef43c982dc8, type: 2}
   - {fileID: 2100000, guid: 7b830f54db84ef24fa9336147839ee59, type: 2}
   - {fileID: 2100000, guid: f01f15c9b642beb4eb035d32d745abb5, type: 2}
   m_StaticBatchInfo:
@@ -99,21 +99,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cc91579c99534e44a8f16cba291cf6db, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MaterialRedLight: {fileID: 2100000, guid: 56da002fdc5ca264fad749e0649b04e6, type: 2}
-  MaterialGreenLight: {fileID: 2100000, guid: 1b84de8e19711184f90540735c201d56, type: 2}
-  MaterialOrangeLight: {fileID: 2100000, guid: 921ad58984d5a4b48a92b02dc5c7022c, type: 2}
-  MaterialBlackLight: {fileID: 2100000, guid: 4bd156e8f415e95448188ef43c982dc8, type: 2}
-  _redTimer: 8
-  _orangeTimer: 3
-  _renderer: {fileID: 4936641162173992192}
-  _currentLightMaterials:
-  - {fileID: 2100000, guid: 413c8f497b68d69478f524c6fdb8e9b0, type: 2}
-  - {fileID: 2100000, guid: 7b830f54db84ef24fa9336147839ee59, type: 2}
+  _lightMaterials:
+  - {fileID: 0}
   - {fileID: 2100000, guid: 4bd156e8f415e95448188ef43c982dc8, type: 2}
-  - {fileID: 2100000, guid: 4bd156e8f415e95448188ef43c982dc8, type: 2}
+  - {fileID: 2100000, guid: 56da002fdc5ca264fad749e0649b04e6, type: 2}
+  - {fileID: 2100000, guid: 921ad58984d5a4b48a92b02dc5c7022c, type: 2}
   - {fileID: 2100000, guid: 1b84de8e19711184f90540735c201d56, type: 2}
-  - {fileID: 2100000, guid: 7b830f54db84ef24fa9336147839ee59, type: 2}
-  - {fileID: 2100000, guid: f01f15c9b642beb4eb035d32d745abb5, type: 2}
+  _lightRotation: 0
+  _hasPedestrianLight: 0
+  _redAndGreenTimer: 20
+  _orangeTimer: 3
+  _currentLightMaterials: []
 --- !u!65 &8933352025745654805
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -125,5 +121,5 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 10, y: 10, z: 2}
-  m_Center: {x: 0, y: -5, z: 1}
+  m_Size: {x: 2.8994975, y: 5.9642367, z: 2}
+  m_Center: {x: 2.6231973, y: -3.768588, z: 1}
