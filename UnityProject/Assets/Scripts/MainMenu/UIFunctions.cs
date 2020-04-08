@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class UIFunctions : MonoBehaviour
 {
@@ -10,6 +11,8 @@ public class UIFunctions : MonoBehaviour
     private GameObject mainMenu;
     [SerializeField]
     private GameObject levelSelectMenu;
+    [SerializeField]
+    private GameObject pauseScreen;
 
     public Animator startButtonAnim;
 
@@ -41,5 +44,13 @@ public class UIFunctions : MonoBehaviour
     {
         Debug.Log("Starting game");
         startButtonAnim.SetTrigger("StartPressed");
+    }
+    public void LoadMenuScene()
+    {
+        SceneManager.LoadScene("Matisse");
+    }
+    public void ClosePauseScreen()
+    {
+        pauseScreen.SetActive(false);
     }
 }

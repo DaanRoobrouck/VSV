@@ -6,9 +6,12 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 0
-    path: Assets/Scenes/SampleScene.unity
+    path: 
     guid: d1c3109bdb54ad54c8a2b2838528e640
   - enabled: 1
     path: Assets/Scenes/Maxim.unity
     guid: 30e21d83b53001d42b5bf66bcbd3f402
+  - enabled: 1
+    path: Assets/Scenes/Matisse.unity
+    guid: e8e4a797b40fc4e4984ebd0d2cb4a913
   m_configObjects: {}
