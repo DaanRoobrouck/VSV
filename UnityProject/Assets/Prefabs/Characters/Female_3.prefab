@@ -1319,6 +1319,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4659421543646401104}
   - component: {fileID: 419718753605990728}
+  - component: {fileID: 5832742037045645792}
   m_Layer: 0
   m_Name: Female_3
   m_TagString: Untagged
@@ -1352,7 +1353,7 @@ Animator:
   m_GameObject: {fileID: 8571140561905279043}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 9e10a098421c1d54d9c1a5837ef90c5a, type: 2}
+  m_Controller: {fileID: 9100000, guid: 999fb4d27f77fb94fb8c7a942931d8af, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 1
@@ -1361,6 +1362,19 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &5832742037045645792
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8571140561905279043}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6ab0c24459d6f384fa87f6a8f3736fe9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentWaypoint: {fileID: 0}
 --- !u!1 &8629505715374693658
 GameObject:
   m_ObjectHideFlags: 0

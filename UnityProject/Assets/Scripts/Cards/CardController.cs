@@ -23,6 +23,7 @@ public class CardController : MonoBehaviour
     public BoxCollider Collider;
 
     private bool _hidecards = false;
+    private bool _isActive = false;
     private void Start()
     {
         _player = FindObjectOfType<FirstPersonAIO>();
@@ -45,6 +46,8 @@ public class CardController : MonoBehaviour
             _player.lockAndHideCursor = false;
             _player.enableCameraMovement = false;
             Cursor.visible = true;
+
+            _isActive = true;
         }
     }
 
@@ -57,7 +60,11 @@ public class CardController : MonoBehaviour
             //animatie, kaarten sliden uit
             LeanTween.moveY(_cardHolder, -125, 0.5f);
 
+            PlayerOrder.Clear();
+
             FreezePlayer(true);
+
+            _isActive = false;
         }
     }
 
@@ -79,21 +86,25 @@ public class CardController : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (_isActive)
         {
-            CheckOrder();
-        }
-
-        if (_hidecards)
-        {
-            foreach (GameObject cardObject in _cards)
+            if (Input.GetKeyDown(KeyCode.Space))
             {
-                _cards.Remove(cardObject);
-                Destroy(cardObject.gameObject);
+                Debug.Log("Check");
+                CheckOrder();
             }
-            if (_cards.Count == 0)
+
+            if (_hidecards)
             {
-                _hidecards = false;
+                foreach (GameObject cardObject in _cards)
+                {
+                    _cards.Remove(cardObject);
+                    Destroy(cardObject.gameObject);
+                }
+                if (_cards.Count == 0)
+                {
+                    _hidecards = false;
+                }
             }
         }
     }
@@ -118,6 +129,11 @@ public class CardController : MonoBehaviour
 
     public void CheckOrder()
     {
+        if (PlayerOrder.Count != _cardIndexOrder.Count)
+        {
+            Debug.Log("Select all cards pls");
+            return;
+        }
         int incorrect = 0;
         for (int i = 0; i < PlayerOrder.Count; i++)
         {
@@ -135,9 +151,11 @@ public class CardController : MonoBehaviour
         }
         if (incorrect == 0)
         {
-            _hidecards = true;
+            HideCards();
             _situationController.CorrectSequence = true;
             Collider.enabled = false;
+
+            PlayerOrder.Clear();
 
             FreezePlayer(false);
         }
