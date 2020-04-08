@@ -14,7 +14,6 @@ public enum TrafficLightRotation
     A, B
 }
 
-
 public class TrafficLightBehavior : MonoBehaviour
 {
 
@@ -22,6 +21,8 @@ public class TrafficLightBehavior : MonoBehaviour
     [SerializeField] private Material[] _lightMaterials;
     [Tooltip("We decide which traffic lights are parallel with each other so they will have the same lights lit up. ")]
     [SerializeField] private TrafficLightRotation _lightRotation;
+
+    private TrafficLightColor _lightState;
 
     [SerializeField] private bool _hasPedestrianLight;
 
@@ -52,20 +53,24 @@ public class TrafficLightBehavior : MonoBehaviour
         }
     }
    
-    private void OnTriggerEnter(Collider other)
+    private void OnTriggerStay(Collider other)
     {
-       // if(other.tag =="Player")
-       // {
-       ////   _currentLightMaterials[4] = MaterialBlackLight;
-       ////   _currentLightMaterials[3] = MaterialOrangeLight;
-       ////   _currentLightMaterials[2] = MaterialBlackLight;
-       //     _isOrange = true;
-       //     _renderer.materials = _currentLightMaterials;
-       // }
+        if (_lightState == TrafficLightColor.Red)
+        {
+            if (other.GetComponent<CarNavigator>() != null)
+            {
+                other.GetComponent<CarNavigator>().CanDrive = false;
+            }
+        }
+        else
+        {
+            other.GetComponent<CarNavigator>().CanDrive = true;
+        }
     }
 
     private IEnumerator GreenLight()
     {
+        _lightState = TrafficLightColor.Green;
         _currentLightMaterials[_redLightIndex] = _lightMaterials[_blackLightIndex];
         _currentLightMaterials[_orangeLightIndex] = _lightMaterials[_blackLightIndex];
         _currentLightMaterials[_greenLightIndex] = _lightMaterials[_greenLightIndex];
@@ -76,6 +81,7 @@ public class TrafficLightBehavior : MonoBehaviour
     }
     private IEnumerator OrangeLight()
     {
+        _lightState = TrafficLightColor.Orange;
         _currentLightMaterials[_redLightIndex] = _lightMaterials[_blackLightIndex];
         _currentLightMaterials[_orangeLightIndex] = _lightMaterials[_orangeLightIndex];
         _currentLightMaterials[_greenLightIndex] = _lightMaterials[_blackLightIndex];
@@ -85,6 +91,7 @@ public class TrafficLightBehavior : MonoBehaviour
     }
     private IEnumerator RedLight()
     {
+        _lightState = TrafficLightColor.Red;
         _currentLightMaterials[_redLightIndex] = _lightMaterials[_redLightIndex];
         _currentLightMaterials[_orangeLightIndex] = _lightMaterials[_blackLightIndex];
         _currentLightMaterials[_greenLightIndex] = _lightMaterials[_blackLightIndex];

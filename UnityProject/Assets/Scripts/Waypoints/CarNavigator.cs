@@ -10,7 +10,11 @@ public class CarNavigator : MonoBehaviour
     private Vector3 _destination;
     private bool _reachedDestination;
 
-    [Range(3f,5f)][SerializeField] private float _speed;
+
+    public bool CanDrive { get; set; } = true;
+
+
+    [Range(3f,10f)][SerializeField] private float _speed;
 
     private void Awake()
     {
@@ -24,15 +28,20 @@ public class CarNavigator : MonoBehaviour
 
     void Update()
     {
-        float distanceToWaypoint = Vector3.Distance(this.transform.position, _destination);
-        if (distanceToWaypoint <= 0.5f)
-        {
-            currentWaypoint = currentWaypoint.PreviousWaypoint;
 
-                SetDestination(currentWaypoint.GetPosition());
-        }
+        if (CanDrive)
+        {
+        float distanceToWaypoint = Vector3.Distance(this.transform.position, _destination);
+
+           if (distanceToWaypoint <= 0.5f)
+           {
+              currentWaypoint = currentWaypoint.PreviousWaypoint;
+              SetDestination(currentWaypoint.GetPosition());
+           }
+
         this.transform.LookAt(_destination);
         this.transform.position = Vector3.MoveTowards(this.transform.position, _destination, Time.deltaTime * _speed);
+        }
     }
 
     private void SetDestination(Vector3 destination)
