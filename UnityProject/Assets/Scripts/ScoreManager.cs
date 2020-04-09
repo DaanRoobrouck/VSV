@@ -17,12 +17,16 @@ public class ScoreManager : MonoBehaviour
 
     public void AddScore(float time)
     {
-        _score += Mathf.Pow((_correct * (1 / time)), _currentStreak);
+        float add = Mathf.Pow((_correct * (1 / time)), _currentStreak);
+        _score += add;
+        Debug.Log(add + " punten toegevoegd, totale score is: " + _score);
     }
 
     public void SubtractScore(int tries)
     {
-        _score -= (_mistake * tries);
+        float subtract = _mistake * tries;
+        _score -= subtract;
+        Debug.Log(subtract + " punten verwijdert, totale score is: " + _score);
     }
 
     public void SendScore(string name, string email)

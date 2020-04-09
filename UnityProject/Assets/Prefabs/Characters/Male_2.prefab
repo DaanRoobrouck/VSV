@@ -41,6 +41,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3810555172957537317}
   - component: {fileID: 8186272481941712673}
+  - component: {fileID: 3214490847250310766}
   m_Layer: 0
   m_Name: Male_2
   m_TagString: Untagged
@@ -77,12 +78,25 @@ Animator:
   m_Controller: {fileID: 9100000, guid: 3918b41d1da68fa4dbb2bc0a74fd5666, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
-  m_ApplyRootMotion: 0
+  m_ApplyRootMotion: 1
   m_LinearVelocityBlending: 0
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &3214490847250310766
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 196634896272176694}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6ab0c24459d6f384fa87f6a8f3736fe9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentWaypoint: {fileID: 0}
 --- !u!1 &255140791531162479
 GameObject:
   m_ObjectHideFlags: 0
