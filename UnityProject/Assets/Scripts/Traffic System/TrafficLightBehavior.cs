@@ -25,6 +25,7 @@ public class TrafficLightBehavior : MonoBehaviour
     private TrafficLightColor _lightState;
 
     [SerializeField] private bool _hasPedestrianLight;
+    private bool _buttonPressed;
 
     
     [Range(5f,25f)][SerializeField]private int _redAndGreenTimer;
@@ -55,48 +56,120 @@ public class TrafficLightBehavior : MonoBehaviour
    
     private void OnTriggerStay(Collider other)
     {
-        if (_lightState == TrafficLightColor.Red)
+        if (other.CompareTag("Vehicle"))
         {
-            if (other.GetComponent<CarNavigator>() != null)
-            {
-                other.GetComponent<CarNavigator>().CanDrive = false;
-            }
+           if (_lightState == TrafficLightColor.Red)
+           {
+                if (other.GetComponent<CarNavigator>() != null)
+                {
+                    other.GetComponent<CarNavigator>().CanDrive = false;
+                }
+           }
+           else
+           {
+               other.GetComponent<CarNavigator>().CanDrive = true;
+           }
         }
-        else
+
+        if (other.CompareTag("Player"))
         {
-            other.GetComponent<CarNavigator>().CanDrive = true;
+            if (Input.GetButtonDown("Interact") && !_buttonPressed)
+            {
+                _buttonPressed = true;
+                Debug.Log("pressed");
+                StartCoroutine(CallRedLight(5));
+            }
         }
     }
 
     private IEnumerator GreenLight()
     {
-        _lightState = TrafficLightColor.Green;
-        _currentLightMaterials[_redLightIndex] = _lightMaterials[_blackLightIndex];
-        _currentLightMaterials[_orangeLightIndex] = _lightMaterials[_blackLightIndex];
-        _currentLightMaterials[_greenLightIndex] = _lightMaterials[_greenLightIndex];
-        _renderer.sharedMaterials = _currentLightMaterials;
+        if (!_buttonPressed)
+        {
+          _lightState = TrafficLightColor.Green;
+          _currentLightMaterials[_redLightIndex] = _lightMaterials[_blackLightIndex];
+          _currentLightMaterials[_orangeLightIndex] = _lightMaterials[_blackLightIndex];
+          _currentLightMaterials[_greenLightIndex] = _lightMaterials[_greenLightIndex];
 
-        yield return new WaitForSeconds(_redAndGreenTimer - _orangeTimer);
-        StartCoroutine(OrangeLight());
+          if (_hasPedestrianLight)
+          {
+              _currentLightMaterials[7] = _lightMaterials[_redLightIndex];
+              _currentLightMaterials[8] = _lightMaterials[_blackLightIndex];
+          }
+          _renderer.sharedMaterials = _currentLightMaterials;
+
+          yield return new WaitForSeconds(_redAndGreenTimer - _orangeTimer);
+          StartCoroutine(OrangeLight());
+        }
     }
     private IEnumerator OrangeLight()
     {
-        _lightState = TrafficLightColor.Orange;
-        _currentLightMaterials[_redLightIndex] = _lightMaterials[_blackLightIndex];
-        _currentLightMaterials[_orangeLightIndex] = _lightMaterials[_orangeLightIndex];
-        _currentLightMaterials[_greenLightIndex] = _lightMaterials[_blackLightIndex];
-        _renderer.sharedMaterials = _currentLightMaterials;
-        yield return new WaitForSeconds(_orangeTimer);
-        StartCoroutine(RedLight());
+        if (!_buttonPressed)
+        {
+          _lightState = TrafficLightColor.Orange;
+          _currentLightMaterials[_redLightIndex] = _lightMaterials[_blackLightIndex];
+          _currentLightMaterials[_orangeLightIndex] = _lightMaterials[_orangeLightIndex];
+          _currentLightMaterials[_greenLightIndex] = _lightMaterials[_blackLightIndex];
+          _renderer.sharedMaterials = _currentLightMaterials;
+          yield return new WaitForSeconds(_orangeTimer);
+          StartCoroutine(RedLight());
+        }
     }
     private IEnumerator RedLight()
+    {
+        if (!_buttonPressed)
+        {
+         _lightState = TrafficLightColor.Red;
+         _currentLightMaterials[_redLightIndex] = _lightMaterials[_redLightIndex];
+         _currentLightMaterials[_orangeLightIndex] = _lightMaterials[_blackLightIndex];
+         _currentLightMaterials[_greenLightIndex] = _lightMaterials[_blackLightIndex];
+
+         if (_hasPedestrianLight)
+         {
+             _currentLightMaterials[7] = _lightMaterials[_blackLightIndex];
+             _currentLightMaterials[8] = _lightMaterials[_greenLightIndex];
+         }
+
+         _renderer.sharedMaterials = _currentLightMaterials;
+         yield return new WaitForSeconds(_redAndGreenTimer);
+         StartCoroutine(GreenLight());
+        }
+    }
+
+    private IEnumerator CallRedLight(int timer)
+    {
+        yield return new WaitForSeconds(timer);
+        StartCoroutine(CalledOrangeLight());
+    }
+
+    private IEnumerator CalledRedLight()
     {
         _lightState = TrafficLightColor.Red;
         _currentLightMaterials[_redLightIndex] = _lightMaterials[_redLightIndex];
         _currentLightMaterials[_orangeLightIndex] = _lightMaterials[_blackLightIndex];
         _currentLightMaterials[_greenLightIndex] = _lightMaterials[_blackLightIndex];
+
+        if (_hasPedestrianLight)
+        {
+            _currentLightMaterials[7] = _lightMaterials[_blackLightIndex];
+            _currentLightMaterials[8] = _lightMaterials[_greenLightIndex];
+        }
+
         _renderer.sharedMaterials = _currentLightMaterials;
         yield return new WaitForSeconds(_redAndGreenTimer);
+        _buttonPressed = false;
         StartCoroutine(GreenLight());
+    }
+
+    private IEnumerator CalledOrangeLight()
+    {
+      
+       _lightState = TrafficLightColor.Orange;
+       _currentLightMaterials[_redLightIndex] = _lightMaterials[_blackLightIndex];
+       _currentLightMaterials[_orangeLightIndex] = _lightMaterials[_orangeLightIndex];
+       _currentLightMaterials[_greenLightIndex] = _lightMaterials[_blackLightIndex];
+       _renderer.sharedMaterials = _currentLightMaterials;
+       yield return new WaitForSeconds(_orangeTimer);
+       StartCoroutine(CalledRedLight());
     }
 }
