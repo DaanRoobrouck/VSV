@@ -20,12 +20,12 @@ public class TrafficLightBehavior : MonoBehaviour
     [Header("Traffic Light Configuration")]
     [SerializeField] private Material[] _lightMaterials;
     [Tooltip("We decide which traffic lights are parallel with each other so they will have the same lights lit up. ")]
-    [SerializeField] private TrafficLightRotation _lightRotation;
+    public TrafficLightRotation LightRotation;
 
     private TrafficLightColor _lightState;
 
     [SerializeField] private bool _hasPedestrianLight;
-    private bool _buttonPressed;
+    public bool ButtonPressed;
 
     
     [Range(5f,25f)][SerializeField]private int _redAndGreenTimer;
@@ -39,11 +39,14 @@ public class TrafficLightBehavior : MonoBehaviour
     [Tooltip("Gets assigned at runtime")]
     [SerializeField] private Material[] _currentLightMaterials;
 
+    [SerializeField]
+    private TrafficLightBehavior[] _sameCrossRoadLights;
+
     void Start()
     {
         _renderer = this.GetComponent<MeshRenderer>();
         _currentLightMaterials = _renderer.sharedMaterials;
-        switch (_lightRotation)
+        switch (LightRotation)
         {
             case TrafficLightRotation.A:
                 StartCoroutine(RedLight());
@@ -73,18 +76,29 @@ public class TrafficLightBehavior : MonoBehaviour
 
         if (other.CompareTag("Player"))
         {
-            if (Input.GetButtonDown("Interact") && !_buttonPressed)
+            if (Input.GetButtonDown("Interact") && !ButtonPressed)
             {
-                _buttonPressed = true;
                 Debug.Log("pressed");
-                StartCoroutine(CallRedLight(5));
+                foreach (var trafficLight in _sameCrossRoadLights)
+                {
+                    trafficLight.ButtonPressed = true;
+                    if (trafficLight.LightRotation == this.LightRotation)
+                    {
+                         StartCoroutine(CallLight(5, trafficLight.CalledOrangeLight()));
+                    }
+                    else
+                    {
+                        StartCoroutine(CallLight(8, trafficLight.CalledGreenLight()));
+
+                    }
+                }
             }
         }
     }
 
     private IEnumerator GreenLight()
     {
-        if (!_buttonPressed)
+        if (!ButtonPressed)
         {
           _lightState = TrafficLightColor.Green;
           _currentLightMaterials[_redLightIndex] = _lightMaterials[_blackLightIndex];
@@ -104,7 +118,7 @@ public class TrafficLightBehavior : MonoBehaviour
     }
     private IEnumerator OrangeLight()
     {
-        if (!_buttonPressed)
+        if (!ButtonPressed)
         {
           _lightState = TrafficLightColor.Orange;
           _currentLightMaterials[_redLightIndex] = _lightMaterials[_blackLightIndex];
@@ -117,7 +131,7 @@ public class TrafficLightBehavior : MonoBehaviour
     }
     private IEnumerator RedLight()
     {
-        if (!_buttonPressed)
+        if (!ButtonPressed)
         {
          _lightState = TrafficLightColor.Red;
          _currentLightMaterials[_redLightIndex] = _lightMaterials[_redLightIndex];
@@ -136,10 +150,10 @@ public class TrafficLightBehavior : MonoBehaviour
         }
     }
 
-    private IEnumerator CallRedLight(int timer)
+    private IEnumerator CallLight(int timer, IEnumerator enumerator)
     {
         yield return new WaitForSeconds(timer);
-        StartCoroutine(CalledOrangeLight());
+        StartCoroutine(enumerator);
     }
 
     private IEnumerator CalledRedLight()
@@ -157,7 +171,7 @@ public class TrafficLightBehavior : MonoBehaviour
 
         _renderer.sharedMaterials = _currentLightMaterials;
         yield return new WaitForSeconds(_redAndGreenTimer);
-        _buttonPressed = false;
+        ButtonPressed = false;
         StartCoroutine(GreenLight());
     }
 
@@ -171,5 +185,25 @@ public class TrafficLightBehavior : MonoBehaviour
        _renderer.sharedMaterials = _currentLightMaterials;
        yield return new WaitForSeconds(_orangeTimer);
        StartCoroutine(CalledRedLight());
+    }
+
+    private IEnumerator CalledGreenLight()
+    {
+       
+            _lightState = TrafficLightColor.Green;
+            _currentLightMaterials[_redLightIndex] = _lightMaterials[_blackLightIndex];
+            _currentLightMaterials[_orangeLightIndex] = _lightMaterials[_blackLightIndex];
+            _currentLightMaterials[_greenLightIndex] = _lightMaterials[_greenLightIndex];
+
+            if (_hasPedestrianLight)
+            {
+                _currentLightMaterials[7] = _lightMaterials[_redLightIndex];
+                _currentLightMaterials[8] = _lightMaterials[_blackLightIndex];
+            }
+            _renderer.sharedMaterials = _currentLightMaterials;
+
+            yield return new WaitForSeconds(_redAndGreenTimer - _orangeTimer);
+            ButtonPressed = false;
+            StartCoroutine(OrangeLight());
     }
 }
