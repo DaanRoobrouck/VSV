@@ -1,18 +1,5 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!114 &-2479886234923026201
-MonoBehaviour:
-  m_ObjectHideFlags: 11
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d0353a89b1f911e48b9e16bdc9f2e058, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  version: 1
 --- !u!21 &2100000
 Material:
   serializedVersion: 6
@@ -20,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: MAT_Grass
+  m_Name: MAT_Metal
   m_Shader: {fileID: 4800000, guid: afa4bbb5f18bb6d45804d2f3e1bc80fe, type: 3}
   m_ShaderKeywords: 
   m_LightmapFlags: 4
@@ -69,14 +56,14 @@ Material:
     - _DstBlend: 0
     - _EnvironmentReflections: 1
     - _GlossMapScale: 0
-    - _Glossiness: 0
+    - _Glossiness: 3.46
     - _GlossyReflections: 0
     - _Metallic: 0
     - _OcclusionStrength: 1
     - _QueueOffset: 0
     - _ReceiveShadows: 1
-    - _RimAmount: 0.716
-    - _RimTreshold: 0.485
+    - _RimAmount: 0.571
+    - _RimTreshold: 0.439
     - _Smoothness: 0
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
@@ -85,11 +72,24 @@ Material:
     - _WorkflowMode: 1
     - _ZWrite: 1
     m_Colors:
-    - _AmbientColor: {r: 0, g: 0, b: 0, a: 1}
-    - _BaseColor: {r: 0.20877549, g: 0.4716981, b: 0.17577429, a: 1}
+    - _AmbientColor: {r: 0.14595942, g: 0.14930914, b: 0.1509434, a: 1}
+    - _BaseColor: {r: 0.71599996, g: 0.5504521, b: 0.370888, a: 1}
     - _Color: {r: 0.5, g: 0.5, b: 0.5, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
-    - _LightColor: {r: 0.084153086, g: 0.1981132, b: 0.081301175, a: 1}
-    - _RimColor: {r: 0.002669131, g: 0.0637255, b: 0.003670055, a: 1}
+    - _LightColor: {r: 0.18111429, g: 0.20513907, b: 0.20754719, a: 1}
+    - _RimColor: {r: 0.248, g: 0.248, b: 0.248, a: 1}
     - _SpecColor: {r: 0.19999996, g: 0.19999996, b: 0.19999996, a: 1}
-    - _SpecularColor: {r: 0.03688314, g: 0.1385, b: 0.019570649, a: 1}
+    - _SpecularColor: {r: 0.26072446, g: 0.2924528, b: 0.28839558, a: 1}
+--- !u!114 &2299079067014138326
+MonoBehaviour:
+  m_ObjectHideFlags: 11
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0353a89b1f911e48b9e16bdc9f2e058, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  version: 1
