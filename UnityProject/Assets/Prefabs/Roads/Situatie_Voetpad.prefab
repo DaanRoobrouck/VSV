@@ -171,8 +171,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _cardHolder: {fileID: 0}
   _cardIndexOrder: 000000000100000002000000
+  _scriptableCards: []
   PlayerOrder: []
   AssignedSituation: 0
+  _cardPrefab: {fileID: 0}
+  _panelCardHolder: {fileID: 0}
+  Collider: {fileID: 0}
 --- !u!114 &3290981675788110422
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -194,6 +198,10 @@ MonoBehaviour:
   _lookGO: {fileID: 0}
   _leftLookGO: {fileID: 3290981675952502439}
   _rightLookGO: {fileID: 3290981676340130553}
+  _forwardLookGO: {fileID: 0}
+  _backwardLookGO: {fileID: 0}
+  _leftCarLookGO: {fileID: 0}
+  _rightCarLookGO: {fileID: 0}
 --- !u!1 &3290981675952502439
 GameObject:
   m_ObjectHideFlags: 0
