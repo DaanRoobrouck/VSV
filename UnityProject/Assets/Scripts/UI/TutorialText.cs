@@ -4,15 +4,20 @@ using UnityEngine;
 
 public class TutorialText : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    [SerializeField] private FirstPersonAIO _playerScript;
+    [SerializeField] private Animator _animator;
+
+    [SerializeField] private string _shownText;
+
+    private void OnTriggerEnter(Collider other)
     {
-        
+        _playerScript.enabled = false;
+        _animator.SetBool("ShowText", true);
     }
 
-    // Update is called once per frame
-    void Update()
+    public void ContinueTutorial()
     {
-        
+        _animator.SetBool("ShowText", false);
+        _playerScript.enabled = true;
     }
 }

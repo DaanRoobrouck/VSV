@@ -43,7 +43,6 @@ public class DestinationManager : MonoBehaviour
             }
             CurrentDestinations[i] = _destinations[index];
         }
-        Debug.Log(CurrentDestinations);
     }
 
     public void SetDestination()
