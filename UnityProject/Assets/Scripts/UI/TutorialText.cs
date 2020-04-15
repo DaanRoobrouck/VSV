@@ -12,7 +12,6 @@ public class TutorialText : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         _playerScript.enabled = false;
-        _animator.SetBool("ShowText", true);
     }
 
     public void ContinueTutorial()
