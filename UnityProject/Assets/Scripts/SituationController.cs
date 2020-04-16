@@ -42,7 +42,9 @@ public class SituationController : MonoBehaviour
     [SerializeField] private GameObject _backwardLookGO;
     [SerializeField] private GameObject _leftCarLookGO;
     [SerializeField] private GameObject _rightCarLookGO;
+    [SerializeField] private GameObject _checkBoundaryGO;
     private GameObject _distanceGO;
+    private GameObject _endGO;
 
     private ScoreManager _scoreManager;
     private float _timer;
@@ -53,10 +55,22 @@ public class SituationController : MonoBehaviour
         _cardController = this.GetComponent<CardController>();
         _fpsController = FindObjectOfType<FirstPersonAIO>();
         _distanceGO = transform.GetChild(0).gameObject;
-        //_endGO = transform.GetChild(1).gameObject;
+        _endGO = transform.GetChild(1).gameObject;
         _situation = _cardController.AssignedSituation;
         _scoreManager = (ScoreManager)FindObjectOfType(typeof(ScoreManager));
 
+        if (_checkBoundaryGO != null)
+        {
+            DeactivateCheck(_checkBoundaryGO);
+        }
+        if (_endGO != null)
+        {
+            DeactivateCheck(_endGO);
+        }
+        if (_distanceGO != null)
+        {
+            DeactivateCheck(_distanceGO);
+        }
         if (_lookGO != null)
         {
             DeactivateCheck(_lookGO);
@@ -86,9 +100,13 @@ public class SituationController : MonoBehaviour
             _timer += Time.deltaTime;
             switch (_situation)
             {
-                case Situation.A:
+                case Situation.PedestrianCrossing:
                     if (!_hasStopped)
                     {
+                        if (!_checkBoundaryGO.activeSelf)
+                        {
+                            ActivateCheck(_checkBoundaryGO);
+                        }       
                         CheckStop();
                         return;
                     }
@@ -99,13 +117,28 @@ public class SituationController : MonoBehaviour
                     }
                     if (!_checkDistance)
                     {
-                        ActivateCheck(_distanceGO);
+                        if (!_distanceGO.activeSelf)
+                        {
+                            ActivateCheck(_distanceGO);
+                        }
+                        if (_checkBoundaryGO.activeSelf)
+                        {
+                            DeactivateCheck(_checkBoundaryGO);
+                        }
+                        if (!_endGO.activeSelf)
+                        {
+                            ActivateCheck(_endGO);
+                        }
                         return;
                     }
                     break;
-                case Situation.B:
+                case Situation.Obstacle:
                     if (!_hasStopped)
                     {
+                        if (!_checkBoundaryGO.activeSelf)
+                        {
+                            ActivateCheck(_checkBoundaryGO);
+                        }
                         CheckStop();
                         return;
                     }
@@ -116,13 +149,28 @@ public class SituationController : MonoBehaviour
                     }
                     if (!_checkDistance)
                     {
-                        ActivateCheck(_distanceGO);
+                        if (_checkBoundaryGO.activeSelf)
+                        {
+                            DeactivateCheck(_checkBoundaryGO);
+                        }
+                        if (!_distanceGO.activeSelf)
+                        {
+                            ActivateCheck(_distanceGO);
+                        }
+                        if (!_endGO.activeSelf)
+                        {
+                            ActivateCheck(_endGO);
+                        }
                         return;
                     }
                     break;
-                case Situation.C:
+                case Situation.BetweenCars:
                     if (!_hasStopped)
                     {
+                        if (!_checkBoundaryGO.activeSelf)
+                        {
+                            ActivateCheck(_checkBoundaryGO);
+                        }
                         CheckStop();
                         return;
                     }
@@ -138,13 +186,28 @@ public class SituationController : MonoBehaviour
                     }
                     if (!_checkDistance)
                     {
-                        ActivateCheck(_distanceGO);
+                        if (_checkBoundaryGO.activeSelf)
+                        {
+                            DeactivateCheck(_checkBoundaryGO);
+                        }
+                        if (!_distanceGO.activeSelf)
+                        {
+                            ActivateCheck(_distanceGO);
+                        }
+                        if (!_endGO.activeSelf)
+                        {
+                            ActivateCheck(_endGO);
+                        }
                         return;
                     }
                     break;
-                case Situation.D:
+                case Situation.Crossing:
                     if (!_hasStopped)
                     {
+                        if (!_checkBoundaryGO.activeSelf)
+                        {
+                            ActivateCheck(_checkBoundaryGO);
+                        }
                         CheckStop();
                         return;
                     }
@@ -155,7 +218,18 @@ public class SituationController : MonoBehaviour
                     }
                     if (!_checkDistance)
                     {
-                        ActivateCheck(_distanceGO);
+                        if (_checkBoundaryGO.activeSelf)
+                        {
+                            DeactivateCheck(_checkBoundaryGO);
+                        }
+                        if (!_distanceGO.activeSelf)
+                        {
+                            ActivateCheck(_distanceGO);
+                        }
+                        if (!_endGO.activeSelf)
+                        {
+                            ActivateCheck(_endGO);
+                        }
                         return;
                     }
                     break;
@@ -347,5 +421,6 @@ public class SituationController : MonoBehaviour
         _cardController.Collider.enabled = true;
 
         DeactivateCheck(_distanceGO);
+        DeactivateCheck(_checkBoundaryGO);
     }
 }

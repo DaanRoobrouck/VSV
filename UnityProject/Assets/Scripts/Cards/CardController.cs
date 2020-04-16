@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public enum Situation { A, B, C, D, E}
+public enum Situation { PedestrianCrossing, Obstacle, BetweenCars, Crossing}
 public class CardController : MonoBehaviour
 {
     [SerializeField] private GameObject _cardHolder;

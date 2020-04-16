@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Distance : MonoBehaviour
+public class AuthorityCheck : MonoBehaviour
 {
     private SituationController _situationController;
     private ScoreManager _scoreManager;
@@ -15,16 +15,16 @@ public class Distance : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            Debug.Log("Je bent op de goede weg");
+            Debug.Log("Mag niet, je deed iets fout");
+            _situationController.Tries++;
+            _scoreManager.SubtractScore(_situationController.Tries);
         }
     }
     private void OnTriggerExit(Collider other)
     {
         if (other.CompareTag("Player"))
         {
-            _situationController.Tries++;
-            _scoreManager.SubtractScore(_situationController.Tries);
-            Debug.Log("Blijf op het pad aub");
+            Debug.Log("Terug op het goede pad");
         }
     }
 }
