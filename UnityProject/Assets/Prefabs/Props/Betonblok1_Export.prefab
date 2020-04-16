@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 3604531647265846754}
   - component: {fileID: 5719246967190589396}
   - component: {fileID: 2045287048053257005}
+  - component: {fileID: 3047046023143942381}
   m_Layer: 0
   m_Name: Betonblok1_Export
   m_TagString: Untagged
@@ -79,3 +80,16 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!65 &3047046023143942381
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 314838245881530353}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2.6316347, y: 0.95980793, z: 0.73462486}
+  m_Center: {x: 0, y: 0, z: 0.36731243}

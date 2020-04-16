@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 240761263766838193}
   - component: {fileID: 9082737520687456647}
   - component: {fileID: 3256336504711798142}
+  - component: {fileID: 3010649679564540525}
   m_Layer: 0
   m_Name: Buxus_Export
   m_TagString: Untagged
@@ -81,3 +82,16 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!65 &3010649679564540525
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3822433211379214754}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 4.100709, y: 2.4839942, z: 0.87773854}
+  m_Center: {x: -0.000002861023, y: 1.2333602, z: -0.00000014901161}

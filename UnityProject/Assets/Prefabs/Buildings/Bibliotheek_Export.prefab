@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 2654072487113684552}
   - component: {fileID: 8640615164053785265}
   - component: {fileID: 86944880682607741}
+  - component: {fileID: 4035286053816110135}
   m_Layer: 0
   m_Name: Bibliotheek_Export
   m_TagString: Untagged
@@ -59,14 +60,14 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 0b9bf702740cbb844828e793edc4f6cb, type: 2}
+  - {fileID: 2100000, guid: 45137d2e9035562499177c8ee9f3adf9, type: 2}
   - {fileID: 2100000, guid: b6fd0e7f4f35d32448db83a2b9349a3a, type: 2}
-  - {fileID: 2100000, guid: 0b9bf702740cbb844828e793edc4f6cb, type: 2}
+  - {fileID: 2100000, guid: 9510215ce7e4a3c46a7b6b8067413d51, type: 2}
   - {fileID: 2100000, guid: b6fd0e7f4f35d32448db83a2b9349a3a, type: 2}
   - {fileID: 2100000, guid: b3e8a9e82893efa40ae54f1611f89e48, type: 2}
-  - {fileID: 2100000, guid: 0b9bf702740cbb844828e793edc4f6cb, type: 2}
+  - {fileID: 2100000, guid: 9510215ce7e4a3c46a7b6b8067413d51, type: 2}
   - {fileID: 1708684242180143079, guid: 19493dfcaf2741d4bab61fba9a775ca3, type: 3}
-  - {fileID: 2100000, guid: c0a2b7095fa2d6046899fc6e9822e494, type: 2}
+  - {fileID: 2100000, guid: 93c8a0b95a286644b9daeef88d38812c, type: 2}
   - {fileID: 2100000, guid: ffc9774f7e95db0408fea5523b625edf, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
@@ -20652,3 +20653,17 @@ MonoBehaviour:
   m_SelectedFaces: 
   m_SelectedEdges: []
   m_SelectedVertices: 
+--- !u!64 &4035286053816110135
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8058478751208816237}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 0}

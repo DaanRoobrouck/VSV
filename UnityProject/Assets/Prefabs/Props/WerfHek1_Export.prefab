@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 6725198303910016303}
   - component: {fileID: 1038147138658650582}
   - component: {fileID: 1304444337270437243}
+  - component: {fileID: 8603500494478135409}
   m_Layer: 0
   m_Name: WerfHek1_Export
   m_TagString: Untagged
@@ -5587,3 +5588,16 @@ MonoBehaviour:
   m_SelectedFaces: 
   m_SelectedEdges: []
   m_SelectedVertices: 
+--- !u!65 &8603500494478135409
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1609169756739632394}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 7.051614, y: 0.38100004, z: 5.7731185}
+  m_Center: {x: 0.8066983, y: 0.0041345656, z: 2.8730385}

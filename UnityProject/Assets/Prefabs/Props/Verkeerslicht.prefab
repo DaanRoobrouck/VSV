@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 582097169909261487}
   - component: {fileID: 8452976080750157465}
   - component: {fileID: 2770709511339991648}
+  - component: {fileID: 6172035913246136420}
   m_Layer: 0
   m_Name: Verkeerslicht
   m_TagString: Untagged
@@ -80,3 +81,16 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!65 &6172035913246136420
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4489912435568105148}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.2549299, y: 0.1846381, z: 3.3661728}
+  m_Center: {x: 0.033721752, y: -2.447096e-11, z: 1.683086}
