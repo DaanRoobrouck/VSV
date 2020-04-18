@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class ScoreManager : MonoBehaviour
 {
-    static float _score;
+    public static float _score = 0;
     private int _concentrationScore = 0;
     private int _currentStreak = 1;
 
