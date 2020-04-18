@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class ScoreManager : MonoBehaviour
 {
-    private float _score = 0;
+    static float _score;
     private int _concentrationScore = 0;
     private int _currentStreak = 1;
 
@@ -15,6 +15,10 @@ public class ScoreManager : MonoBehaviour
     [SerializeField] private int _mistake = 1;
     [SerializeField] private int _correct = 1;
 
+    private void Start()
+    {
+        _score = 0;
+    }
     public void AddScore(float time)
     {
         float add = Mathf.Pow((_correct * (1 / time)), _currentStreak);
