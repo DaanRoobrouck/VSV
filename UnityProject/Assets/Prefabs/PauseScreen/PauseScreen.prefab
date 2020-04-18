@@ -1458,7 +1458,7 @@ RectTransform:
   m_GameObject: {fileID: 2611205118656938497}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 2.511936, y: 2.511936, z: 2.511936}
+  m_LocalScale: {x: 2.2, y: 2.511936, z: 2.511936}
   m_Children:
   - {fileID: 2611205117278799223}
   - {fileID: 2611205117977911308}
@@ -1584,4 +1584,5 @@ MonoBehaviour:
   mainMenu: {fileID: 2611205118656938497}
   levelSelectMenu: {fileID: 0}
   pauseScreen: {fileID: 2611205118656938497}
+  transitionScreen: {fileID: 0}
   playerController: {fileID: 0}

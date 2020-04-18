@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -13,6 +14,8 @@ public class UIFunctions : MonoBehaviour
     private GameObject levelSelectMenu;
     [SerializeField]
     private GameObject pauseScreen;
+    [SerializeField]
+    private GameObject transitionScreen;
     [SerializeField]
     private FirstPersonAIO playerController;
 
@@ -62,8 +65,18 @@ public class UIFunctions : MonoBehaviour
     }
     public void LoadCity()
     {
+        StartCoroutine(LoadingProcess());
+    }
+
+    IEnumerator LoadingProcess()
+    {
+        transitionScreen.GetComponent<Animator>().SetTrigger("LoadingStarted");
+
+        yield return new WaitForSeconds(1f);
+
         SceneManager.LoadScene("CityMockup");
     }
+
     public void ClosePauseScreen()
     {
         pauseScreen.GetComponent<Animator>().SetTrigger("ContinuePressed");
