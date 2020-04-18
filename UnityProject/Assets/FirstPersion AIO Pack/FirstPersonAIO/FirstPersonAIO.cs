@@ -55,7 +55,6 @@ using System.Collections.Generic;
 
 public class FirstPersonAIO : MonoBehaviour {
 
-
     #region Variables
 
     #region Input Settings
@@ -63,6 +62,7 @@ public class FirstPersonAIO : MonoBehaviour {
     #endregion
 
     #region Look Settings
+
     public bool enableCameraMovement = true;
     public enum InvertMouseInput{None,X,Y,Both}
     public InvertMouseInput mouseInputInversion = InvertMouseInput.None;
@@ -237,7 +237,11 @@ public class BETA_SETTINGS{
     [Space(5)]
     public BETA_SETTINGS betaSettings = new BETA_SETTINGS();
      */
-    
+
+    #endregion
+
+    #region UI Settings
+    public UIFunctions UIFunctions;
     #endregion
 
     #endregion
@@ -359,7 +363,7 @@ public class BETA_SETTINGS{
             playerCamera.transform.localRotation = Quaternion.Euler(-followAngles.x + originalRotation.x,0,0);
             transform.localRotation =  Quaternion.Euler(0, followAngles.y+originalRotation.y, 0);
         }
-    
+
         #endregion
 
         #region  Input Settings - Update
@@ -382,6 +386,14 @@ public class BETA_SETTINGS{
         #region BETA_SETTINGS - Update
 
         #endregion
+
+        #region Custom Inputs - Update
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            UIFunctions.OpenPauseScreen();
+        }
+        #endregion
+
     }
 
     private void FixedUpdate()
@@ -826,10 +838,13 @@ public class BETA_SETTINGS{
         #endregion
         
         #region Movement Setup
+
             EditorGUILayout.LabelField("",GUI.skin.horizontalSlider);
             GUILayout.Label("Movement Setup",new GUIStyle(GUI.skin.label){alignment = TextAnchor.MiddleCenter,fontStyle = FontStyle.Bold, fontSize = 13},GUILayout.ExpandWidth(true));
             EditorGUILayout.Space();
             EditorGUILayout.Space();
+
+
             t.playerCanMove = EditorGUILayout.ToggleLeft(new GUIContent("Enable Player Movement","Determines if the player is allowed to move."),t.playerCanMove);
             GUI.enabled = t.playerCanMove;
             t.walkByDefault = EditorGUILayout.ToggleLeft(new GUIContent("Walk By Default","Determines if the default mode of movement is 'Walk' or 'Srpint'."),t.walkByDefault);
@@ -1367,7 +1382,17 @@ public class BETA_SETTINGS{
             }
         #endregion
 
-            EditorGUILayout.Space();
+        #region UI Setup, grts Matisse
+        EditorGUILayout.LabelField("", GUI.skin.horizontalSlider);
+        GUILayout.Label("UI Setup, grts Matisse", new GUIStyle(GUI.skin.label) { alignment = TextAnchor.MiddleCenter, fontStyle = FontStyle.Bold, fontSize = 13 }, GUILayout.ExpandWidth(true));
+        EditorGUILayout.Space();
+        EditorGUILayout.Space();
+
+        t.UIFunctions = (UIFunctions)EditorGUILayout.ObjectField(new GUIContent("UIFunctions Script", "de script, domkop"), t.UIFunctions, typeof(UIFunctions), true);
+
+        #endregion
+
+        EditorGUILayout.Space();
             EditorGUILayout.Space();
             EditorGUILayout.Space();
             EditorGUILayout.BeginVertical("Box");

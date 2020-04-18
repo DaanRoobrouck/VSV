@@ -13,6 +13,8 @@ public class UIFunctions : MonoBehaviour
     private GameObject levelSelectMenu;
     [SerializeField]
     private GameObject pauseScreen;
+    [SerializeField]
+    private FirstPersonAIO playerController;
 
     private Animator _anim;
 
@@ -64,6 +66,15 @@ public class UIFunctions : MonoBehaviour
     }
     public void ClosePauseScreen()
     {
-        pauseScreen.SetActive(false);
+        pauseScreen.GetComponent<Animator>().SetTrigger("ContinuePressed");
+        playerController.enableCameraMovement = true;
+        playerController.playerCanMove = true;
+
+    }
+    public void OpenPauseScreen()
+    {
+        pauseScreen.GetComponent<Animator>().SetTrigger("PausePressed");
+        playerController.enableCameraMovement = false;
+        playerController.playerCanMove = false;
     }
 }
