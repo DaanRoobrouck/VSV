@@ -14,7 +14,10 @@ public class SettingsScript : MonoBehaviour
     private void Update()
     {
         DontDestroyOnLoad(this.gameObject);
-        audioSource.volume = VolumeSlider.value;
+        if (audioSource != null)
+        {
+            audioSource.volume = VolumeSlider.value;
+        }
         FP.mouseSensitivity = SensitivitySlider.value * 3;
     }
 }

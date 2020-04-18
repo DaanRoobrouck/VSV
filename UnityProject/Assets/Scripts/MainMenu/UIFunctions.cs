@@ -14,7 +14,12 @@ public class UIFunctions : MonoBehaviour
     [SerializeField]
     private GameObject pauseScreen;
 
-    public Animator startButtonAnim;
+    private Animator _anim;
+
+    private void Start()
+    {
+        _anim = this.GetComponent<Animator>();
+    }
 
     public void OpenSVSLink()
     {
@@ -43,11 +48,19 @@ public class UIFunctions : MonoBehaviour
     public void Play()
     {
         Debug.Log("Starting game");
-        startButtonAnim.SetTrigger("StartPressed");
+        _anim.SetTrigger("StartPressed");
     }
     public void LoadMenuScene()
     {
-        SceneManager.LoadScene("Matisse");
+        SceneManager.LoadScene("TitleScreen");
+    }
+    public void LoadTutorial()
+    {
+        SceneManager.LoadScene("Tutorial");
+    }
+    public void LoadCity()
+    {
+        SceneManager.LoadScene("CityMockup");
     }
     public void ClosePauseScreen()
     {
