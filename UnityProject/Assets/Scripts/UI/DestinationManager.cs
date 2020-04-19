@@ -5,6 +5,7 @@ using UnityEngine;
 using Random = System.Random;
 using System.Linq;
 using Assets.Scripts.UI;
+using UnityEngine.SceneManagement;
 
 
 public class DestinationManager : MonoBehaviour
@@ -49,7 +50,7 @@ public class DestinationManager : MonoBehaviour
     {
         if (CurrentDestinationIndex == CurrentDestinations.Length)
         {
-            //End game
+            SceneManager.LoadScene(3);
         }
         CurrentDestination = CurrentDestinations[CurrentDestinationIndex].transform;
         CurrentDestination.GetComponent<BoxCollider>().enabled = true;
