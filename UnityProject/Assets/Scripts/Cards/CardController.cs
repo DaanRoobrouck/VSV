@@ -57,6 +57,12 @@ public class CardController : MonoBehaviour
         {
             HideCards();
 
+            //foreach (GameObject cardObject in _cards)
+            //{
+            //    _cards.Remove(cardObject);
+            //    Destroy(cardObject.gameObject);
+            //}
+
             //animatie, kaarten sliden uit
             LeanTween.moveY(_cardHolder, -125, 0.5f);
 
@@ -64,7 +70,7 @@ public class CardController : MonoBehaviour
 
             FreezePlayer(true);
 
-            _isActive = false;
+            
         }
     }
 
@@ -98,12 +104,14 @@ public class CardController : MonoBehaviour
             {
                 foreach (GameObject cardObject in _cards)
                 {
-                    _cards.Remove(cardObject);
+                    //_cards.Remove(cardObject);
                     Destroy(cardObject.gameObject);
                 }
+                _cards.Clear();
                 if (_cards.Count == 0)
                 {
                     _hidecards = false;
+                    _isActive = false;
                 }
             }
         }
