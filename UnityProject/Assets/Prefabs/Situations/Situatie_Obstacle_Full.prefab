@@ -159,8 +159,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _cardHolder: {fileID: 0}
-  _cardIndexOrder: 000000000100000002000000
-  _scriptableCards: []
+  _cardIndexOrder: 020000000000000008000000
+  _scriptableCards:
+  - {fileID: 11400000, guid: 87ed2aac61d8d7c43a4dcef9897934b7, type: 2}
+  - {fileID: 11400000, guid: 69cd5e90cd8d277469fd70cb27c93d94, type: 2}
+  - {fileID: 11400000, guid: f1039fbf69cbfb348a5d3e6adcb5547c, type: 2}
   PlayerOrder: []
   AssignedSituation: 1
   _cardPrefab: {fileID: 838347714013668856, guid: f8a71718f91abd94db65e74342678e95,

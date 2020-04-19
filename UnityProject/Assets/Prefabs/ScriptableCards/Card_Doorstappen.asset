@@ -10,8 +10,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 431d586334ff1c64d939849a48278e97, type: 3}
-  m_Name: TestCard01
+  m_Name: Card_Doorstappen
   m_EditorClassIdentifier: 
-  Index: 0
-  Icon: {fileID: 10901, guid: 0000000000000000f000000000000000, type: 0}
-  Description: 0
+  Index: 7
+  Icon: {fileID: 21300000, guid: 3c1cbe5bdf366e44f86a8ab199ded46e, type: 3}
+  Description: Stap door
