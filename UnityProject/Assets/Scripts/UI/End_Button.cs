@@ -7,6 +7,6 @@ public class End_Button : MonoBehaviour
 {
     public void LoadMainScene()
     {
-        SceneManager.LoadScene(2);
+        SceneManager.LoadScene(1);
     }
 }

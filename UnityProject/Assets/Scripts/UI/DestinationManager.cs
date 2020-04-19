@@ -50,7 +50,7 @@ public class DestinationManager : MonoBehaviour
     {
         if (CurrentDestinationIndex == CurrentDestinations.Length)
         {
-            SceneManager.LoadScene(3);
+            SceneManager.LoadScene(2);
         }
         CurrentDestination = CurrentDestinations[CurrentDestinationIndex].transform;
         CurrentDestination.GetComponent<BoxCollider>().enabled = true;
