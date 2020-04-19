@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 511671091329742113}
   - component: {fileID: 3765912095059494016}
   - component: {fileID: 9026197488023096577}
+  - component: {fileID: 5730608166788122168}
   m_Layer: 0
   m_Name: Stoplicht_Dubbel_2
   m_TagString: Untagged
@@ -121,11 +122,14 @@ MonoBehaviour:
   - {fileID: 2100000, guid: 56da002fdc5ca264fad749e0649b04e6, type: 2}
   - {fileID: 2100000, guid: 921ad58984d5a4b48a92b02dc5c7022c, type: 2}
   - {fileID: 2100000, guid: 1b84de8e19711184f90540735c201d56, type: 2}
-  _lightRotation: 1
+  LightRotation: 0
   _hasPedestrianLight: 1
+  _isOnlyPedestrianLight: 0
+  ButtonPressed: 0
   _redAndGreenTimer: 20
   _orangeTimer: 3
   _currentLightMaterials: []
+  _sameCrossRoadLights: []
 --- !u!54 &9026197488023096577
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -142,3 +146,17 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!136 &5730608166788122168
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6121738301207641610}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.16
+  m_Height: 3.56
+  m_Direction: 2
+  m_Center: {x: -0.004024565, y: -0.03, z: 1.7}

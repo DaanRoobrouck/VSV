@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 6843621005424176170}
   - component: {fileID: 7260174526905621496}
   - component: {fileID: 5081646294137792932}
+  - component: {fileID: 6702784799001935918}
   m_Layer: 0
   m_Name: Stoplicht_Voetgangers
   m_TagString: Untagged
@@ -126,3 +127,17 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!136 &6702784799001935918
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5099687792479803638}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.22
+  m_Height: 3.89
+  m_Direction: 2
+  m_Center: {x: 0.04, y: 0.01, z: 1.86}
