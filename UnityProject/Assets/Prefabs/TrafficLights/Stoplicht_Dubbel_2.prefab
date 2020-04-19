@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 3765912095059494016}
   - component: {fileID: 9026197488023096577}
   - component: {fileID: 5730608166788122168}
+  - component: {fileID: 3518937738872478498}
   m_Layer: 0
   m_Name: Stoplicht_Dubbel_2
   m_TagString: Untagged
@@ -160,3 +161,16 @@ CapsuleCollider:
   m_Height: 3.56
   m_Direction: 2
   m_Center: {x: -0.004024565, y: -0.03, z: 1.7}
+--- !u!65 &3518937738872478498
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6121738301207641610}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.7825567, y: 1.77, z: 6.1806736}
+  m_Center: {x: -0.12274623, y: -0.178804, z: 3.0903368}
