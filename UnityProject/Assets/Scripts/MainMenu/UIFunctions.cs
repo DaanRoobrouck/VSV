@@ -28,7 +28,7 @@ public class UIFunctions : MonoBehaviour
 
     public void OpenSVSLink()
     {
-        Application.OpenURL("https://www.verkeeropschool.be/");
+        Application.OpenURL("https://www.vsv.be/");
     }
     public void OpenSettings()
     {
