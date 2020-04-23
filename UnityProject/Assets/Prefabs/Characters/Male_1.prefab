@@ -755,6 +755,7 @@ GameObject:
   - component: {fileID: 9170259210669049819}
   - component: {fileID: 4195660389322026179}
   - component: {fileID: 3670069659669055395}
+  - component: {fileID: 3340840854520189148}
   m_Layer: 0
   m_Name: Male_1
   m_TagString: Untagged
@@ -810,6 +811,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentWaypoint: {fileID: 0}
+--- !u!136 &3340840854520189148
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5266986094804088264}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.25
+  m_Height: 1.8
+  m_Direction: 1
+  m_Center: {x: 0, y: 0.9, z: 0}
 --- !u!1 &5269670289484087725
 GameObject:
   m_ObjectHideFlags: 0

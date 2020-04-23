@@ -42,6 +42,7 @@ GameObject:
   - component: {fileID: 3844501519592000635}
   - component: {fileID: 8079700781836675789}
   - component: {fileID: 1191078769153103578}
+  - component: {fileID: 8600644913974829233}
   m_Layer: 0
   m_Name: Female_2
   m_TagString: Untagged
@@ -97,6 +98,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentWaypoint: {fileID: 0}
+--- !u!136 &8600644913974829233
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 216507152736321128}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.25
+  m_Height: 1.8
+  m_Direction: 1
+  m_Center: {x: 0, y: 0.9, z: 0}
 --- !u!1 &232083662201735693
 GameObject:
   m_ObjectHideFlags: 0

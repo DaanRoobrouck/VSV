@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 2639963427584717160}
   - component: {fileID: 6482947602357324638}
   - component: {fileID: 775893557045196711}
+  - component: {fileID: 836736332788584269}
   m_Layer: 0
   m_Name: Bakkerij_Export
   m_TagString: Untagged
@@ -89,3 +90,16 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!65 &836736332788584269
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1366931654700123003}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 15.582272, y: 9.904357, z: 13.4812975}
+  m_Center: {x: -0.086488724, y: 0.79621077, z: 6.6425476}

@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 8653827844605406156}
   - component: {fileID: 379309711265747450}
   - component: {fileID: 6232732602148728067}
+  - component: {fileID: 3956121199593636754}
   m_Layer: 0
   m_Name: Doos3_Export
   m_TagString: Untagged
@@ -79,3 +80,16 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!65 &3956121199593636754
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5639574684845480415}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.0230231, y: 1.5420622, z: 1.0030919}
+  m_Center: {x: 0.0049026012, y: 0.002628684, z: 0.48065382}
