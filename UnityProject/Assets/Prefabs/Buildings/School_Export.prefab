@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 5265571653957023362}
   - component: {fileID: 1886894917560732283}
   - component: {fileID: 3478756751032320390}
+  - component: {fileID: 7984493249513709778}
   m_Layer: 0
   m_Name: School_Export
   m_TagString: Untagged
@@ -85191,3 +85192,16 @@ MonoBehaviour:
   m_SelectedFaces: 
   m_SelectedEdges: []
   m_SelectedVertices: 
+--- !u!65 &7984493249513709778
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 149549947822325415}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 33.729332, y: 13.514984, z: 21.406492}
+  m_Center: {x: -0.026732445, y: -0.051157486, z: 10.703246}

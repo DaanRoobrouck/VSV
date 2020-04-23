@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 5572082352711130158}
   - component: {fileID: 2191153002329022679}
   - component: {fileID: 4240550053595248810}
+  - component: {fileID: 8869410767159282633}
   m_Layer: 0
   m_Name: Auto2
   m_TagString: Vehicle
@@ -217,6 +218,19 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!65 &8869410767159282633
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 456090648844964875}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 4.7189617, y: 1.4175789, z: 1.9615037}
+  m_Center: {x: 0.0000036954889, y: 0.6903244, z: 0}
 --- !u!1 &5871839912312638192
 GameObject:
   m_ObjectHideFlags: 0

@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 335734248380754138}
   - component: {fileID: 8542367573677142925}
   - component: {fileID: 6980916840429186251}
+  - component: {fileID: 351496473254622790}
   m_Layer: 0
   m_Name: Bank_Export
   m_TagString: Untagged
@@ -12231,3 +12232,16 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 0}
+--- !u!65 &351496473254622790
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2059291311654624262}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 18.288, y: 14.478004, z: 19.26427}
+  m_Center: {x: 0, y: -0.0000007152559, z: 9.590799}

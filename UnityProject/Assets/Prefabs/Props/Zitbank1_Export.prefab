@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 362282290356682515}
   - component: {fileID: 8672828344767661349}
   - component: {fileID: 3125667494155205084}
+  - component: {fileID: 5975987206801628994}
   m_Layer: 0
   m_Name: Zitbank1_Export
   m_TagString: Untagged
@@ -80,3 +81,16 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!65 &5975987206801628994
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3700916600540040448}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 3.81, y: 1.0160003, z: 1.231391}
+  m_Center: {x: 0, y: -0.000000029802337, z: 0.5962814}
