@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4512386469887788239}
   m_Layer: 0
-  m_Name: SignalisatiePaal
+  m_Name: RSignalisatiePaal
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -145,7 +145,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Doel
+  m_text: Doel (PLACEHOLDER)
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 672371656676bb548b0d636bff8751f4, type: 2}
   m_sharedMaterial: {fileID: -1715939977620872107, guid: 672371656676bb548b0d636bff8751f4,
@@ -191,7 +191,7 @@ MonoBehaviour:
   m_enableWordWrapping: 1
   m_wordWrappingRatios: 0.4
   m_overflowMode: 0
-  m_firstOverflowCharacterIndex: -1
+  m_firstOverflowCharacterIndex: 5
   m_linkedTextComponent: {fileID: 0}
   m_isLinkedTextComponent: 0
   m_isTextTruncated: 0
@@ -215,12 +215,12 @@ MonoBehaviour:
   m_margin: {x: 0, y: -4.389444, z: 0, w: 0}
   m_textInfo:
     textComponent: {fileID: 5680977285172677502}
-    characterCount: 4
+    characterCount: 18
     spriteCount: 0
-    spaceCount: 0
-    wordCount: 1
+    spaceCount: 1
+    wordCount: 2
     linkCount: 0
-    lineCount: 1
+    lineCount: 3
     pageCount: 1
     materialCount: 2
   m_isUsingLegacyAnimationComponent: 0
