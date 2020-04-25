@@ -45,23 +45,28 @@ public class SituationController : MonoBehaviour
     [SerializeField] private GameObject _checkBoundaryGO;
     [SerializeField] private GameObject _distanceGO;
     private Distance _distance;
+    private AuthorityCheck _authorityCheck;
     //private GameObject _endGO;
 
     private ScoreManager _scoreManager;
     private float _timer;
     private float _stopTimer;
 
+    private UIManager _uiManager;
+
     void Start()
     {
-
+        _authorityCheck = _checkBoundaryGO.GetComponent<AuthorityCheck>();
         _cardController = this.GetComponent<CardController>();
         _fpsController = FindObjectOfType<FirstPersonAIO>();
+        _uiManager = FindObjectOfType<UIManager>();
         //_endGO = transform.GetChild(1).gameObject;
         _situation = _cardController.AssignedSituation;
         _scoreManager = (ScoreManager)FindObjectOfType(typeof(ScoreManager));
 
         if (_checkBoundaryGO != null)
         {
+            _authorityCheck.SituationController = this;
             DeactivateCheck(_checkBoundaryGO);
         }
         //if (_endGO != null)
@@ -252,6 +257,7 @@ public class SituationController : MonoBehaviour
                 Debug.Log("Time up, player stopped correct");
                 _hasStopped = true;
                 _stopTimer = 0;
+                _uiManager.UIPoints(12, true);
             }
         }
     }
@@ -287,6 +293,7 @@ public class SituationController : MonoBehaviour
             _hasLooked = true;
             _leftCount = 0;
             _rightCount = 0;
+            _uiManager.UIPoints(12, true);
         }
     }
 
@@ -373,6 +380,8 @@ public class SituationController : MonoBehaviour
             _rightCount = 0;
             _forwardCount = 0;
             _backwardCount = 0;
+
+            _uiManager.UIPoints(12, true);
         }
     }
 
@@ -388,6 +397,7 @@ public class SituationController : MonoBehaviour
             {
                 Debug.Log("Player looked correct");
                 DeactivateCheck(_lookGO);
+                _uiManager.UIPoints(12, true);
                 _hasLooked = true;
             }
         }

@@ -71,9 +71,7 @@ public class CardController : MonoBehaviour
 
             PlayerOrder.Clear();
 
-            FreezePlayer(false);
-
-            
+            FreezePlayer(false);         
         }
     }
 
@@ -86,9 +84,9 @@ public class CardController : MonoBehaviour
             Cursor.visible = false;
         }
         else
-        {
-            _player.enableCameraMovement = false;
+        {            
             _player.lockAndHideCursor = false;
+            _player.enableCameraMovement = false;
             Cursor.visible = false;
         }
     }

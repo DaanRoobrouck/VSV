@@ -69,10 +69,10 @@ MonoBehaviour:
   AssignedSituation: 0
   _cardPrefab: {fileID: 838347714013668856, guid: f8a71718f91abd94db65e74342678e95,
     type: 3}
-  _panelCardHolder: {fileID: 0}
   StartCollider1: {fileID: 448423343}
   StartCollider2: {fileID: 1048144026}
   _endCollider: {fileID: 5092314678204122653}
+  _bothWays: 1
 --- !u!114 &448423344
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -192,8 +192,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 1, y: 1, z: 1.3517456}
+  m_Center: {x: 0, y: 0, z: -0.17587277}
 --- !u!114 &597556679
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -275,10 +275,10 @@ MonoBehaviour:
   AssignedSituation: 0
   _cardPrefab: {fileID: 838347714013668856, guid: f8a71718f91abd94db65e74342678e95,
     type: 3}
-  _panelCardHolder: {fileID: 0}
   StartCollider1: {fileID: 448423343}
   StartCollider2: {fileID: 1048144026}
   _endCollider: {fileID: 597556677}
+  _bothWays: 1
 --- !u!114 &1048144024
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -363,6 +363,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 18b31daf77bd6fe40923aab6615bab29, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  SituationController: {fileID: 0}
 --- !u!1 &5092314677299976600
 GameObject:
   m_ObjectHideFlags: 0
@@ -679,8 +680,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 1, y: 1, z: 1.4228863}
+  m_Center: {x: 0, y: 0, z: 0.07799703}
 --- !u!114 &5092314678204122643
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -750,6 +751,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 18b31daf77bd6fe40923aab6615bab29, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  SituationController: {fileID: 0}
 --- !u!1 &5092314679413247943
 GameObject:
   m_ObjectHideFlags: 0

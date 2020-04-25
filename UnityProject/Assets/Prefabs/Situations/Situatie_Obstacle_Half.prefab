@@ -69,7 +69,6 @@ MonoBehaviour:
   AssignedSituation: 1
   _cardPrefab: {fileID: 838347714013668856, guid: f8a71718f91abd94db65e74342678e95,
     type: 3}
-  _panelCardHolder: {fileID: 0}
   StartCollider1: {fileID: 558286626}
   StartCollider2: {fileID: 495709757}
   _endCollider: {fileID: 704479181}
@@ -170,7 +169,6 @@ MonoBehaviour:
   AssignedSituation: 1
   _cardPrefab: {fileID: 838347714013668856, guid: f8a71718f91abd94db65e74342678e95,
     type: 3}
-  _panelCardHolder: {fileID: 0}
   StartCollider1: {fileID: 558286626}
   StartCollider2: {fileID: 495709757}
   _endCollider: {fileID: 1245346759}
@@ -294,7 +292,7 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.62530756, y: 1, z: 1}
+  m_Size: {x: 0.62530756, y: 1, z: 2.01854}
   m_Center: {x: 0.0513511, y: 0, z: -2.1152513e-14}
 --- !u!114 &704479182
 MonoBehaviour:
@@ -493,7 +491,7 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.6165198, y: 1, z: 1}
+  m_Size: {x: 0.6165198, y: 1, z: 2.3348498}
   m_Center: {x: 0.0469677, y: 0, z: -2.9073965e-14}
 --- !u!114 &1245346761
 MonoBehaviour:
@@ -790,6 +788,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 18b31daf77bd6fe40923aab6615bab29, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  SituationController: {fileID: 0}
 --- !u!65 &1817761671453884238
 BoxCollider:
   m_ObjectHideFlags: 0

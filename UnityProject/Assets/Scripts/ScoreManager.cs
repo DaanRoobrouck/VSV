@@ -15,6 +15,8 @@ public class ScoreManager : MonoBehaviour
     [SerializeField] private int _mistake = 1;
     [SerializeField] private int _correct = 1;
 
+    [SerializeField] private UIManager _uiManager;
+
     private void Start()
     {
         _score = 0;
@@ -24,6 +26,7 @@ public class ScoreManager : MonoBehaviour
         float add = Mathf.Pow((_correct * (1 / time)), _currentStreak);
         _score += add;
         Debug.Log(add + " punten toegevoegd, totale score is: " + _score);
+        _uiManager.UIPoints(10, true);
     }
 
     public void SubtractScore(int tries)
@@ -31,6 +34,7 @@ public class ScoreManager : MonoBehaviour
         float subtract = _mistake * tries;
         _score -= subtract;
         Debug.Log(subtract + " punten verwijdert, totale score is: " + _score);
+        _uiManager.UIPoints(10, false);
     }
 
     public void SendScore(string name, string email)

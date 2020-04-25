@@ -4,11 +4,10 @@ using UnityEngine;
 
 public class AuthorityCheck : MonoBehaviour
 {
-    private SituationController _situationController;
+    public SituationController SituationController;
     private ScoreManager _scoreManager;
     private void Start()
     {
-        _situationController = this.GetComponentInParent<SituationController>();
         _scoreManager = (ScoreManager)FindObjectOfType(typeof(ScoreManager));
     }
     private void OnTriggerEnter(Collider other)
@@ -16,8 +15,8 @@ public class AuthorityCheck : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             Debug.Log("Mag niet, je deed iets fout");
-            _situationController.Tries++;
-            _scoreManager.SubtractScore(_situationController.Tries);
+            SituationController.Tries++;
+            _scoreManager.SubtractScore(SituationController.Tries);
         }
     }
     private void OnTriggerExit(Collider other)

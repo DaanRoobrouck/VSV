@@ -24,7 +24,7 @@ public class DestinationManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        this.UpdateDestination += (sender, args) => _uiListener.UpdateText(CurrentDestination);
+        this.UpdateDestination += (sender, args) => _uiListener.UpdateDestinationText(CurrentDestination);
         _random = new Random();
         GetRandomDestinations(_destinations, 3);
         SetDestination();
