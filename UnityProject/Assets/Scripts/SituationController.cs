@@ -43,8 +43,9 @@ public class SituationController : MonoBehaviour
     [SerializeField] private GameObject _leftCarLookGO;
     [SerializeField] private GameObject _rightCarLookGO;
     [SerializeField] private GameObject _checkBoundaryGO;
-    private GameObject _distanceGO;
-    private GameObject _endGO;
+    [SerializeField] private GameObject _distanceGO;
+    private Distance _distance;
+    //private GameObject _endGO;
 
     private ScoreManager _scoreManager;
     private float _timer;
@@ -52,10 +53,10 @@ public class SituationController : MonoBehaviour
 
     void Start()
     {
+
         _cardController = this.GetComponent<CardController>();
         _fpsController = FindObjectOfType<FirstPersonAIO>();
-        _distanceGO = transform.GetChild(0).gameObject;
-        _endGO = transform.GetChild(1).gameObject;
+        //_endGO = transform.GetChild(1).gameObject;
         _situation = _cardController.AssignedSituation;
         _scoreManager = (ScoreManager)FindObjectOfType(typeof(ScoreManager));
 
@@ -63,12 +64,14 @@ public class SituationController : MonoBehaviour
         {
             DeactivateCheck(_checkBoundaryGO);
         }
-        if (_endGO != null)
-        {
-            DeactivateCheck(_endGO);
-        }
+        //if (_endGO != null)
+        //{
+        //    DeactivateCheck(_endGO);
+        //}
         if (_distanceGO != null)
         {
+            _distance = _distanceGO.GetComponent<Distance>();
+            _distance.SituationController = this;
             DeactivateCheck(_distanceGO);
         }
         if (_lookGO != null)
@@ -125,10 +128,10 @@ public class SituationController : MonoBehaviour
                         {
                             DeactivateCheck(_checkBoundaryGO);
                         }
-                        if (!_endGO.activeSelf)
-                        {
-                            ActivateCheck(_endGO);
-                        }
+                        //if (!_endGO.activeSelf)
+                        //{
+                        //    ActivateCheck(_endGO);
+                        //}
                         return;
                     }
                     break;
@@ -157,10 +160,10 @@ public class SituationController : MonoBehaviour
                         {
                             ActivateCheck(_distanceGO);
                         }
-                        if (!_endGO.activeSelf)
-                        {
-                            ActivateCheck(_endGO);
-                        }
+                        //if (!_endGO.activeSelf)
+                        //{
+                        //    ActivateCheck(_endGO);
+                        //}
                         return;
                     }
                     break;
@@ -194,10 +197,10 @@ public class SituationController : MonoBehaviour
                         {
                             ActivateCheck(_distanceGO);
                         }
-                        if (!_endGO.activeSelf)
-                        {
-                            ActivateCheck(_endGO);
-                        }
+                        //if (!_endGO.activeSelf)
+                        //{
+                        //    ActivateCheck(_endGO);
+                        //}
                         return;
                     }
                     break;
@@ -226,10 +229,10 @@ public class SituationController : MonoBehaviour
                         {
                             ActivateCheck(_distanceGO);
                         }
-                        if (!_endGO.activeSelf)
-                        {
-                            ActivateCheck(_endGO);
-                        }
+                        //if (!_endGO.activeSelf)
+                        //{
+                        //    ActivateCheck(_endGO);
+                        //}
                         return;
                     }
                     break;
@@ -408,19 +411,29 @@ public class SituationController : MonoBehaviour
 
         _hasStopped = false;
         _hasLooked = false;
+        _hasLookedCars = false;
         _checkDistance = false;
 
         _lookLeft = true;
         _lookRight = false;
         _leftCount = 0;
         _rightCount = 0;
-
+        _forwardCount = 0;
+        _backwardCount = 0;
 
         _timer = 0;
 
-        _cardController.Collider.enabled = true;
-
         DeactivateCheck(_distanceGO);
         DeactivateCheck(_checkBoundaryGO);
+    }
+
+    public void EnableStartColliders()
+    {
+        _cardController.StartCollider1.enabled = true;
+        if (_cardController.StartCollider2 != null)
+        {
+            _cardController.StartCollider2.enabled = true;
+        }
+        
     }
 }

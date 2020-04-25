@@ -18,12 +18,16 @@ public class CardController : MonoBehaviour
     private SituationController _situationController;
 
     [SerializeField] private GameObject _cardPrefab;
-    [SerializeField] private GameObject _panelCardHolder;
 
-    public BoxCollider Collider;
+    public BoxCollider StartCollider1;
+    public BoxCollider StartCollider2;
+
+    [SerializeField] private GameObject _endCollider;
 
     private bool _hidecards = false;
     private bool _isActive = false;
+
+    [SerializeField] private bool _bothWays = false;
     private void Start()
     {
         _player = FindObjectOfType<FirstPersonAIO>();
@@ -31,7 +35,12 @@ public class CardController : MonoBehaviour
 
         _cards = new List<GameObject>();
 
-        Collider = this.GetComponent<BoxCollider>();
+        _endCollider.SetActive(false);
+
+        if (!_bothWays)
+        {
+            StartCollider1 = this.GetComponent<BoxCollider>();
+        }       
     }
     private void OnTriggerEnter(Collider other)
     {
@@ -57,18 +66,12 @@ public class CardController : MonoBehaviour
         {
             HideCards();
 
-            //foreach (GameObject cardObject in _cards)
-            //{
-            //    _cards.Remove(cardObject);
-            //    Destroy(cardObject.gameObject);
-            //}
-
             //animatie, kaarten sliden uit
             LeanTween.moveY(_cardHolder, -125, 0.5f);
 
             PlayerOrder.Clear();
 
-            FreezePlayer(true);
+            FreezePlayer(false);
 
             
         }
@@ -104,7 +107,6 @@ public class CardController : MonoBehaviour
             {
                 foreach (GameObject cardObject in _cards)
                 {
-                    //_cards.Remove(cardObject);
                     Destroy(cardObject.gameObject);
                 }
                 _cards.Clear();
@@ -121,7 +123,7 @@ public class CardController : MonoBehaviour
     {
         for (int i = 0; i < _cardIndexOrder.Count; i++)
         {
-            GameObject cardObject = Instantiate(_cardPrefab, _panelCardHolder.transform);
+            GameObject cardObject = Instantiate(_cardPrefab, _cardHolder.transform);
             Card card = cardObject.GetComponent<Card>();
             card.ScriptableCard = _scriptableCards[i];
             card.Controller = this;
@@ -161,7 +163,18 @@ public class CardController : MonoBehaviour
         {
             HideCards();
             _situationController.CorrectSequence = true;
-            Collider.enabled = false;
+            if (_bothWays)
+            {
+                StartCollider1.enabled = false;
+                StartCollider2.enabled = false;
+            }
+            else
+            {
+                StartCollider1.enabled = false;
+            }
+            
+
+            _endCollider.SetActive(true);
 
             PlayerOrder.Clear();
 
