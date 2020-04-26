@@ -17,6 +17,10 @@ public class Card : MonoBehaviour
 
     public CardController Controller;
 
+    private int _order;
+    public int Order { get => _order; set => _order = value; }
+    private Text _orderText;
+
     private void Start()
     {
         _icon = transform.GetChild(1).GetComponent<Image>();
@@ -24,6 +28,8 @@ public class Card : MonoBehaviour
         
         _index = ScriptableCard.Index;
         Btn = GetComponent<Button>();
+        _orderText = transform.GetChild(2).GetComponent<Text>();
+        _orderText.text = string.Empty;
 
         _icon.sprite = ScriptableCard.Icon;
         _description.text = ScriptableCard.Description;
@@ -57,6 +63,14 @@ public class Card : MonoBehaviour
             _selected = false;
             LeanTween.moveY(this.gameObject, 125, 0.5f);
             Controller.PlayerOrder.Remove(this);
+            _orderText.text = string.Empty;
+        }
+
+        int index = 1;
+        foreach (Card card in Controller.PlayerOrder)
+        {
+            card._orderText.text = index.ToString();
+            index++;
         }
     }
 }
