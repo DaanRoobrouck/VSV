@@ -30,15 +30,23 @@ public class UIFunctions : MonoBehaviour
     {
         Application.OpenURL("https://www.vsv.be/");
     }
-    public void OpenSettings()
+    public void OpenSettingsInMenu()
     {
         mainMenu.SetActive(false);
         settingsMenu.SetActive(true);
     }
-    public void CloseSettings()
+    public void CloseSettingsInMenu()
     {
         settingsMenu.SetActive(false);
         mainMenu.SetActive(true);
+    }
+    public void OpenSettingsInGame()
+    {
+        settingsMenu.SetActive(true);
+    }
+    public void CloseSettingsInGame()
+    {
+        settingsMenu.SetActive(false);
     }
     public void CloseLevelSelect()
     {
