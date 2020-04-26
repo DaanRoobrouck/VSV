@@ -118,7 +118,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 3362176701986675929}
+      - m_Target: {fileID: 0}
         m_MethodName: LoadMenuScene
         m_Mode: 1
         m_Arguments:
@@ -320,7 +320,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 3362176701986675929}
+      - m_Target: {fileID: 0}
         m_MethodName: OpenSettings
         m_Mode: 1
         m_Arguments:
@@ -1419,7 +1419,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 3362176701986675929}
+      - m_Target: {fileID: 0}
         m_MethodName: ClosePauseScreen
         m_Mode: 1
         m_Arguments:
@@ -1473,7 +1473,6 @@ RectTransform:
   - {fileID: 2611205117068430029}
   - {fileID: 2611205118139839363}
   - {fileID: 2611205117354143447}
-  - {fileID: 905639135604134276}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1537,52 +1536,3 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!1 &5977413344107165223
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 905639135604134276}
-  - component: {fileID: 3362176701986675929}
-  m_Layer: 0
-  m_Name: UIFunctionsObject
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &905639135604134276
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5977413344107165223}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -54.111084, y: -183.26251, z: 55.95758}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 2611205118656938498}
-  m_RootOrder: 13
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &3362176701986675929
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5977413344107165223}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c6750f3e319201546ae3bf6caeafaf45, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  settingsMenu: {fileID: 0}
-  mainMenu: {fileID: 2611205118656938497}
-  levelSelectMenu: {fileID: 0}
-  pauseScreen: {fileID: 2611205118656938497}
-  transitionScreen: {fileID: 0}
-  playerController: {fileID: 0}
