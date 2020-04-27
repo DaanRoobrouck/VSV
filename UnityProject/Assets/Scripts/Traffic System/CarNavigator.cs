@@ -48,4 +48,23 @@ public class CarNavigator : MonoBehaviour
         transform.LookAt(currentWaypoint.transform);
         //_reachedDestination = false;
     }
+
+    private void OnTriggerStay(Collider other)
+    {
+        if (other.CompareTag("Light"))
+        {
+           TrafficLightColor _lightState = other.GetComponent<TrafficLightBehavior>().LightState;
+            if (_lightState == TrafficLightColor.Red)
+            {
+                if (other.GetComponent<CarNavigator>() != null)
+                {
+                    other.GetComponent<CarNavigator>().CanDrive = false;
+                }
+            }
+            else
+            {
+                other.GetComponent<CarNavigator>().CanDrive = true;
+            }
+        }
+    }
 }
