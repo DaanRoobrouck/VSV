@@ -14,6 +14,9 @@ public class CarNavigator : MonoBehaviour
 
     [Range(3f,10f)][SerializeField] private float _speed;
 
+    [SerializeField] private GameObject _carBefore;
+    [SerializeField] private GameObject _carAfter;
+
     private void Awake()
     {
         //assign controller
@@ -66,7 +69,23 @@ public class CarNavigator : MonoBehaviour
 
         if (other.CompareTag("Vehicle"))
         {
+            if (other.gameObject == _carAfter)
+            {
+                other.GetComponent<CarNavigator>().CanDrive = false;
+            }
+            else if (other.gameObject == _carBefore)
+            {
+                CanDrive = false;
 
+            }
+        }
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.CompareTag("Vehicle"))
+        {
+            other.GetComponent<CarNavigator>().CanDrive = true;
         }
     }
 }
