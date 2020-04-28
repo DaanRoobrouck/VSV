@@ -6,6 +6,7 @@ public enum Situation { PedestrianCrossing, Obstacle, BetweenCars, Crossing}
 public class CardController : MonoBehaviour
 {
     [SerializeField] private GameObject _cardHolder;
+    [SerializeField] private GameObject _checkButton;
     private FirstPersonAIO _player;
 
     [SerializeField] private List<int> _cardIndexOrder;
@@ -30,6 +31,7 @@ public class CardController : MonoBehaviour
     [SerializeField] private bool _bothWays = false;
     private void Start()
     {
+        _checkButton.SetActive(false);
         _player = FindObjectOfType<FirstPersonAIO>();
         _situationController = GetComponent<SituationController>();
 
@@ -95,10 +97,15 @@ public class CardController : MonoBehaviour
     {
         if (_isActive)
         {
-            if (Input.GetKeyDown(KeyCode.Space))
+            //if (Input.GetKeyDown(KeyCode.Space))
+            //{
+            //    Debug.Log("Check");
+            //    CheckOrder();
+            //}
+
+            if (PlayerOrder.Count == _cardIndexOrder.Count)
             {
-                Debug.Log("Check");
-                CheckOrder();
+                _checkButton.SetActive(true);
             }
 
             if (_hidecards)
@@ -137,11 +144,11 @@ public class CardController : MonoBehaviour
 
     public void CheckOrder()
     {
-        if (PlayerOrder.Count != _cardIndexOrder.Count)
-        {
-            Debug.Log("Select all cards pls");
-            return;
-        }
+        //if (PlayerOrder.Count != _cardIndexOrder.Count)
+        //{
+        //    Debug.Log("Select all cards pls");
+        //    return;
+        //}
         int incorrect = 0;
         for (int i = 0; i < PlayerOrder.Count; i++)
         {
@@ -159,6 +166,7 @@ public class CardController : MonoBehaviour
         }
         if (incorrect == 0)
         {
+            _checkButton.SetActive(false);
             HideCards();
             _situationController.CorrectSequence = true;
             if (_bothWays)
@@ -171,7 +179,6 @@ public class CardController : MonoBehaviour
                 StartCollider1.enabled = false;
             }
             
-
             _endCollider.SetActive(true);
 
             PlayerOrder.Clear();
