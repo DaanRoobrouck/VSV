@@ -27,6 +27,7 @@
             #pragma vertex vert
             #pragma fragment frag
             #pragma multi_compile_fwdbase
+            #pragma multi_compile_fog
 
             #include "Lighting.cginc"
             #include "AutoLight.cginc"
@@ -45,6 +46,7 @@
                 float2 uv : TEXCOORD0;
                 float3 viewDir:TEXCOORD1;
                 SHADOW_COORDS(2)
+                UNITY_FOG_COORDS(3)
             };
 
 
@@ -56,6 +58,7 @@
                 o.viewDir = WorldSpaceViewDir(v.vertex);
                 o.uv = v.uv;
                 TRANSFER_SHADOW(o)
+                UNITY_TRANSFER_FOG(o,o.vertex);
                 return o;
             }
             CBUFFER_START(Unity_Per_Material)
@@ -97,7 +100,10 @@
                 rimIntensity = smoothstep(_RimAmount -0.01,_RimAmount+0.01,rimIntensity);
                 float4 rim = rimIntensity*_RimColor;
 
-                return (_AmbientColor + light + specular+rim);
+                float4 color =(_AmbientColor + light + specular+rim);
+                UNITY_APPLY_FOG(i.fogCoord,color);
+
+                return color;
             }
             ENDCG
         }
