@@ -76,13 +76,13 @@ Material:
     - _WorkflowMode: 1
     - _ZWrite: 1
     m_Colors:
-    - _AmbientColor: {r: 0.745283, g: 0.54891306, b: 0.20038268, a: 1}
+    - _AmbientColor: {r: 0.4716981, g: 0.35084426, b: 0.13572444, a: 1}
     - _BaseColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
     - _Color: {r: 0.5, g: 0.5, b: 0.5, a: 1}
     - _DiffuseColor: {r: 1, g: 0.9676375, b: 0, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
-    - _LightColor: {r: 0.1, g: 0.1, b: 0.1, a: 1}
-    - _RimColor: {r: 1, g: 1, b: 1, a: 1}
+    - _LightColor: {r: 0.47353154, g: 0.3515327, b: 0.13563336, a: 1}
+    - _RimColor: {r: 0.47353154, g: 0.3515327, b: 0.13563336, a: 1}
     - _SpecColor: {r: 0.19999996, g: 0.19999996, b: 0.19999996, a: 1}
     - _Specular: {r: 0.4716981, g: 0.18022436, b: 0.18022428, a: 1}
-    - _SpecularColor: {r: 0.9, g: 0.9, b: 0.9, a: 1}
+    - _SpecularColor: {r: 0.47353154, g: 0.3515327, b: 0.13563336, a: 1}
