@@ -64,6 +64,7 @@ public class Card : MonoBehaviour
             LeanTween.moveY(this.gameObject, 125, 0.5f);
             Controller.PlayerOrder.Remove(this);
             _orderText.text = string.Empty;
+            Btn.image.color = Color.white;
         }
 
         int index = 1;

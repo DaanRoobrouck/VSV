@@ -1,12 +1,14 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public enum Situation { PedestrianCrossing, Obstacle, BetweenCars, Crossing}
 public class CardController : MonoBehaviour
 {
     [SerializeField] private GameObject _cardHolder;
-    [SerializeField] private GameObject _checkButton;
+    [SerializeField] private GameObject _checkButtonGO;
+    private Button _checkButton;
     private FirstPersonAIO _player;
 
     [SerializeField] private List<int> _cardIndexOrder;
@@ -23,6 +25,8 @@ public class CardController : MonoBehaviour
     public BoxCollider StartCollider1;
     public BoxCollider StartCollider2;
 
+    public List<GameObject> Indications = new List<GameObject>();
+
     [SerializeField] private GameObject _endCollider;
 
     private bool _hidecards = false;
@@ -31,7 +35,9 @@ public class CardController : MonoBehaviour
     [SerializeField] private bool _bothWays = false;
     private void Start()
     {
-        _checkButton.SetActive(false);
+        _checkButtonGO.SetActive(false);
+        _checkButton = _checkButtonGO.GetComponent<Button>();
+        
         _player = FindObjectOfType<FirstPersonAIO>();
         _situationController = GetComponent<SituationController>();
 
@@ -48,8 +54,12 @@ public class CardController : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
+            foreach (GameObject indicationGO in Indications)
+            {
+                indicationGO.SetActive(false);
+            }
             ShowCards();
-
+            _checkButton.onClick.AddListener(CheckOrder);
             Debug.Log("In");
             //animatie, kaarten sliden in
             LeanTween.moveY(_cardHolder, 125, 0.5f);
@@ -66,8 +76,12 @@ public class CardController : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
+            foreach (GameObject indicationGO in Indications)
+            {
+                indicationGO.SetActive(true);
+            }
             HideCards();
-
+            _checkButton.onClick.RemoveListener(CheckOrder);
             //animatie, kaarten sliden uit
             LeanTween.moveY(_cardHolder, -125, 0.5f);
 
@@ -105,7 +119,11 @@ public class CardController : MonoBehaviour
 
             if (PlayerOrder.Count == _cardIndexOrder.Count)
             {
-                _checkButton.SetActive(true);
+                _checkButtonGO.SetActive(true);
+            }
+            else
+            {
+                _checkButtonGO.SetActive(false);
             }
 
             if (_hidecards)
@@ -166,7 +184,7 @@ public class CardController : MonoBehaviour
         }
         if (incorrect == 0)
         {
-            _checkButton.SetActive(false);
+            _checkButtonGO.SetActive(false);
             HideCards();
             _situationController.CorrectSequence = true;
             if (_bothWays)

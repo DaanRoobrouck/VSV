@@ -433,6 +433,11 @@ public class SituationController : MonoBehaviour
 
         _timer = 0;
 
+        foreach (GameObject indicationGO in _cardController.Indications)
+        {
+            indicationGO.SetActive(true);
+        }
+       
         DeactivateCheck(_distanceGO);
         DeactivateCheck(_checkBoundaryGO);
     }
