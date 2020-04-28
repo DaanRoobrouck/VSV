@@ -90,8 +90,8 @@ GameObject:
   - component: {fileID: 5491792106901143374}
   - component: {fileID: 5491792106901143375}
   m_Layer: 5
-  m_Name: Image
-  m_TagString: Untagged
+  m_Name: TransitionScreen
+  m_TagString: TransitionScreen
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

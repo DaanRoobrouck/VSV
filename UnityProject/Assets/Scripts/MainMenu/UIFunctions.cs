@@ -21,11 +21,16 @@ public class UIFunctions : MonoBehaviour
 
     private Animator _anim;
 
+    
     private void Start()
     {
         _anim = this.GetComponent<Animator>();
+        transitionScreen = GameObject.FindGameObjectWithTag("TransitionScreen");
     }
-
+    public void OpenEndScreen()
+    {
+        StartCoroutine(LoadingProcess("EndScene"));
+    }
     public void OpenSVSLink()
     {
         Application.OpenURL("https://www.vsv.be/");
@@ -73,16 +78,16 @@ public class UIFunctions : MonoBehaviour
     }
     public void LoadCity()
     {
-        StartCoroutine(LoadingProcess());
+        StartCoroutine(LoadingProcess("CityMockup"));
     }
 
-    IEnumerator LoadingProcess()
+    IEnumerator LoadingProcess(String LevelName)
     {
         transitionScreen.GetComponent<Animator>().SetTrigger("LoadingStarted");
 
         yield return new WaitForSeconds(1f);
 
-        SceneManager.LoadScene("CityMockup");
+        SceneManager.LoadScene(LevelName);
     }
 
     public void ClosePauseScreen()
