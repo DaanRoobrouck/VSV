@@ -82,7 +82,7 @@ Material:
     - _DiffuseColor: {r: 0.24279155, g: 0.6132076, b: 0.18801177, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _LightColor: {r: 0.1, g: 0.1, b: 0.1, a: 1}
-    - _RimColor: {r: 0.14542542, g: 0.7169812, b: 0.18136324, a: 1}
+    - _RimColor: {r: 0.0026042792, g: 0.012880623, b: 0.0032377525, a: 1}
     - _SpecColor: {r: 0.19999996, g: 0.19999996, b: 0.19999996, a: 1}
     - _Specular: {r: 1, g: 1, b: 1, a: 1}
-    - _SpecularColor: {r: 0, g: 1.1450981, b: 0.10980392, a: 1}
+    - _SpecularColor: {r: 0, g: 0.115268916, b: 0.011466541, a: 1}
