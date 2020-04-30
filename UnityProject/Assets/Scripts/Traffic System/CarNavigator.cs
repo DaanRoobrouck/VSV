@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System.Net.Configuration;
+using UnityEngine;
 
 public class CarNavigator : MonoBehaviour
 {
@@ -17,10 +18,9 @@ public class CarNavigator : MonoBehaviour
     [SerializeField] private GameObject _carBefore;
     [SerializeField] private GameObject _carAfter;
 
-    private void Awake()
-    {
-        //assign controller
-    }
+    [SerializeField] private bool _stationary;
+
+  
 
     void Start()
     {
@@ -30,7 +30,7 @@ public class CarNavigator : MonoBehaviour
     void Update()
     {
 
-        if (CanDrive)
+        if (CanDrive && !_stationary)
         {
         float distanceToWaypoint = Vector3.Distance(this.transform.position, _destination);
 
@@ -54,31 +54,34 @@ public class CarNavigator : MonoBehaviour
 
     private void OnTriggerStay(Collider other)
     {
-        if (other.CompareTag("Light"))
+        if (_stationary)
         {
-           TrafficLightColor _lightState = other.GetComponent<TrafficLightBehavior>().LightState;
-            if (_lightState == TrafficLightColor.Red)
-            {
-                CanDrive = false;
-            }
-            else
-            {
-                CanDrive = true;
-            }
-        }
+          if (other.CompareTag("Light"))
+          {
+             TrafficLightColor _lightState = other.GetComponent<TrafficLightBehavior>().LightState;
+              if (_lightState == TrafficLightColor.Red)
+              {
+                  CanDrive = false;
+              }
+              else
+              {
+                  CanDrive = true;
+              }
+          }
 
-        if (other.CompareTag("Vehicle"))
-        {
-            if (other.gameObject == _carAfter)
-            {
-                other.GetComponent<CarNavigator>().CanDrive = false;
-            }
-            else if (other.gameObject == _carBefore)
-            {
-                CanDrive = false;
+          if (other.CompareTag("Vehicle"))
+          {
+              if (other.gameObject == _carAfter)
+              {
+                  other.GetComponent<CarNavigator>().CanDrive = false;
+              }
+              else if (other.gameObject == _carBefore)
+              {
+                  CanDrive = false;
 
-            }
-        }
+              }
+          }
+          }
     }
 
     private void OnTriggerExit(Collider other)
