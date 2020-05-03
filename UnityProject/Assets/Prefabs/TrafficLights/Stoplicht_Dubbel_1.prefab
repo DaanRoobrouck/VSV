@@ -1,5 +1,63 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &1376646244859437850
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6658848005193134803}
+  - component: {fileID: 4541470429972046121}
+  - component: {fileID: 7347346814352384051}
+  m_Layer: 0
+  m_Name: GameObject
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6658848005193134803
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1376646244859437850}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 7064707853086277722}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &4541470429972046121
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1376646244859437850}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ea740004399a0be4db3f583d1b13f43f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _parentLight: {fileID: 5944169118879936624}
+--- !u!65 &7347346814352384051
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1376646244859437850}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 11.131978, y: 3.0472534, z: 1}
+  m_Center: {x: 7.025989, y: -0, z: 0}
 --- !u!1 &6075843549092917833
 GameObject:
   m_ObjectHideFlags: 0
@@ -33,7 +91,8 @@ Transform:
   m_LocalRotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071068}
   m_LocalPosition: {x: 6.3264723, y: -0.000000008606911, z: -10.550597}
   m_LocalScale: {x: 0.7, y: 0.7, z: 0.7}
-  m_Children: []
+  m_Children:
+  - {fileID: 6658848005193134803}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -111,13 +170,15 @@ MonoBehaviour:
   - {fileID: 2100000, guid: 921ad58984d5a4b48a92b02dc5c7022c, type: 2}
   - {fileID: 2100000, guid: 1b84de8e19711184f90540735c201d56, type: 2}
   LightRotation: 0
+  LightState: 0
   _hasPedestrianLight: 1
   _isOnlyPedestrianLight: 0
   ButtonPressed: 0
   _redAndGreenTimer: 20
   _orangeTimer: 3
   _currentLightMaterials: []
-  _sameCrossRoadLights: []
+  SameCrossRoadLights: []
+  PauseLightCollider: {fileID: 7347346814352384051}
 --- !u!65 &750614396948572527
 BoxCollider:
   m_ObjectHideFlags: 0

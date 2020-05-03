@@ -40,8 +40,10 @@ public class TrafficLightBehavior : MonoBehaviour
     [Tooltip("Gets assigned at runtime")]
     [SerializeField] private Material[] _currentLightMaterials;
 
-    [SerializeField]
-    private TrafficLightBehavior[] _sameCrossRoadLights;
+    
+    public TrafficLightBehavior[] SameCrossRoadLights;
+
+    public BoxCollider PauseLightCollider;
 
     void Start()
     {
@@ -80,7 +82,7 @@ public class TrafficLightBehavior : MonoBehaviour
             if (Input.GetButtonDown("Interact") && !ButtonPressed)
             {
                 Debug.Log("pressed");
-                foreach (var trafficLight in _sameCrossRoadLights)
+                foreach (var trafficLight in SameCrossRoadLights)
                 {
                     trafficLight.ButtonPressed = true;
                     if (trafficLight.LightRotation == this.LightRotation)
@@ -102,6 +104,7 @@ public class TrafficLightBehavior : MonoBehaviour
         if (!ButtonPressed)
         {
               LightState = TrafficLightColor.Green;
+              PauseLightCollider.enabled = false;
             if (_isOnlyPedestrianLight)
             {
                 _currentLightMaterials[4] = _lightMaterials[0];
@@ -145,6 +148,8 @@ public class TrafficLightBehavior : MonoBehaviour
     private IEnumerator RedLight()
     {
             LightState = TrafficLightColor.Red;
+            PauseLightCollider.enabled = true;
+
         if (_isOnlyPedestrianLight)
         {
             _currentLightMaterials[4] = _lightMaterials[1];
@@ -184,6 +189,8 @@ public class TrafficLightBehavior : MonoBehaviour
     private IEnumerator CalledRedLight()
     {
         LightState = TrafficLightColor.Red;
+        PauseLightCollider.enabled = true;
+
         _currentLightMaterials[_redLightIndex] = _lightMaterials[_redLightIndex];
         _currentLightMaterials[_orangeLightIndex] = _lightMaterials[_blackLightIndex];
         _currentLightMaterials[_greenLightIndex] = _lightMaterials[_blackLightIndex];
@@ -214,8 +221,9 @@ public class TrafficLightBehavior : MonoBehaviour
 
     private IEnumerator CalledGreenLight()
     {
-       
-            LightState = TrafficLightColor.Green;
+        PauseLightCollider.enabled = false;
+
+        LightState = TrafficLightColor.Green;
             _currentLightMaterials[_redLightIndex] = _lightMaterials[_blackLightIndex];
             _currentLightMaterials[_orangeLightIndex] = _lightMaterials[_blackLightIndex];
             _currentLightMaterials[_greenLightIndex] = _lightMaterials[_greenLightIndex];
