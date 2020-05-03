@@ -21,20 +21,21 @@ public class ScoreManager : MonoBehaviour
     {
         _score = 0;
     }
-    public void AddScore(float time)
+    public void AddScore(int time)
     {
-        float add = Mathf.Pow((_correct * (1 / time)), _currentStreak);
-        _score += add;
-        Debug.Log(add + " punten toegevoegd, totale score is: " + _score);
-        _uiManager.UIPoints(10, true);
+        //float add = Mathf.Pow((_correct * (1 / time)), _currentStreak);
+        //_score += add;
+        _score += time;
+        Debug.Log(time + " punten toegevoegd, totale score is: " + _score);
+        _uiManager.UIPoints(time, true);
     }
 
     public void SubtractScore(int tries)
     {
-        float subtract = _mistake * tries;
+        int subtract = _mistake * tries;
         _score -= subtract;
         Debug.Log(subtract + " punten verwijdert, totale score is: " + _score);
-        _uiManager.UIPoints(10, false);
+        _uiManager.UIPoints(subtract, false);
     }
 
     public void SendScore(string name, string email)
@@ -45,5 +46,12 @@ public class ScoreManager : MonoBehaviour
     public void CalculateFinalScore()
     {
         _score = _score * _concentrationScore;
+    }
+
+    public void ResetScore()
+    {
+        _score = 0;
+        _concentrationScore = 0;
+        _currentStreak = 1;
     }
 }

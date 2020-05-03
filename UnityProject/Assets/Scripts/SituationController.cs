@@ -257,7 +257,7 @@ public class SituationController : MonoBehaviour
                 Debug.Log("Time up, player stopped correct");
                 _hasStopped = true;
                 _stopTimer = 0;
-                _uiManager.UIPoints(12, true);
+                _scoreManager.AddScore(10);
             }
         }
     }
@@ -293,7 +293,7 @@ public class SituationController : MonoBehaviour
             _hasLooked = true;
             _leftCount = 0;
             _rightCount = 0;
-            _uiManager.UIPoints(12, true);
+            _scoreManager.AddScore(10);
         }
     }
 
@@ -326,6 +326,7 @@ public class SituationController : MonoBehaviour
             _hasLookedCars = true;
             _leftCount = 0;
             _rightCount = 0;
+            _scoreManager.AddScore(10);
         }
     }
 
@@ -381,7 +382,7 @@ public class SituationController : MonoBehaviour
             _forwardCount = 0;
             _backwardCount = 0;
 
-            _uiManager.UIPoints(12, true);
+            _scoreManager.AddScore(10);
         }
     }
 
@@ -397,7 +398,7 @@ public class SituationController : MonoBehaviour
             {
                 Debug.Log("Player looked correct");
                 DeactivateCheck(_lookGO);
-                _uiManager.UIPoints(12, true);
+                _scoreManager.AddScore(10);
                 _hasLooked = true;
             }
         }
@@ -417,7 +418,7 @@ public class SituationController : MonoBehaviour
     {
         CorrectSequence = false;
 
-        _scoreManager.AddScore(_timer);
+        _scoreManager.AddScore(10);
 
         _hasStopped = false;
         _hasLooked = false;
