@@ -12,6 +12,8 @@ public class TutorialText : MonoBehaviour
     {
         _playerScript.enabled = false;
         _playerScript.GetComponent<Rigidbody>().velocity = Vector3.zero;
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
     }
 
     public void ContinueTutorial()
@@ -19,6 +21,8 @@ public class TutorialText : MonoBehaviour
         _animator.SetBool("ShowText", false);
         _playerScript.enabled = true;
         Destroy(this.gameObject);
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
     }
 
  

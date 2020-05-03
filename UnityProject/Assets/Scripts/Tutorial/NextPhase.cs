@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Fase2 : MonoBehaviour
+public class NextPhase : MonoBehaviour
 {
     [SerializeField] private GameObject _tutTxt;
     // Start is called before the first frame 
