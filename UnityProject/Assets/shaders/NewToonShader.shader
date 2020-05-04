@@ -53,7 +53,7 @@
                 o.vertex = UnityObjectToClipPos(v.vertex);
                 o.worldNormal = UnityObjectToWorldNormal(v.normal);
                 o.viewDir = WorldSpaceViewDir(v.vertex);
-                TRANSFER_SHADOW(o)
+                TRANSFER_SHADOW(o);
                 UNITY_TRANSFER_FOG(o,o.vertex);
                 return o;
             }

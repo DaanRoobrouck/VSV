@@ -1,5 +1,4 @@
-﻿using System.Net.Configuration;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class CarNavigator : MonoBehaviour
 {
