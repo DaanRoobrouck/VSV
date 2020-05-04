@@ -74,7 +74,7 @@ public class UIFunctions : MonoBehaviour
     }
     public void LoadTutorial()
     {
-        SceneManager.LoadScene("Tutorial");
+        SceneManager.LoadScene("TutorialScene");
     }
     public void LoadCity()
     {
