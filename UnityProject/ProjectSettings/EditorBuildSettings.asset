@@ -21,7 +21,7 @@ EditorBuildSettings:
     path: Assets/Scenes/Game/EndScene.unity
     guid: e9169be29c66b2a4cb9e35769feb0bee
   - enabled: 1
-    path: Assets/Scenes/ScoreDisplay.unity
+    path: Assets/Scenes/Game/ScoreDisplay.unity
     guid: ba0d761e2ebfc654dacdee1323e36ec8
   - enabled: 1
     path: Assets/Scenes/Game/TutorialScene.unity

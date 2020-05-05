@@ -18,6 +18,10 @@ public class UIFunctions : MonoBehaviour
     private GameObject transitionScreen;
     [SerializeField]
     private FirstPersonAIO playerController;
+    [SerializeField]
+    private GameObject emailMenu;
+    [SerializeField]
+    private GameObject scoreMenu;
 
     private Animator _anim;
 
@@ -75,6 +79,12 @@ public class UIFunctions : MonoBehaviour
     public void LoadTutorial()
     {
         SceneManager.LoadScene("TutorialScene");
+    }
+    public void OpenEmailWindow()
+    {
+        emailMenu.SetActive(true);
+        scoreMenu.SetActive(false);
+
     }
     public void LoadCity()
     {
