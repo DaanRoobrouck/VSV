@@ -446,12 +446,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _cardHolder: {fileID: 0}
   _checkButtonGO: {fileID: 0}
-  _cardIndexOrder: 06000000020000000000000001000000
-  _scriptableCards:
-  - {fileID: 11400000, guid: 88a03dc414fe92c42bd65ce4bca8f804, type: 2}
+  ScriptableCards:
   - {fileID: 11400000, guid: 87ed2aac61d8d7c43a4dcef9897934b7, type: 2}
+  - {fileID: 11400000, guid: 1bd5478942a497e43afd910c4d21aac0, type: 2}
   - {fileID: 11400000, guid: 69cd5e90cd8d277469fd70cb27c93d94, type: 2}
   - {fileID: 11400000, guid: 6ed7b8e3e3a4bde469fc4c42e9b25900, type: 2}
+  - {fileID: 11400000, guid: 1c23a499a2c289e419c07b3e655d7b49, type: 2}
   PlayerOrder: []
   AssignedSituation: 2
   _cardPrefab: {fileID: 838347714013668856, guid: f8a71718f91abd94db65e74342678e95,
@@ -462,6 +462,9 @@ MonoBehaviour:
   - {fileID: 7203013990887675825}
   - {fileID: 3625336818214584386}
   _endCollider: {fileID: 5003618489064213626}
+  _hintCard: {fileID: 0}
+  HintCardGO: {fileID: 0}
+  HintIndex: 0
   _bothWays: 0
 --- !u!114 &5003618488702266442
 MonoBehaviour:

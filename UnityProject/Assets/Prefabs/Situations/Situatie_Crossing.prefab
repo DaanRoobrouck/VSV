@@ -226,8 +226,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _cardHolder: {fileID: 0}
   _checkButtonGO: {fileID: 0}
-  _cardIndexOrder: 02000000000000000100000007000000
-  _scriptableCards:
+  ScriptableCards:
   - {fileID: 11400000, guid: 87ed2aac61d8d7c43a4dcef9897934b7, type: 2}
   - {fileID: 11400000, guid: 69cd5e90cd8d277469fd70cb27c93d94, type: 2}
   - {fileID: 11400000, guid: 6ed7b8e3e3a4bde469fc4c42e9b25900, type: 2}
@@ -240,6 +239,9 @@ MonoBehaviour:
   StartCollider2: {fileID: 1614272001}
   Indications: []
   _endCollider: {fileID: 1272756820}
+  _hintCard: {fileID: 0}
+  HintCardGO: {fileID: 0}
+  HintIndex: 0
   _bothWays: 1
 --- !u!114 &1401718810
 MonoBehaviour:
@@ -268,6 +270,7 @@ MonoBehaviour:
   _rightCarLookGO: {fileID: 0}
   _checkBoundaryGO: {fileID: 925660847}
   _distanceGO: {fileID: 234319326401341471}
+  _streetCollider: {fileID: 0}
 --- !u!1 &1484291229
 GameObject:
   m_ObjectHideFlags: 0
@@ -436,8 +439,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _cardHolder: {fileID: 0}
   _checkButtonGO: {fileID: 0}
-  _cardIndexOrder: 02000000000000000100000007000000
-  _scriptableCards:
+  ScriptableCards:
   - {fileID: 11400000, guid: 87ed2aac61d8d7c43a4dcef9897934b7, type: 2}
   - {fileID: 11400000, guid: 69cd5e90cd8d277469fd70cb27c93d94, type: 2}
   - {fileID: 11400000, guid: 6ed7b8e3e3a4bde469fc4c42e9b25900, type: 2}
@@ -452,6 +454,9 @@ MonoBehaviour:
   - {fileID: 6129830682329211509}
   - {fileID: 5464775078282415030}
   _endCollider: {fileID: 1484291229}
+  _hintCard: {fileID: 0}
+  HintCardGO: {fileID: 0}
+  HintIndex: 0
   _bothWays: 1
 --- !u!114 &1614271999
 MonoBehaviour:
@@ -480,6 +485,7 @@ MonoBehaviour:
   _rightCarLookGO: {fileID: 0}
   _checkBoundaryGO: {fileID: 234319327836002380}
   _distanceGO: {fileID: 234319326401341471}
+  _streetCollider: {fileID: 0}
 --- !u!1 &234319326045813133
 GameObject:
   m_ObjectHideFlags: 0

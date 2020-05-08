@@ -62,21 +62,24 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _cardHolder: {fileID: 0}
   _checkButtonGO: {fileID: 0}
-  _cardIndexOrder: 020000000000000008000000
-  _scriptableCards:
+  ScriptableCards:
   - {fileID: 11400000, guid: 87ed2aac61d8d7c43a4dcef9897934b7, type: 2}
   - {fileID: 11400000, guid: 69cd5e90cd8d277469fd70cb27c93d94, type: 2}
   - {fileID: 11400000, guid: f1039fbf69cbfb348a5d3e6adcb5547c, type: 2}
+  - {fileID: 11400000, guid: 1c23a499a2c289e419c07b3e655d7b49, type: 2}
   PlayerOrder: []
   AssignedSituation: 1
   _cardPrefab: {fileID: 838347714013668856, guid: f8a71718f91abd94db65e74342678e95,
     type: 3}
-  StartCollider1: {fileID: 558286626}
-  StartCollider2: {fileID: 495709757}
+  StartCollider1: {fileID: 495709757}
+  StartCollider2: {fileID: 558286626}
   Indications:
   - {fileID: 3457545285790488317}
   - {fileID: 1698377441809158257}
   _endCollider: {fileID: 704479181}
+  _hintCard: {fileID: 0}
+  HintCardGO: {fileID: 0}
+  HintIndex: 0
   _bothWays: 1
 --- !u!114 &495709758
 MonoBehaviour:
@@ -105,6 +108,7 @@ MonoBehaviour:
   _rightCarLookGO: {fileID: 0}
   _checkBoundaryGO: {fileID: 1817761671453884241}
   _distanceGO: {fileID: 1817761670524261301}
+  _streetCollider: {fileID: 0}
 --- !u!1 &558286622
 GameObject:
   m_ObjectHideFlags: 0
@@ -167,11 +171,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _cardHolder: {fileID: 0}
   _checkButtonGO: {fileID: 0}
-  _cardIndexOrder: 020000000000000008000000
-  _scriptableCards:
+  ScriptableCards:
   - {fileID: 11400000, guid: 87ed2aac61d8d7c43a4dcef9897934b7, type: 2}
   - {fileID: 11400000, guid: 69cd5e90cd8d277469fd70cb27c93d94, type: 2}
   - {fileID: 11400000, guid: f1039fbf69cbfb348a5d3e6adcb5547c, type: 2}
+  - {fileID: 11400000, guid: 1c23a499a2c289e419c07b3e655d7b49, type: 2}
   PlayerOrder: []
   AssignedSituation: 1
   _cardPrefab: {fileID: 838347714013668856, guid: f8a71718f91abd94db65e74342678e95,
@@ -182,6 +186,9 @@ MonoBehaviour:
   - {fileID: 3457545285790488317}
   - {fileID: 1698377441809158257}
   _endCollider: {fileID: 1245346759}
+  _hintCard: {fileID: 0}
+  HintCardGO: {fileID: 0}
+  HintIndex: 0
   _bothWays: 1
 --- !u!114 &558286624
 MonoBehaviour:
@@ -210,6 +217,7 @@ MonoBehaviour:
   _rightCarLookGO: {fileID: 0}
   _checkBoundaryGO: {fileID: 1817761671453884241}
   _distanceGO: {fileID: 1817761670524261301}
+  _streetCollider: {fileID: 0}
 --- !u!1 &704479181
 GameObject:
   m_ObjectHideFlags: 0

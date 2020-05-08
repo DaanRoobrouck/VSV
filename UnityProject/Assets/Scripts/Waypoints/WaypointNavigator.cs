@@ -34,14 +34,12 @@ public class WaypointNavigator : MonoBehaviour
             }
             SetDestination(currentWaypoint.GetPosition());
         }
-        //this.transform.LookAt(_destination);
         this.transform.position = Vector3.MoveTowards(this.transform.position, _destination, Time.deltaTime * _speed);
     }
 
     private void SetDestination(Vector3 destination)
     {
         _destination = destination;
-        Debug.Log("_destination : " + _destination);
         transform.LookAt(currentWaypoint.transform);
     }
 }

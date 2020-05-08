@@ -5585,11 +5585,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _cardHolder: {fileID: 0}
   _checkButtonGO: {fileID: 0}
-  _cardIndexOrder: 020000000000000008000000
-  _scriptableCards:
+  ScriptableCards:
   - {fileID: 11400000, guid: 87ed2aac61d8d7c43a4dcef9897934b7, type: 2}
   - {fileID: 11400000, guid: 69cd5e90cd8d277469fd70cb27c93d94, type: 2}
   - {fileID: 11400000, guid: f1039fbf69cbfb348a5d3e6adcb5547c, type: 2}
+  - {fileID: 11400000, guid: 1c23a499a2c289e419c07b3e655d7b49, type: 2}
   PlayerOrder: []
   AssignedSituation: 1
   _cardPrefab: {fileID: 838347714013668856, guid: f8a71718f91abd94db65e74342678e95,
@@ -5600,6 +5600,9 @@ MonoBehaviour:
   - {fileID: 4178906947651719093}
   - {fileID: 7682187124671387561}
   _endCollider: {fileID: 7478980625401184515}
+  _hintCard: {fileID: 0}
+  HintCardGO: {fileID: 0}
+  HintIndex: 0
   _bothWays: 1
 --- !u!114 &7478980623880535524
 MonoBehaviour:
@@ -5691,21 +5694,24 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _cardHolder: {fileID: 0}
   _checkButtonGO: {fileID: 0}
-  _cardIndexOrder: 020000000000000008000000
-  _scriptableCards:
+  ScriptableCards:
   - {fileID: 11400000, guid: 87ed2aac61d8d7c43a4dcef9897934b7, type: 2}
   - {fileID: 11400000, guid: 69cd5e90cd8d277469fd70cb27c93d94, type: 2}
   - {fileID: 11400000, guid: f1039fbf69cbfb348a5d3e6adcb5547c, type: 2}
+  - {fileID: 11400000, guid: 1c23a499a2c289e419c07b3e655d7b49, type: 2}
   PlayerOrder: []
   AssignedSituation: 1
   _cardPrefab: {fileID: 838347714013668856, guid: f8a71718f91abd94db65e74342678e95,
     type: 3}
-  StartCollider1: {fileID: 7478980623880535526}
-  StartCollider2: {fileID: 7478980624622064889}
+  StartCollider1: {fileID: 7478980624622064889}
+  StartCollider2: {fileID: 7478980623880535526}
   Indications:
   - {fileID: 4178906947651719093}
   - {fileID: 7682187124671387561}
   _endCollider: {fileID: 7478980623753151753}
+  _hintCard: {fileID: 0}
+  HintCardGO: {fileID: 0}
+  HintIndex: 0
   _bothWays: 1
 --- !u!114 &7478980624622064890
 MonoBehaviour:

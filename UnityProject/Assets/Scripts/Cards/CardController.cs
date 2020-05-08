@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -11,8 +12,8 @@ public class CardController : MonoBehaviour
     private Button _checkButton;
     private FirstPersonAIO _player;
 
-    [SerializeField] private List<int> _cardIndexOrder;
-    [SerializeField] private List<CardCreator> _scriptableCards;
+    private List<int> _cardIndexOrder = new List<int>();
+    [SerializeField] public List<CardCreator> ScriptableCards;
     private List<GameObject> _cards;
     public List<Card> PlayerOrder;
 
@@ -28,13 +29,21 @@ public class CardController : MonoBehaviour
     public List<GameObject> Indications = new List<GameObject>();
 
     [SerializeField] private GameObject _endCollider;
+    [SerializeField] private GameObject _hintCard;
 
     private bool _hidecards = false;
     private bool _isActive = false;
 
+    public GameObject HintCardGO;
+    public int HintIndex = 0;
+
     [SerializeField] private bool _bothWays = false;
     private void Start()
     {
+        foreach (CardCreator card in ScriptableCards)
+        {
+            _cardIndexOrder.Add(card.Index);
+        }
         _checkButtonGO.SetActive(false);
         _checkButton = _checkButtonGO.GetComponent<Button>();
         
@@ -111,12 +120,6 @@ public class CardController : MonoBehaviour
     {
         if (_isActive)
         {
-            //if (Input.GetKeyDown(KeyCode.Space))
-            //{
-            //    Debug.Log("Check");
-            //    CheckOrder();
-            //}
-
             if (PlayerOrder.Count == _cardIndexOrder.Count)
             {
                 _checkButtonGO.SetActive(true);
@@ -148,7 +151,7 @@ public class CardController : MonoBehaviour
         {
             GameObject cardObject = Instantiate(_cardPrefab, _cardHolder.transform);
             Card card = cardObject.GetComponent<Card>();
-            card.ScriptableCard = _scriptableCards[i];
+            card.ScriptableCard = ScriptableCards[i];
             card.Controller = this;
 
             _cards.Add(cardObject);
@@ -162,11 +165,6 @@ public class CardController : MonoBehaviour
 
     public void CheckOrder()
     {
-        //if (PlayerOrder.Count != _cardIndexOrder.Count)
-        //{
-        //    Debug.Log("Select all cards pls");
-        //    return;
-        //}
         int incorrect = 0;
         for (int i = 0; i < PlayerOrder.Count; i++)
         {
@@ -185,6 +183,7 @@ public class CardController : MonoBehaviour
         if (incorrect == 0)
         {
             _checkButtonGO.SetActive(false);
+            HintCard(HintIndex);
             HideCards();
             _situationController.CorrectSequence = true;
             if (_bothWays)
@@ -203,5 +202,29 @@ public class CardController : MonoBehaviour
 
             FreezePlayer(false);
         }
+    }
+
+    public void HintCard(int index)
+    {
+        if (index > ScriptableCards.Count)
+        {
+            Destroy(HintCardGO);
+            return;
+        }
+        if (HintCardGO == null)
+        {
+            HintCardGO = Instantiate(_cardPrefab, _hintCard.transform);
+        }
+        Card card = HintCardGO.GetComponent<Card>();
+        card.ScriptableCard = ScriptableCards[index];
+        Image icon = card.transform.GetChild(1).GetComponent<Image>();
+        Text description = card.GetComponentInChildren<Text>();
+        icon.sprite = card.ScriptableCard.Icon;
+        description.text = card.ScriptableCard.Description;
+        card.Controller = this;
+        card.Selected = true;
+        description.enabled = false;
+        Button btn = card.GetComponent<Button>();
+        btn.interactable = false;
     }
 }

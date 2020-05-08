@@ -28,6 +28,9 @@ public class SituationController : MonoBehaviour
     private int _tries = 0;
     public int Tries { get => _tries; set => _tries = value; }
 
+    private int _hints = 0;
+    public int Hints { get => _hints; set => _hints = value; }
+
     public bool CorrectSequence = false;
 
     [SerializeField] private float _stopTime;
@@ -106,7 +109,16 @@ public class SituationController : MonoBehaviour
     {
         if (CorrectSequence)
         {
-            _timer += Time.deltaTime;
+            if (_timer >= 7)
+            {
+                Card card = _cardController.HintCardGO.GetComponent<Card>();
+                _hints++;
+                card.Description.enabled = true;
+            }
+            else
+            {
+                _timer += Time.deltaTime;
+            }            
             switch (_situation)
             {
                 case Situation.PedestrianCrossing:
@@ -263,6 +275,9 @@ public class SituationController : MonoBehaviour
                 _hasStopped = true;
                 _stopTimer = 0;
                 _scoreManager.AddScore(10);
+                _cardController.HintIndex++;
+                _cardController.HintCard(_cardController.HintIndex);
+                _timer = 0;
             }
         }
     }
@@ -299,6 +314,9 @@ public class SituationController : MonoBehaviour
             _leftCount = 0;
             _rightCount = 0;
             _scoreManager.AddScore(10);
+            _cardController.HintIndex++;
+            _cardController.HintCard(_cardController.HintIndex);
+            _timer = 0;
         }
     }
 
@@ -332,6 +350,9 @@ public class SituationController : MonoBehaviour
             _leftCount = 0;
             _rightCount = 0;
             _scoreManager.AddScore(10);
+            _cardController.HintIndex++;
+            _cardController.HintCard(_cardController.HintIndex);
+            _timer = 0;
         }
     }
 
@@ -388,6 +409,9 @@ public class SituationController : MonoBehaviour
             _backwardCount = 0;
 
             _scoreManager.AddScore(10);
+            _cardController.HintIndex++;
+            _cardController.HintCard(_cardController.HintIndex);
+            _timer = 0;
         }
     }
 
@@ -405,6 +429,9 @@ public class SituationController : MonoBehaviour
                 DeactivateCheck(_lookGO);
                 _scoreManager.AddScore(10);
                 _hasLooked = true;
+                _cardController.HintIndex++;
+                _cardController.HintCard(_cardController.HintIndex);
+                _timer = 0;
             }
         }
     }
@@ -438,6 +465,8 @@ public class SituationController : MonoBehaviour
         _backwardCount = 0;
 
         _timer = 0;
+        _hints = 0;
+        _tries = 0;
 
         foreach (GameObject indicationGO in _cardController.Indications)
         {
@@ -448,7 +477,10 @@ public class SituationController : MonoBehaviour
         {
             _streetCollider.enabled = true;
         }
-       
+
+        _cardController.HintIndex = 0;
+        Destroy(_cardController.HintCardGO);
+
         DeactivateCheck(_distanceGO);
         DeactivateCheck(_checkBoundaryGO);
     }

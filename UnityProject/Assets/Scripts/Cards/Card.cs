@@ -6,10 +6,10 @@ using UnityEngine.UI;
 public class Card : MonoBehaviour
 {
     public CardCreator ScriptableCard;
-    private bool _selected = false;
+    public bool Selected = false;
 
-    private Image _icon;
-    private Text _description;
+    public Image Icon;
+    public Text Description;
     public Button Btn;
 
     private int _index;
@@ -23,20 +23,20 @@ public class Card : MonoBehaviour
 
     private void Start()
     {
-        _icon = transform.GetChild(1).GetComponent<Image>();
-        _description = GetComponentInChildren<Text>();
+        Icon = transform.GetChild(1).GetComponent<Image>();
+        Description = GetComponentInChildren<Text>();
         
         _index = ScriptableCard.Index;
         Btn = GetComponent<Button>();
         _orderText = transform.GetChild(2).GetComponent<Text>();
         _orderText.text = string.Empty;
 
-        _icon.sprite = ScriptableCard.Icon;
-        _description.text = ScriptableCard.Description;
+        Icon.sprite = ScriptableCard.Icon;
+        Description.text = ScriptableCard.Description;
     }
     public void OnMouseEnter()
     {
-        if (!_selected)
+        if (!Selected)
         {
             LeanTween.moveY(this.gameObject, 200, 0.25f);
         }
@@ -44,7 +44,7 @@ public class Card : MonoBehaviour
 
     public void OnMouseExit()
     {
-        if (!_selected)
+        if (!Selected)
         {
             LeanTween.moveY(this.gameObject, 125, 0.5f);
         }
@@ -52,15 +52,15 @@ public class Card : MonoBehaviour
 
     public void OnMouseClick()
     {
-        if (!_selected)
+        if (!Selected)
         {
-            _selected = true;
+            Selected = true;
             LeanTween.moveY(this.gameObject, 200, 0.25f);
             Controller.PlayerOrder.Add(this);
         }
         else
         {
-            _selected = false;
+            Selected = false;
             LeanTween.moveY(this.gameObject, 125, 0.5f);
             Controller.PlayerOrder.Remove(this);
             _orderText.text = string.Empty;
