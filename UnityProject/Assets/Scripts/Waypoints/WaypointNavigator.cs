@@ -11,19 +11,12 @@ public class WaypointNavigator : MonoBehaviour
     private float _speed;
     private int _direction;
 
-    private void Awake()
-    {
-        //assign controller
-    }
-
     void Start()
     {
         SetDestination(currentWaypoint.GetPosition());
         _speed = Random.Range(0.8f, 1.3f);
         float _random = Random.Range(0, 2);
-        Debug.Log("r: " + _random);
         _direction = Mathf.RoundToInt(_random);
-        Debug.Log("d: " + _direction);
     }
 
     void Update()
@@ -39,17 +32,16 @@ public class WaypointNavigator : MonoBehaviour
             {
                 currentWaypoint = currentWaypoint.PreviousWaypoint;
             }
-            
             SetDestination(currentWaypoint.GetPosition());
         }
-        this.transform.LookAt(_destination);
+        //this.transform.LookAt(_destination);
         this.transform.position = Vector3.MoveTowards(this.transform.position, _destination, Time.deltaTime * _speed);
     }
 
     private void SetDestination(Vector3 destination)
     {
         _destination = destination;
+        Debug.Log("_destination : " + _destination);
         transform.LookAt(currentWaypoint.transform);
-        //_reachedDestination = false;
     }
 }
