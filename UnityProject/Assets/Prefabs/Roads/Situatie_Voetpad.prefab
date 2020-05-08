@@ -106,6 +106,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7f0536edea6f8474486dedb7e549c73b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  SituationController: {fileID: 0}
 --- !u!1 &3290981675788110410
 GameObject:
   m_ObjectHideFlags: 0
@@ -124,7 +125,7 @@ GameObject:
   m_Icon: {fileID: 5132851093641282708, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &3290981675788110423
 Transform:
   m_ObjectHideFlags: 0
@@ -170,13 +171,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _cardHolder: {fileID: 0}
+  _checkButtonGO: {fileID: 0}
   _cardIndexOrder: 000000000100000002000000
   _scriptableCards: []
   PlayerOrder: []
   AssignedSituation: 0
   _cardPrefab: {fileID: 0}
-  _panelCardHolder: {fileID: 0}
-  Collider: {fileID: 0}
+  StartCollider1: {fileID: 0}
+  StartCollider2: {fileID: 0}
+  Indications: []
+  _endCollider: {fileID: 0}
+  _bothWays: 0
 --- !u!114 &3290981675788110422
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -202,6 +207,8 @@ MonoBehaviour:
   _backwardLookGO: {fileID: 0}
   _leftCarLookGO: {fileID: 0}
   _rightCarLookGO: {fileID: 0}
+  _checkBoundaryGO: {fileID: 0}
+  _distanceGO: {fileID: 0}
 --- !u!1 &3290981675952502439
 GameObject:
   m_ObjectHideFlags: 0

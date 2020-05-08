@@ -490,6 +490,7 @@ MonoBehaviour:
   _rightCarLookGO: {fileID: 4725530351235292257}
   _checkBoundaryGO: {fileID: 5003618487487409137}
   _distanceGO: {fileID: 5003618488231992155}
+  _streetCollider: {fileID: 6619914398336660355}
 --- !u!1 &5003618489064213626
 GameObject:
   m_ObjectHideFlags: 0
@@ -1097,6 +1098,12 @@ PrefabInstance:
 --- !u!4 &8336530126612345681 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3945471557724037143, guid: eb08fc06f96cb5a45977f0d0cf12c063,
+    type: 3}
+  m_PrefabInstance: {fileID: 5003618489288512326}
+  m_PrefabAsset: {fileID: 0}
+--- !u!65 &6619914398336660355 stripped
+BoxCollider:
+  m_CorrespondingSourceObject: {fileID: 2210921703205757125, guid: eb08fc06f96cb5a45977f0d0cf12c063,
     type: 3}
   m_PrefabInstance: {fileID: 5003618489288512326}
   m_PrefabAsset: {fileID: 0}

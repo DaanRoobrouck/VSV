@@ -44,6 +44,7 @@ public class SituationController : MonoBehaviour
     [SerializeField] private GameObject _rightCarLookGO;
     [SerializeField] private GameObject _checkBoundaryGO;
     [SerializeField] private GameObject _distanceGO;
+    [SerializeField] private BoxCollider _streetCollider;
     private Distance _distance;
     private AuthorityCheck _authorityCheck;
     //private GameObject _endGO;
@@ -197,6 +198,10 @@ public class SituationController : MonoBehaviour
                         if (_checkBoundaryGO.activeSelf)
                         {
                             DeactivateCheck(_checkBoundaryGO);
+                        }
+                        if (_streetCollider != null)
+                        {
+                            _streetCollider.enabled = false;
                         }
                         if (!_distanceGO.activeSelf)
                         {
@@ -437,6 +442,11 @@ public class SituationController : MonoBehaviour
         foreach (GameObject indicationGO in _cardController.Indications)
         {
             indicationGO.SetActive(true);
+        }
+
+        if (_streetCollider != null)
+        {
+            _streetCollider.enabled = true;
         }
        
         DeactivateCheck(_distanceGO);

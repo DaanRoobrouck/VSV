@@ -16,9 +16,15 @@ public class AuthorityCheck : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            Debug.Log("Mag niet, je deed iets fout");
-            SituationController.Tries++;
-            _scoreManager.SubtractScore(SituationController.Tries);
+            if (SituationController != null)
+            {
+                SituationController.Tries++;
+                _scoreManager.SubtractScore(SituationController.Tries);
+            }
+            else
+            {
+                _scoreManager.SubtractScore(1);
+            }
             _uiManager.UpdateExplanationText("Wat je nu doet is niet veilig! Je hebt de voorzorgsmaatregelen nog niet toegepast of moet ergens anders oversteken!");
         }
     }
