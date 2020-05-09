@@ -177,7 +177,9 @@ MonoBehaviour:
   _redAndGreenTimer: 20
   _orangeTimer: 3
   _currentLightMaterials: []
-  SameCrossRoadLights: []
+  SameCrossRoadLights:
+  - {fileID: 5944169118879936624}
+  - {fileID: 0}
   PauseLightCollider: {fileID: 7347346814352384051}
 --- !u!65 &750614396948572527
 BoxCollider:
