@@ -57,6 +57,7 @@ public class SituationController : MonoBehaviour
     private float _stopTimer;
 
     private UIManager _uiManager;
+    [SerializeField] private ParticleSystem _particle;
 
     void Start()
     {
@@ -278,6 +279,9 @@ public class SituationController : MonoBehaviour
                 _cardController.HintIndex++;
                 _cardController.HintCard(_cardController.HintIndex);
                 _timer = 0;
+
+                _particle.transform.position = _fpsController.transform.position;
+                _particle.Play();
             }
         }
     }
@@ -295,6 +299,8 @@ public class SituationController : MonoBehaviour
                 _leftCount++;
                 _lookLeft = false;
                 _lookRight = true;
+                _particle.transform.position = _leftLookGO.transform.position;
+                _particle.Play();
                 Debug.Log("Looked Left, now look right");
             }
             else if (_lookRight && hit.transform.gameObject == _rightLookGO)
@@ -302,6 +308,8 @@ public class SituationController : MonoBehaviour
                 _rightCount++;
                 _lookRight = false;
                 _lookLeft = true;
+                _particle.transform.position = _rightLookGO.transform.position;
+                _particle.Play();
                 Debug.Log("Looked Right, now look left");
             }
         }
@@ -317,6 +325,9 @@ public class SituationController : MonoBehaviour
             _cardController.HintIndex++;
             _cardController.HintCard(_cardController.HintIndex);
             _timer = 0;
+
+            _particle.transform.position = _fpsController.transform.position;
+            _particle.Play();
         }
     }
 
@@ -334,6 +345,8 @@ public class SituationController : MonoBehaviour
                 _lookLeft = false;
                 _lookRight = true;
                 Debug.Log("Looked at the left car");
+                _particle.transform.position = _leftCarLookGO.transform.position;
+                _particle.Play();
             }
             else if (_lookRight && hit.transform.gameObject == _rightCarLookGO)
             {
@@ -341,6 +354,8 @@ public class SituationController : MonoBehaviour
                 _lookRight = false;
                 _lookLeft = true;
                 Debug.Log("Looked at the right car");
+                _particle.transform.position = _rightCarLookGO.transform.position;
+                _particle.Play();
             }
         }
         if (_leftCount >= 1 && _rightCount >= 1)
@@ -353,6 +368,9 @@ public class SituationController : MonoBehaviour
             _cardController.HintIndex++;
             _cardController.HintCard(_cardController.HintIndex);
             _timer = 0;
+
+            _particle.transform.position = _fpsController.transform.position;
+            _particle.Play();
         }
     }
 
@@ -371,6 +389,8 @@ public class SituationController : MonoBehaviour
                 _leftCount++;
                 _lookLeft = false;
                 _lookRight = true;
+                _particle.transform.position = _leftLookGO.transform.position;
+                _particle.Play();
                 Debug.Log("Looked Left, now look right");
             }
             else if (_lookRight && hit.transform.gameObject == _rightLookGO)
@@ -378,6 +398,8 @@ public class SituationController : MonoBehaviour
                 _rightCount++;
                 _lookRight = false;
                 _lookForward = true;
+                _particle.transform.position = _rightLookGO.transform.position;
+                _particle.Play();
                 Debug.Log("Looked Right, now look forward");
             }
             else if (_lookForward && hit.transform.gameObject == _forwardLookGO)
@@ -385,6 +407,8 @@ public class SituationController : MonoBehaviour
                 _forwardCount++;
                 _lookForward = false;
                 _lookBackward = true;
+                _particle.transform.position = _forwardLookGO.transform.position;
+                _particle.Play();
                 Debug.Log("Looked Forward, now look backward");
             }
             else if (_lookBackward && hit.transform.gameObject == _backwardLookGO)
@@ -392,6 +416,8 @@ public class SituationController : MonoBehaviour
                 _backwardCount++;
                 _lookBackward = false;
                 _lookLeft = true;
+                _particle.transform.position = _backwardLookGO.transform.position;
+                _particle.Play();
                 Debug.Log("Looked Backward, now look left");
             }
         }
@@ -412,6 +438,9 @@ public class SituationController : MonoBehaviour
             _cardController.HintIndex++;
             _cardController.HintCard(_cardController.HintIndex);
             _timer = 0;
+
+            _particle.transform.position = _fpsController.transform.position;
+            _particle.Play();
         }
     }
 
@@ -432,6 +461,9 @@ public class SituationController : MonoBehaviour
                 _cardController.HintIndex++;
                 _cardController.HintCard(_cardController.HintIndex);
                 _timer = 0;
+
+                _particle.transform.position = _lookGO.transform.position;
+                _particle.Play();
             }
         }
     }
