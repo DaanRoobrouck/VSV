@@ -22,8 +22,8 @@ public class DestinationManager : MonoBehaviour
     [SerializeField] private UIManager _uiListener;
 
     [SerializeField] private GameObject[] _trafficSigns;
-    [SerializeField] private Material _highlightMaterial;
-    [SerializeField] private Material _normalMaterial;
+    [SerializeField] private Material[] _highlightMaterials;
+    [SerializeField] private Material[] _normalMaterials;
 
 
     // Start is called before the first frame update
@@ -67,9 +67,9 @@ public class DestinationManager : MonoBehaviour
             if(text ==CurrentDestination.name.ToString())
             {
                 Debug.Log("Sign Gevonden");
-                sign.GetComponent<MeshRenderer>().materials[1]=_highlightMaterial;
+                sign.GetComponent<MeshRenderer>().materials=_highlightMaterials;
             }
-            else sign.GetComponent<MeshRenderer>().materials[1]=_normalMaterial;
+            else sign.GetComponent<MeshRenderer>().materials=_normalMaterials;
         }
         //event to update UI (also call it when updating the destination)
     }
