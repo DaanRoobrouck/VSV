@@ -10,19 +10,20 @@ public class TutorialText : MonoBehaviour
 
     private void Start()
     {
-        _playerScript.enabled = false;
+        _playerScript.lockAndHideCursor = false;
+        Debug.Log("Zichtbaar");
         _playerScript.GetComponent<Rigidbody>().velocity = Vector3.zero;
-        Cursor.lockState = CursorLockMode.None;
-        Cursor.visible = true;
+        _playerScript.enabled = false;
     }
 
     public void ContinueTutorial()
     {
         _animator.SetBool("ShowText", false);
         _playerScript.enabled = true;
-        Destroy(this.gameObject);
-        Cursor.lockState = CursorLockMode.Locked;
-        Cursor.visible = false;
+        _playerScript.lockAndHideCursor = true;
+        Debug.Log("Onzichtbaar");
+        Destroy(this.transform.parent.gameObject);
+        
     }
 
  

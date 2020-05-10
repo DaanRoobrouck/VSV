@@ -338,7 +338,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 6749669164823767456}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 7583027850172783657}
+        m_MethodName: ContinueTutorial
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &3446943865836364642
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -366,6 +377,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4251589958381858149}
   - component: {fileID: 2246157518210906717}
+  - component: {fileID: 7583027850172783657}
   m_Layer: 0
   m_Name: TutorialTextTrigger
   m_TagString: Untagged
@@ -401,6 +413,20 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &7583027850172783657
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5956112225242931107}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4b8f98bace0e3f145bd8f3770d886dcb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _playerScript: {fileID: 0}
+  _animator: {fileID: 6371746962364291900}
 --- !u!1 &6479771139973764735
 GameObject:
   m_ObjectHideFlags: 0

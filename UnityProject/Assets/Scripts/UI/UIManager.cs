@@ -21,11 +21,6 @@ public class UIManager : MonoBehaviour
         DisableExplanation();
     }
 
-    void Update()
-    {
-        
-    }
-
     public void UpdateDestinationText(Transform transform)
     {
         _destinationText.text = string.Format("GA NAAR {0}", transform.name.ToString());
@@ -34,7 +29,7 @@ public class UIManager : MonoBehaviour
     public void UpdateExplanationText(String text)
     {
         _explanationText.text = text.ToUpper();
-        _player.lockAndHideCursor = false;
+       // _player.lockAndHideCursor = false;
         _player.playerCanMove = false;
         _player.enableCameraMovement = false;
 
@@ -46,7 +41,7 @@ public class UIManager : MonoBehaviour
         _explanationPanel.SetActive(false);
         _player.enableCameraMovement = true;
         _player.playerCanMove = true;
-        _player.lockAndHideCursor = true;
+        //_player.lockAndHideCursor = true;
     }
 
     public void UIPoints(int value, bool status)

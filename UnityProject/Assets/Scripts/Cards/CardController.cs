@@ -74,8 +74,9 @@ public class CardController : MonoBehaviour
             LeanTween.moveY(_cardHolder, 125, 0.5f);
             
             _player.lockAndHideCursor = false;
+            Debug.Log("Maximzichtbaar");
             _player.enableCameraMovement = false;
-            Cursor.visible = true;
+            //Cursor.visible = true;
 
             _isActive = true;
         }
@@ -106,13 +107,17 @@ public class CardController : MonoBehaviour
         {
             _player.enableCameraMovement = true;
             _player.lockAndHideCursor = true;
-            Cursor.visible = false;
+            Debug.Log("MaximzOnichtbaar");
+
+            //Cursor.visible = false;
         }
         else
         {            
             _player.lockAndHideCursor = false;
+            Debug.Log("Maximzichtbaar");
+
             _player.enableCameraMovement = false;
-            Cursor.visible = false;
+            //Cursor.visible = false;
         }
     }
 

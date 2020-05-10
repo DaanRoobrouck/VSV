@@ -19,7 +19,7 @@ public class Distance : MonoBehaviour
             Debug.Log("Je bent op de goede weg");
         }
     }
-    private void OnTriggerExit(Collider other)
+    private void OnTriggerExit(Collider other) 
     {
         if (other.CompareTag("Player"))
         {
