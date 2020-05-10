@@ -71,7 +71,7 @@ public class FirstPersonAIO : MonoBehaviour {
     public float mouseSensitivityInternal;
     public  float   fOVToMouseSensitivity = 1;
     public float cameraSmoothing = 5f;
-    public bool lockAndHideCursor = false;
+    public bool lockAndHideCursor { get; set; } = false;
     public Camera playerCamera;
     public bool enableCameraShake=false;
     internal Vector3 cameraStartingPosition;
@@ -311,7 +311,16 @@ public class BETA_SETTINGS{
         }
         mouseSensitivityInternal = mouseSensitivity;
         cameraStartingPosition = playerCamera.transform.localPosition;
-        if(lockAndHideCursor) { Cursor.lockState = CursorLockMode.Locked; Cursor.visible = false; }
+        if (lockAndHideCursor)
+        {
+            Cursor.lockState = CursorLockMode.Locked; Cursor.visible = false;
+            Debug.Log("TitelOnzichtbaar");
+        }
+        else
+        {
+            Cursor.lockState = CursorLockMode.None; Cursor.visible = true;
+            Debug.Log("TitelZichtbaar");
+        }
         baseCamFOV = playerCamera.fieldOfView;
         #endregion
 
@@ -387,12 +396,12 @@ public class BETA_SETTINGS{
 
         #endregion
 
-        #region Custom Inputs - Update
-        if (Input.GetKeyDown(KeyCode.Escape))
-        {
-            UIFunctions.OpenPauseScreen();
-        }
-        #endregion
+        //#region Custom Inputs - Update
+        //if (Input.GetKeyDown(KeyCode.Escape))
+        //{
+        //    UIFunctions.OpenPauseScreen();
+        //}
+        //#endregion
 
     }
 

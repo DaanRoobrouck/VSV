@@ -19,11 +19,11 @@ public class AuthorityCheck : MonoBehaviour
             if (SituationController != null)
             {
                 SituationController.Tries++;
-                _scoreManager.SubtractScore(SituationController.Tries);
+                _scoreManager.SubtractScore(SituationController.Tries, _uiManager);
             }
             else
             {
-                _scoreManager.SubtractScore(1);
+                _scoreManager.SubtractScore(1, _uiManager);
             }
             _uiManager.UpdateExplanationText("Wat je nu doet is niet veilig! Je hebt de voorzorgsmaatregelen nog niet toegepast of moet ergens anders oversteken!");
         }

@@ -271,6 +271,7 @@ MonoBehaviour:
   _checkBoundaryGO: {fileID: 925660847}
   _distanceGO: {fileID: 234319326401341471}
   _streetCollider: {fileID: 0}
+  _particle: {fileID: 0}
 --- !u!1 &1484291229
 GameObject:
   m_ObjectHideFlags: 0
@@ -472,7 +473,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   CorrectSequence: 0
   _stopTime: 3
-  _aantalKeerKijken: 2
+  _aantalKeerKijken: 1
   LayerMask:
     serializedVersion: 2
     m_Bits: 256
@@ -486,6 +487,7 @@ MonoBehaviour:
   _checkBoundaryGO: {fileID: 234319327836002380}
   _distanceGO: {fileID: 234319326401341471}
   _streetCollider: {fileID: 0}
+  _particle: {fileID: 0}
 --- !u!1 &234319326045813133
 GameObject:
   m_ObjectHideFlags: 0

@@ -275,7 +275,7 @@ public class SituationController : MonoBehaviour
                 Debug.Log("Time up, player stopped correct");
                 _hasStopped = true;
                 _stopTimer = 0;
-                _scoreManager.AddScore(10);
+                _scoreManager.AddScore(10, _uiManager);
                 _cardController.HintIndex++;
                 _cardController.HintCard(_cardController.HintIndex);
                 _timer = 0;
@@ -321,7 +321,7 @@ public class SituationController : MonoBehaviour
             _hasLooked = true;
             _leftCount = 0;
             _rightCount = 0;
-            _scoreManager.AddScore(10);
+            _scoreManager.AddScore(10, _uiManager);
             _cardController.HintIndex++;
             _cardController.HintCard(_cardController.HintIndex);
             _timer = 0;
@@ -364,7 +364,7 @@ public class SituationController : MonoBehaviour
             _hasLookedCars = true;
             _leftCount = 0;
             _rightCount = 0;
-            _scoreManager.AddScore(10);
+            _scoreManager.AddScore(10, _uiManager);
             _cardController.HintIndex++;
             _cardController.HintCard(_cardController.HintIndex);
             _timer = 0;
@@ -434,7 +434,7 @@ public class SituationController : MonoBehaviour
             _forwardCount = 0;
             _backwardCount = 0;
 
-            _scoreManager.AddScore(10);
+            _scoreManager.AddScore(10, _uiManager);
             _cardController.HintIndex++;
             _cardController.HintCard(_cardController.HintIndex);
             _timer = 0;
@@ -456,7 +456,7 @@ public class SituationController : MonoBehaviour
             {
                 Debug.Log("Player looked correct");
                 DeactivateCheck(_lookGO);
-                _scoreManager.AddScore(10);
+                _scoreManager.AddScore(10, _uiManager);
                 _hasLooked = true;
                 _cardController.HintIndex++;
                 _cardController.HintCard(_cardController.HintIndex);
@@ -482,7 +482,7 @@ public class SituationController : MonoBehaviour
     {
         CorrectSequence = false;
 
-        _scoreManager.AddScore(10);
+        _scoreManager.AddScore(10, _uiManager);
 
         _hasStopped = false;
         _hasLooked = false;
