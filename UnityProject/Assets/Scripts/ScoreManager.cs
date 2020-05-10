@@ -21,21 +21,21 @@ public class ScoreManager : MonoBehaviour
     {
         _score = 0;
     }
-    public void AddScore(int time)
+    public void AddScore(int time, UIManager uiManager)
     {
         //float add = Mathf.Pow((_correct * (1 / time)), _currentStreak);
         //_score += add;
         _score += time;
         Debug.Log(time + " punten toegevoegd, totale score is: " + _score);
-        _uiManager.UIPoints(time, true);
+        uiManager.UIPoints(time, true);
     }
 
-    public void SubtractScore(int tries)
+    public void SubtractScore(int tries, UIManager uiManager)
     {
         int subtract = _mistake * tries;
         _score -= subtract;
         Debug.Log(subtract + " punten verwijdert, totale score is: " + _score);
-        _uiManager.UIPoints(subtract, false);
+        uiManager.UIPoints(subtract, false);
     }
 
     public void SendScore(string name, string email)

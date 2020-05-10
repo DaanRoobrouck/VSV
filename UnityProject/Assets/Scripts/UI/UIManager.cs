@@ -18,7 +18,7 @@ public class UIManager : MonoBehaviour
         _explanationText = _explanationPanel.transform.GetChild(1).GetComponent<TextMeshProUGUI>();
         _player = FindObjectOfType<FirstPersonAIO>();
         _pointsText.enabled = false;
-        DisableExplanation();
+        _explanationPanel.SetActive(false);
     }
 
     public void UpdateDestinationText(Transform transform)
@@ -28,6 +28,7 @@ public class UIManager : MonoBehaviour
 
     public void UpdateExplanationText(String text)
     {
+        Cursor.lockState = CursorLockMode.None; Cursor.visible = true;
         _explanationText.text = text.ToUpper();
        // _player.lockAndHideCursor = false;
         _player.playerCanMove = false;
@@ -38,9 +39,11 @@ public class UIManager : MonoBehaviour
 
     public void DisableExplanation()
     {
+        Cursor.lockState = CursorLockMode.Locked; Cursor.visible = false;
         _explanationPanel.SetActive(false);
         _player.enableCameraMovement = true;
         _player.playerCanMove = true;
+
         //_player.lockAndHideCursor = true;
     }
 
