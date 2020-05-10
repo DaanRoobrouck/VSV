@@ -839,7 +839,7 @@ public class BETA_SETTINGS{
             t.playerCamera = (Camera)EditorGUILayout.ObjectField(new GUIContent("Player Camera", "Camera attached to this controller"),t.playerCamera,typeof(Camera),true);
             if(!t.playerCamera){EditorGUILayout.HelpBox("A Camera is required for operation.",MessageType.Error);}
             t.enableCameraShake = EditorGUILayout.ToggleLeft(new GUIContent("Enable Camera Shake?", "Call this Coroutine externally with duration ranging from 0.01 to 1, and a magnitude of 0.01 to 0.5."), t.enableCameraShake);
-           // t.lockAndHideCursor = EditorGUILayout.ToggleLeft(new GUIContent("Lock and Hide Cursor","For debuging or if You don't plan on having a pause menu or quit button."),t.lockAndHideCursor);
+            t.lockAndHideCursor = EditorGUILayout.ToggleLeft(new GUIContent("Lock and Hide Cursor","For debuging or if You don't plan on having a pause menu or quit button."),t.lockAndHideCursor);
             t.autoCrosshair = EditorGUILayout.ToggleLeft(new GUIContent("Auto Crosshair","Determines if a basic crosshair will be generated."),t.autoCrosshair);
             if(t.autoCrosshair){EditorGUI.indentLevel++; EditorGUILayout.BeginHorizontal(); EditorGUILayout.PrefixLabel(new GUIContent("Crosshair","Sprite to use as a crosshair."));t.Crosshair = (Sprite)EditorGUILayout.ObjectField(t.Crosshair,typeof(Sprite),false); EditorGUILayout.EndHorizontal(); EditorGUI.indentLevel--;}
             GUI.enabled = true;

@@ -72,8 +72,11 @@ public class CardController : MonoBehaviour
             Debug.Log("In");
             //animatie, kaarten sliden in
             LeanTween.moveY(_cardHolder, 125, 0.5f);
-            
-            _player.lockAndHideCursor = false;
+
+            //_player.lockAndHideCursor = false;
+
+            Cursor.lockState = CursorLockMode.None; Cursor.visible = true;
+
             Debug.Log("Maximzichtbaar");
             _player.enableCameraMovement = false;
             //Cursor.visible = true;
@@ -106,17 +109,21 @@ public class CardController : MonoBehaviour
         if (!state)
         {
             _player.enableCameraMovement = true;
-            _player.lockAndHideCursor = true;
+            //_player.lockAndHideCursor = true;
+
+            Cursor.lockState = CursorLockMode.Locked; Cursor.visible = false;
             Debug.Log("MaximzOnichtbaar");
 
             //Cursor.visible = false;
         }
         else
-        {            
-            _player.lockAndHideCursor = false;
-            Debug.Log("Maximzichtbaar");
+        {
+            //_player.lockAndHideCursor = false;
 
             _player.enableCameraMovement = false;
+            Cursor.lockState = CursorLockMode.None; Cursor.visible = true;
+            Debug.Log("Maximzichtbaar");
+
             //Cursor.visible = false;
         }
     }
