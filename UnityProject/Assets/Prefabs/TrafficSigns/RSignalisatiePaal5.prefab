@@ -1648,6 +1648,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: School
       objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: eaf29e00f16434443ab789fe81d02583,
+        type: 3}
+      propertyPath: m_TagString
+      value: TrafficSign
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: eaf29e00f16434443ab789fe81d02583, type: 3}
 --- !u!4 &6160392643123109057 stripped
@@ -1732,6 +1737,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Bib
+      objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: eaf29e00f16434443ab789fe81d02583,
+        type: 3}
+      propertyPath: m_TagString
+      value: TrafficSign
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: eaf29e00f16434443ab789fe81d02583, type: 3}
@@ -1818,6 +1828,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Bakkerij
       objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: eaf29e00f16434443ab789fe81d02583,
+        type: 3}
+      propertyPath: m_TagString
+      value: TrafficSign
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: eaf29e00f16434443ab789fe81d02583, type: 3}
 --- !u!4 &7041512673041106071 stripped
@@ -1903,6 +1918,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Snoepwinkel
       objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: eaf29e00f16434443ab789fe81d02583,
+        type: 3}
+      propertyPath: m_TagString
+      value: TrafficSign
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: eaf29e00f16434443ab789fe81d02583, type: 3}
 --- !u!4 &8325335162527866448 stripped
@@ -1987,6 +2007,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Bank
+      objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: eaf29e00f16434443ab789fe81d02583,
+        type: 3}
+      propertyPath: m_TagString
+      value: TrafficSign
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: eaf29e00f16434443ab789fe81d02583, type: 3}

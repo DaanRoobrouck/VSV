@@ -23,7 +23,7 @@ public class UIManager : MonoBehaviour
 
     public void UpdateDestinationText(Transform transform)
     {
-        _destinationText.text = string.Format("GA NAAR {0}", transform.name.ToString());
+        _destinationText.text = string.Format("GA NAAR DE {0}", transform.name.ToString());
     }
 
     public void UpdateExplanationText(String text)

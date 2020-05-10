@@ -6,6 +6,7 @@ using Random = System.Random;
 using System.Linq;
 using Assets.Scripts.UI;
 using UnityEngine.SceneManagement;
+using TMPro;
 
 
 public class DestinationManager : MonoBehaviour
@@ -20,10 +21,15 @@ public class DestinationManager : MonoBehaviour
     public event EventHandler<DestinationEventArgs> UpdateDestination;
     [SerializeField] private UIManager _uiListener;
 
+    [SerializeField] private GameObject[] _trafficSigns;
+    [SerializeField] private Material _highlightMaterial;
+    [SerializeField] private Material _normalMaterial;
+
 
     // Start is called before the first frame update
     void Start()
     {
+        _trafficSigns = GameObject.FindGameObjectsWithTag("TrafficSign");
         this.UpdateDestination += (sender, args) => _uiListener.UpdateDestinationText(CurrentDestination);
         _random = new Random();
         GetRandomDestinations(_destinations, 3);
@@ -55,6 +61,16 @@ public class DestinationManager : MonoBehaviour
         CurrentDestination = CurrentDestinations[CurrentDestinationIndex].transform;
         CurrentDestination.GetComponent<BoxCollider>().enabled = true;
         UpdateDestination?.Invoke(this, new DestinationEventArgs(CurrentDestination) );
+        foreach(GameObject sign in _trafficSigns)
+        {
+            string text = sign.GetComponentInChildren<TextMeshPro>().text;
+            if(text ==CurrentDestination.name.ToString())
+            {
+                Debug.Log("Sign Gevonden");
+                sign.GetComponent<MeshRenderer>().materials[1]=_highlightMaterial;
+            }
+            else sign.GetComponent<MeshRenderer>().materials[1]=_normalMaterial;
+        }
         //event to update UI (also call it when updating the destination)
     }
 }
