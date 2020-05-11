@@ -284,6 +284,9 @@ MonoBehaviour:
   - {fileID: 6810402252931132419}
   CurrentDestinationIndex: 0
   _uiListener: {fileID: 0}
+  _trafficSigns: []
+  _highlightMaterial: {fileID: 2100000, guid: 4b2897ad394e5bc46bea6c2231fc8c33, type: 2}
+  _normalMaterial: {fileID: 2100000, guid: 5faee8e1e4f35a64cbac78db8f702cdf, type: 2}
 --- !u!1 &6810402254319424511
 GameObject:
   m_ObjectHideFlags: 0

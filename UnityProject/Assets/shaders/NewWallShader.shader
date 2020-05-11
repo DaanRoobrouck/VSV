@@ -41,7 +41,7 @@
 
             struct v2f
             {
-                float4 vertex : SV_POSITION;
+                float4 pos : SV_POSITION;
                 float3 worldNormal : NORMAL;
                 float2 uv : TEXCOORD0;
                 float3 viewDir:TEXCOORD1;
@@ -53,12 +53,12 @@
             v2f vert (appdata v)
             {
                 v2f o;
-                o.vertex = UnityObjectToClipPos(v.vertex);
+                o.pos = UnityObjectToClipPos(v.vertex);
                 o.worldNormal = UnityObjectToWorldNormal(v.normal);
                 o.viewDir = WorldSpaceViewDir(v.vertex);
                 o.uv = v.uv;
                 TRANSFER_SHADOW(o);
-                UNITY_TRANSFER_FOG(o,o.vertex);
+                UNITY_TRANSFER_FOG(o,o.pos);
                 return o;
             }
             CBUFFER_START(Unity_Per_Material)
