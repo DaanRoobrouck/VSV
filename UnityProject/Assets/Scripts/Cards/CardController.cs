@@ -143,6 +143,7 @@ public class CardController : MonoBehaviour
 
             if (_hidecards)
             {
+
                 foreach (GameObject cardObject in _cards)
                 {
                     Destroy(cardObject.gameObject);
@@ -159,15 +160,28 @@ public class CardController : MonoBehaviour
 
     private void ShowCards()
     {
-        for (int i = 0; i < _cardIndexOrder.Count; i++)
+        List<CardCreator> cards = new List<CardCreator>(ScriptableCards);
+        while (cards.Count > 0)
         {
+            int randomIndex = UnityEngine.Random.Range(0, cards.Count - 1);
+
             GameObject cardObject = Instantiate(_cardPrefab, _cardHolder.transform);
             Card card = cardObject.GetComponent<Card>();
-            card.ScriptableCard = ScriptableCards[i];
+            card.ScriptableCard = ScriptableCards[ScriptableCards.IndexOf(cards[randomIndex])];
             card.Controller = this;
 
             _cards.Add(cardObject);
+            cards.RemoveAt(randomIndex);
         }
+        //for (int i = 0; i < _cardIndexOrder.Count; i++)
+        //{
+        //    GameObject cardObject = Instantiate(_cardPrefab, _cardHolder.transform);
+        //    Card card = cardObject.GetComponent<Card>();
+        //    card.ScriptableCard = ScriptableCards[i];
+        //    card.Controller = this;
+
+        //    _cards.Add(cardObject);
+        //}
     }
 
     private void HideCards()
@@ -184,6 +198,12 @@ public class CardController : MonoBehaviour
             {
                 Debug.Log("Juiste selectie");
                 PlayerOrder[i].Btn.image.color = Color.green;
+            }
+            else if (PlayerOrder[i].Index == _cardIndexOrder[i - 1])
+            {
+                Debug.Log("Onjuiste selectie");
+                PlayerOrder[i].Btn.image.color = Color.yellow;
+                incorrect++;
             }
             else
             {
@@ -229,13 +249,16 @@ public class CardController : MonoBehaviour
         }
         Card card = HintCardGO.GetComponent<Card>();
         card.ScriptableCard = ScriptableCards[index];
+
         Image icon = card.transform.GetChild(1).GetComponent<Image>();
         Text description = card.GetComponentInChildren<Text>();
         icon.sprite = card.ScriptableCard.Icon;
         description.text = card.ScriptableCard.Description;
+        description.enabled = false;
+
         card.Controller = this;
         card.Selected = true;
-        description.enabled = false;
+
         Button btn = card.GetComponent<Button>();
         btn.interactable = false;
     }
