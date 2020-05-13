@@ -199,7 +199,7 @@ public class CardController : MonoBehaviour
                 Debug.Log("Juiste selectie");
                 PlayerOrder[i].Btn.image.color = Color.green;
             }
-            else if (PlayerOrder[i].Index == _cardIndexOrder[i - 1])
+            else if (i != 0 && PlayerOrder[i].Index == _cardIndexOrder[i - 1])
             {
                 Debug.Log("Onjuiste selectie");
                 PlayerOrder[i].Btn.image.color = Color.yellow;
@@ -214,6 +214,7 @@ public class CardController : MonoBehaviour
         }
         if (incorrect == 0)
         {
+            _checkButton.onClick.RemoveAllListeners();
             _checkButtonGO.SetActive(false);
             HintCard(HintIndex);
             HideCards();

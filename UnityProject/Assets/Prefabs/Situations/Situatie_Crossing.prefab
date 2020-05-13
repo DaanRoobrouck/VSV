@@ -235,9 +235,11 @@ MonoBehaviour:
   AssignedSituation: 3
   _cardPrefab: {fileID: 838347714013668856, guid: f8a71718f91abd94db65e74342678e95,
     type: 3}
-  StartCollider1: {fileID: 1401718812}
-  StartCollider2: {fileID: 1614272001}
-  Indications: []
+  StartCollider1: {fileID: 1614272001}
+  StartCollider2: {fileID: 1401718812}
+  Indications:
+  - {fileID: 5464775078282415030}
+  - {fileID: 6129830682329211509}
   _endCollider: {fileID: 1272756820}
   _hintCard: {fileID: 0}
   HintCardGO: {fileID: 0}
