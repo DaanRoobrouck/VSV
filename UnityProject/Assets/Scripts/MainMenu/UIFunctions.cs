@@ -70,7 +70,6 @@ public class UIFunctions : MonoBehaviour
     public void Play()
     {
         Debug.Log("Starting game");
-        _anim.SetTrigger("StartPressed");
     }
     public void LoadMenuScene()
     {
@@ -78,7 +77,8 @@ public class UIFunctions : MonoBehaviour
     }
     public void LoadTutorial()
     {
-        SceneManager.LoadScene("TutorialScene");
+        StartCoroutine(LoadingProcess("TutorialScene"));
+
     }
     public void OpenEmailWindow()
     {
