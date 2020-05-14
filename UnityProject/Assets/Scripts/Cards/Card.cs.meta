@@ -3,7 +3,14 @@ guid: 510672b7da0c8774cbb58440a19657b2
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - ScriptableCard: {instanceID: 0}
+  - Icon: {instanceID: 0}
+  - Description: {instanceID: 0}
+  - Btn: {instanceID: 0}
+  - Controller: {instanceID: 0}
+  - _audio: {instanceID: 0}
+  - _sound: {fileID: 8300000, guid: 26ed8186b1ab7d944816eb6997755a6d, type: 3}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

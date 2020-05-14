@@ -38,8 +38,11 @@ public class CardController : MonoBehaviour
     public int HintIndex = 0;
 
     [SerializeField] private bool _bothWays = false;
+    private AudioSource _audio;
+    [SerializeField] private AudioClip[] _sounds;
     private void Start()
     {
+        _audio = GetComponent<AudioSource>();
         foreach (CardCreator card in ScriptableCards)
         {
             _cardIndexOrder.Add(card.Index);
@@ -214,6 +217,8 @@ public class CardController : MonoBehaviour
         }
         if (incorrect == 0)
         {
+            _audio.clip = _sounds[0];
+            _audio.Play();
             _checkButton.onClick.RemoveAllListeners();
             _checkButtonGO.SetActive(false);
             HintCard(HintIndex);
@@ -234,6 +239,11 @@ public class CardController : MonoBehaviour
             PlayerOrder.Clear();
 
             FreezePlayer(false);
+        }
+        else 
+        {
+            _audio.clip = _sounds[1];
+            _audio.Play();
         }
     }
 

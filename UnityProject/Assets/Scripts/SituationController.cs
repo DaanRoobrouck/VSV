@@ -59,8 +59,12 @@ public class SituationController : MonoBehaviour
     private UIManager _uiManager;
     [SerializeField] private ParticleSystem _particle;
 
+    private AudioSource _audio;
+    [SerializeField] private AudioClip[] _sounds;
+
     void Start()
     {
+        _audio = GetComponent<AudioSource>();
         _authorityCheck = _checkBoundaryGO.GetComponent<AuthorityCheck>();
         _cardController = this.GetComponent<CardController>();
         _fpsController = FindObjectOfType<FirstPersonAIO>();
@@ -282,6 +286,8 @@ public class SituationController : MonoBehaviour
 
                 _particle.transform.position = _fpsController.transform.position;
                 _particle.Play();
+                _audio.clip = _sounds[0];
+                _audio.Play();
             }
         }
     }
@@ -301,6 +307,8 @@ public class SituationController : MonoBehaviour
                 _lookRight = true;
                 _particle.transform.position = _leftLookGO.transform.position;
                 _particle.Play();
+                _audio.clip = _sounds[0];
+                _audio.Play();
                 Debug.Log("Looked Left, now look right");
             }
             else if (_lookRight && hit.transform.gameObject == _rightLookGO)
@@ -310,6 +318,8 @@ public class SituationController : MonoBehaviour
                 _lookLeft = true;
                 _particle.transform.position = _rightLookGO.transform.position;
                 _particle.Play();
+                _audio.clip = _sounds[0];
+                _audio.Play();
                 Debug.Log("Looked Right, now look left");
             }
         }
@@ -328,6 +338,8 @@ public class SituationController : MonoBehaviour
 
             _particle.transform.position = _fpsController.transform.position;
             _particle.Play();
+            _audio.clip = _sounds[0];
+            _audio.Play();
         }
     }
 
@@ -347,6 +359,8 @@ public class SituationController : MonoBehaviour
                 Debug.Log("Looked at the left car");
                 _particle.transform.position = _leftCarLookGO.transform.position;
                 _particle.Play();
+                _audio.clip = _sounds[0];
+                _audio.Play();
             }
             else if (_lookRight && hit.transform.gameObject == _rightCarLookGO)
             {
@@ -356,6 +370,8 @@ public class SituationController : MonoBehaviour
                 Debug.Log("Looked at the right car");
                 _particle.transform.position = _rightCarLookGO.transform.position;
                 _particle.Play();
+                _audio.clip = _sounds[0];
+                _audio.Play();
             }
         }
         if (_leftCount >= 1 && _rightCount >= 1)
@@ -371,6 +387,8 @@ public class SituationController : MonoBehaviour
 
             _particle.transform.position = _fpsController.transform.position;
             _particle.Play();
+            _audio.clip = _sounds[0];
+            _audio.Play();
         }
     }
 
@@ -391,6 +409,8 @@ public class SituationController : MonoBehaviour
                 _lookRight = true;
                 _particle.transform.position = _leftLookGO.transform.position;
                 _particle.Play();
+                _audio.clip = _sounds[0];
+                _audio.Play();
                 Debug.Log("Looked Left, now look right");
             }
             else if (_lookRight && hit.transform.gameObject == _rightLookGO)
@@ -400,6 +420,8 @@ public class SituationController : MonoBehaviour
                 _lookForward = true;
                 _particle.transform.position = _rightLookGO.transform.position;
                 _particle.Play();
+                _audio.clip = _sounds[0];
+                _audio.Play();
                 Debug.Log("Looked Right, now look forward");
             }
             else if (_lookForward && hit.transform.gameObject == _forwardLookGO)
@@ -409,6 +431,8 @@ public class SituationController : MonoBehaviour
                 _lookBackward = true;
                 _particle.transform.position = _forwardLookGO.transform.position;
                 _particle.Play();
+                _audio.clip = _sounds[0];
+                _audio.Play();
                 Debug.Log("Looked Forward, now look backward");
             }
             else if (_lookBackward && hit.transform.gameObject == _backwardLookGO)
@@ -418,6 +442,8 @@ public class SituationController : MonoBehaviour
                 _lookLeft = true;
                 _particle.transform.position = _backwardLookGO.transform.position;
                 _particle.Play();
+                _audio.clip = _sounds[0];
+                _audio.Play();
                 Debug.Log("Looked Backward, now look left");
             }
         }
@@ -441,6 +467,8 @@ public class SituationController : MonoBehaviour
 
             _particle.transform.position = _fpsController.transform.position;
             _particle.Play();
+            _audio.clip = _sounds[0];
+            _audio.Play();
         }
     }
 
@@ -464,6 +492,8 @@ public class SituationController : MonoBehaviour
 
                 _particle.transform.position = _lookGO.transform.position;
                 _particle.Play();
+                _audio.clip = _sounds[0];
+                _audio.Play();
             }
         }
     }
@@ -483,6 +513,8 @@ public class SituationController : MonoBehaviour
         CorrectSequence = false;
 
         _scoreManager.AddScore(10, _uiManager);
+        _audio.clip = _sounds[1];
+        _audio.Play();
 
         _hasStopped = false;
         _hasLooked = false;
