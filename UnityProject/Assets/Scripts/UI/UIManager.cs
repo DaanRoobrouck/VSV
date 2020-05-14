@@ -12,9 +12,12 @@ public class UIManager : MonoBehaviour
     [SerializeField] private GameObject _explanationPanel;
     private TextMeshProUGUI _explanationText;
     private FirstPersonAIO _player;
+    private AudioSource _audio;
+    [SerializeField] private AudioClip[] _sounds;
 
     void Start()
     {
+        _audio = GetComponent<AudioSource>();
         _explanationText = _explanationPanel.transform.GetChild(1).GetComponent<TextMeshProUGUI>();
         _player = FindObjectOfType<FirstPersonAIO>();
         _pointsText.enabled = false;
@@ -24,6 +27,8 @@ public class UIManager : MonoBehaviour
     public void UpdateDestinationText(Transform transform)
     {
         _destinationText.text = string.Format("GA NAAR DE {0}", transform.name.ToString());
+        _audio.clip = _sounds[1];
+        _audio.Play();
     }
 
     public void UpdateExplanationText(String text)
@@ -33,7 +38,8 @@ public class UIManager : MonoBehaviour
        // _player.lockAndHideCursor = false;
         _player.playerCanMove = false;
         _player.enableCameraMovement = false;
-
+        _audio.clip = _sounds[0];
+        _audio.Play();
         _explanationPanel.SetActive(true);
     }
 

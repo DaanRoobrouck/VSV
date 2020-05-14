@@ -20,9 +20,12 @@ public class Card : MonoBehaviour
     private int _order;
     public int Order { get => _order; set => _order = value; }
     private Text _orderText;
+    private AudioSource _audio;
+    [SerializeField] private AudioClip _sound;
 
     private void Start()
     {
+        _audio = GetComponent<AudioSource>();
         Icon = transform.GetChild(1).GetComponent<Image>();
         Description = GetComponentInChildren<Text>();
         
@@ -57,6 +60,8 @@ public class Card : MonoBehaviour
             Selected = true;
             LeanTween.moveY(this.gameObject, 200, 0.25f);
             Controller.PlayerOrder.Add(this);
+            _audio.clip = _sound;
+            _audio.Play();
         }
         else
         {
