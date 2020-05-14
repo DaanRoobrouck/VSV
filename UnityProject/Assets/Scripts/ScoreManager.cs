@@ -5,8 +5,8 @@ using UnityEngine;
 public class ScoreManager : MonoBehaviour
 {
     public static float _score = 0;
-    private int _concentrationScore = 0;
-    private int _currentStreak = 1;
+    private static int _concentrationScore = 0;
+    private static int _currentStreak = 1;
 
     //The concentrationScore and currentStreak values can be modified in the SituationController
     public int ConcentrationScore { get => _concentrationScore; set => _concentrationScore = value; }
@@ -48,10 +48,11 @@ public class ScoreManager : MonoBehaviour
         _score = _score * _concentrationScore;
     }
 
-    public void ResetScore()
+    public static void ResetScore()
     {
         _score = 0;
         _concentrationScore = 0;
         _currentStreak = 1;
     }
+
 }
