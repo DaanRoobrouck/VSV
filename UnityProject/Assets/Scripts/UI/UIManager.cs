@@ -12,7 +12,7 @@ public class UIManager : MonoBehaviour
     [SerializeField] private GameObject _explanationPanel;
     private TextMeshProUGUI _explanationText;
     private FirstPersonAIO _player;
-    private AudioSource _audio;
+    [SerializeField] private AudioSource _audio;
     [SerializeField] private AudioClip[] _sounds;
 
     void Start()
