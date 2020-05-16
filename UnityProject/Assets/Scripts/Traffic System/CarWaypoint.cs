@@ -2,7 +2,7 @@
 
 public class CarWaypoint : MonoBehaviour
 {
-    public CarWaypoint PreviousWaypoint;
+    public CarWaypoint NextWaypoint;
 
     [Range(0, 5)]
     public float Width = 1f;

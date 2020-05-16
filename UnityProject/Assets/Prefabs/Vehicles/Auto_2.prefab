@@ -291,7 +291,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentWaypoint: {fileID: 0}
-  _speed: 6.5
+  _speed: 7
   _carBefore: {fileID: 0}
   _carAfter: {fileID: 0}
   _stationary: 0

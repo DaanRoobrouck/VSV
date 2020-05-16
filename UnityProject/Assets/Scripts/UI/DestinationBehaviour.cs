@@ -12,8 +12,11 @@ public class DestinationBehaviour : MonoBehaviour
     }
     private void OnTriggerEnter(Collider other)
     {
-        this.GetComponent<BoxCollider>().enabled = false;
-        _destinationManager.CurrentDestinationIndex++;
-        _destinationManager.SetDestination();
+        if (other.CompareTag("Player"))
+        {
+          this.GetComponent<BoxCollider>().enabled = false;
+          _destinationManager.CurrentDestinationIndex++;
+          _destinationManager.SetDestination();
+        }
     }
 }

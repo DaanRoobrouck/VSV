@@ -4,7 +4,7 @@ public class CarNavigator : MonoBehaviour
 {
     //controller
 
-    public CarWaypoint currentWaypoint;
+    public CarWaypoint NextWayPoint;
     private Vector3 _destination;
     private bool _reachedDestination;
 
@@ -25,7 +25,7 @@ public class CarNavigator : MonoBehaviour
     {
         if (!_stationary)
         {
-            SetDestination(currentWaypoint.GetPosition());
+            SetDestination(NextWayPoint.GetPosition());
         }
     }
 
@@ -38,8 +38,8 @@ public class CarNavigator : MonoBehaviour
 
            if (distanceToWaypoint <= 0.5f)
            {
-              currentWaypoint = currentWaypoint.PreviousWaypoint;
-              SetDestination(currentWaypoint.GetPosition());
+              NextWayPoint = NextWayPoint.NextWaypoint;
+              SetDestination(NextWayPoint.GetPosition());
            }
 
         this.transform.LookAt(_destination);
@@ -50,7 +50,7 @@ public class CarNavigator : MonoBehaviour
     private void SetDestination(Vector3 destination)
     {
         _destination = destination;
-        transform.LookAt(currentWaypoint.transform);
+        transform.LookAt(NextWayPoint.transform);
         //_reachedDestination = false;
     }
 
