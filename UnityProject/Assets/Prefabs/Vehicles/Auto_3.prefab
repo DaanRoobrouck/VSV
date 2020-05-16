@@ -233,7 +233,7 @@ GameObject:
   - component: {fileID: 872712435949440291}
   m_Layer: 0
   m_Name: Auto_3
-  m_TagString: Untagged
+  m_TagString: Vehicle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

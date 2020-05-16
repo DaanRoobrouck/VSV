@@ -56,7 +56,7 @@ public class CarNavigator : MonoBehaviour
 
     private void OnTriggerStay(Collider other)
     {
-        if (_stationary)
+        if (!_stationary)
         {
           if (other.CompareTag("Light"))
           {
@@ -88,9 +88,12 @@ public class CarNavigator : MonoBehaviour
 
     private void OnTriggerExit(Collider other)
     {
-        if (other.CompareTag("Vehicle"))
+        if (!_stationary)
         {
-            other.GetComponent<CarNavigator>().CanDrive = true;
+          if (other.CompareTag("Vehicle"))
+          {
+              other.GetComponent<CarNavigator>().CanDrive = true;
+          }
         }
     }
 }
