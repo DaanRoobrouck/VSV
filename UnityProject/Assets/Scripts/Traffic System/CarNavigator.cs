@@ -23,7 +23,10 @@ public class CarNavigator : MonoBehaviour
 
     void Start()
     {
-        SetDestination(currentWaypoint.GetPosition());
+        if (!_stationary)
+        {
+            SetDestination(currentWaypoint.GetPosition());
+        }
     }
 
     void Update()
