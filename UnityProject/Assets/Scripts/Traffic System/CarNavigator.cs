@@ -31,7 +31,6 @@ public class CarNavigator : MonoBehaviour
 
     void Update()
     {
-
         if (CanDrive && !_stationary)
         {
         float distanceToWaypoint = Vector3.Distance(this.transform.position, _destination);
@@ -61,11 +60,12 @@ public class CarNavigator : MonoBehaviour
           if (other.CompareTag("Light"))
           {
              TrafficLightColor _lightState = other.GetComponent<TrafficLightBehavior>().LightState;
-              if (_lightState == TrafficLightColor.Red)
-              {
-                  CanDrive = false;
-              }
-              else
+             if (_lightState == TrafficLightColor.Red)
+             {
+                 CanDrive = false;
+               
+             }
+             else
               {
                   CanDrive = true;
               }
@@ -80,9 +80,11 @@ public class CarNavigator : MonoBehaviour
               else if (other.gameObject == _carBefore)
               {
                   CanDrive = false;
+                  Debug.Log(this.gameObject.name);
 
-              }
-          }
+
+                }
+            }
           }
     }
 
