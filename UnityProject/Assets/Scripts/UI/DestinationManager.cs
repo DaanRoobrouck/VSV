@@ -57,6 +57,9 @@ public class DestinationManager : MonoBehaviour
         if (CurrentDestinationIndex == CurrentDestinations.Length)
         {
             SceneManager.LoadScene("ScoreDisplay");
+            Cursor.lockState = CursorLockMode.None;
+            Cursor.visible = true;
+            return;
         }
         CurrentDestination = CurrentDestinations[CurrentDestinationIndex].transform;
         CurrentDestination.GetComponent<BoxCollider>().enabled = true;
