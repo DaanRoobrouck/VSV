@@ -19214,9 +19214,9 @@ ParticleSystem:
         m_RotationOrder: 4
     startSpeed:
       serializedVersion: 2
-      minMaxState: 0
-      scalar: 0.1
-      minScalar: 5
+      minMaxState: 3
+      scalar: 0.12
+      minScalar: 0.8
       maxCurve:
         serializedVersion: 2
         m_Curve:
