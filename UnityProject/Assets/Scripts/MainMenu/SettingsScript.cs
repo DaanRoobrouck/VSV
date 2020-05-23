@@ -13,7 +13,6 @@ public class SettingsScript : MonoBehaviour
 
     private void Update()
     {
-        DontDestroyOnLoad(this.gameObject);
         if (audioSource != null)
         {
             audioSource.volume = VolumeSlider.value;
