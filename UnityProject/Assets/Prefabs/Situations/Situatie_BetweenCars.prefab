@@ -557,7 +557,7 @@ MonoBehaviour:
   ScriptableCards:
   - {fileID: 11400000, guid: 87ed2aac61d8d7c43a4dcef9897934b7, type: 2}
   - {fileID: 11400000, guid: 1bd5478942a497e43afd910c4d21aac0, type: 2}
-  - {fileID: 11400000, guid: 69cd5e90cd8d277469fd70cb27c93d94, type: 2}
+  - {fileID: 11400000, guid: 3d5d01b3a7c31b643b605bed0005d945, type: 2}
   - {fileID: 11400000, guid: 6ed7b8e3e3a4bde469fc4c42e9b25900, type: 2}
   - {fileID: 11400000, guid: 1c23a499a2c289e419c07b3e655d7b49, type: 2}
   PlayerOrder: []
