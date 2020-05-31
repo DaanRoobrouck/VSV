@@ -43,7 +43,9 @@ public class TrafficLightBehavior : MonoBehaviour
     
     public TrafficLightBehavior[] SameCrossRoadLights;
 
-    public BoxCollider PauseLightCollider;
+    public GameObject CheckTrafficLightPause;
+
+    
 
     void Start()
     {
@@ -104,21 +106,26 @@ public class TrafficLightBehavior : MonoBehaviour
         if (!ButtonPressed)
         {
               LightState = TrafficLightColor.Green;
-              PauseLightCollider.enabled = false;
-            if (_isOnlyPedestrianLight)
-            {
-                _currentLightMaterials[4] = _lightMaterials[0];
-                _currentLightMaterials[5] = _lightMaterials[2];
-                _renderer.sharedMaterials = _currentLightMaterials;
-                yield return new WaitForSeconds(_redAndGreenTimer);
-                StartCoroutine(RedLight());
-            }
-            else
-            {
+              if (_isOnlyPedestrianLight) 
+              {
 
-              _currentLightMaterials[_redLightIndex] = _lightMaterials[_blackLightIndex];
-              _currentLightMaterials[_orangeLightIndex] = _lightMaterials[_blackLightIndex];
-              _currentLightMaterials[_greenLightIndex] = _lightMaterials[_greenLightIndex];
+                this.transform.GetChild(0).gameObject.SetActive(true);
+                this.transform.GetChild(1).gameObject.SetActive(false);
+                _currentLightMaterials[4] = _lightMaterials[0];
+                    _currentLightMaterials[5] = _lightMaterials[2];
+                    _renderer.sharedMaterials = _currentLightMaterials;
+                    yield return new WaitForSeconds(_redAndGreenTimer);
+                    StartCoroutine(RedLight());
+                
+              }
+              else
+              {
+                this.transform.GetChild(0).gameObject.SetActive(false);
+                this.transform.GetChild(1).gameObject.SetActive(true);
+
+                _currentLightMaterials[_redLightIndex] = _lightMaterials[_blackLightIndex];
+                _currentLightMaterials[_orangeLightIndex] = _lightMaterials[_blackLightIndex];
+                _currentLightMaterials[_greenLightIndex] = _lightMaterials[_greenLightIndex];
 
               if (_hasPedestrianLight)
               {
@@ -148,22 +155,28 @@ public class TrafficLightBehavior : MonoBehaviour
     private IEnumerator RedLight()
     {
             LightState = TrafficLightColor.Red;
-            PauseLightCollider.enabled = true;
 
         if (_isOnlyPedestrianLight)
         {
-            _currentLightMaterials[4] = _lightMaterials[1];
+            if (!ButtonPressed)
+            {
+                this.transform.GetChild(0).gameObject.SetActive(false);
+                this.transform.GetChild(1).gameObject.SetActive(true);
+                _currentLightMaterials[4] = _lightMaterials[1];
             _currentLightMaterials[5] = _lightMaterials[0];
             _renderer.sharedMaterials = _currentLightMaterials;
             yield return new WaitForSeconds(_redAndGreenTimer);
             StartCoroutine(GreenLight());
+            }
         }
         else
         {
 
            if (!ButtonPressed)
            {
-            _currentLightMaterials[_redLightIndex] = _lightMaterials[_redLightIndex];
+               this.transform.GetChild(0).gameObject.SetActive(true);
+               this.transform.GetChild(1).gameObject.SetActive(false);
+                _currentLightMaterials[_redLightIndex] = _lightMaterials[_redLightIndex];
             _currentLightMaterials[_orangeLightIndex] = _lightMaterials[_blackLightIndex];
             _currentLightMaterials[_greenLightIndex] = _lightMaterials[_blackLightIndex];
           
@@ -189,7 +202,10 @@ public class TrafficLightBehavior : MonoBehaviour
     private IEnumerator CalledRedLight()
     {
         LightState = TrafficLightColor.Red;
-        PauseLightCollider.enabled = true;
+        this.transform.GetChild(0).gameObject.SetActive(false);
+        this.transform.GetChild(1).gameObject.SetActive(true);
+        //CheckTrafficLightPause.GetComponent<PauseParentLight>().enabled = false;
+        //CheckTrafficLightPause.GetComponent<AuthorityCheck>().enabled = false;
 
         _currentLightMaterials[_redLightIndex] = _lightMaterials[_redLightIndex];
         _currentLightMaterials[_orangeLightIndex] = _lightMaterials[_blackLightIndex];
@@ -221,7 +237,8 @@ public class TrafficLightBehavior : MonoBehaviour
 
     private IEnumerator CalledGreenLight()
     {
-        PauseLightCollider.enabled = false;
+        CheckTrafficLightPause.GetComponent<PauseParentLight>().enabled = false;
+        CheckTrafficLightPause.GetComponent<AuthorityCheck>().enabled = false;
 
         LightState = TrafficLightColor.Green;
             _currentLightMaterials[_redLightIndex] = _lightMaterials[_blackLightIndex];

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+
 public class PauseParentLight : MonoBehaviour
 {
     [SerializeField] private TrafficLightBehavior _parentLight;
@@ -27,4 +28,6 @@ public class PauseParentLight : MonoBehaviour
             }
         }
     }
+
+   
 }

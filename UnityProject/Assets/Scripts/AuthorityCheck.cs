@@ -24,6 +24,7 @@ public class AuthorityCheck : MonoBehaviour
             else
             {
                 _scoreManager.SubtractScore(1, _uiManager);
+                Debug.Log(this.gameObject.name);
             }
             _uiManager.UpdateExplanationText("Wat je nu doet is niet veilig! Je hebt de voorzorgsmaatregelen nog niet toegepast of moet ergens anders oversteken!");
         }

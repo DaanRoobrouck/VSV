@@ -1,5 +1,63 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &4367101562727422958
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8373761634136206939}
+  - component: {fileID: 8415718843793139310}
+  - component: {fileID: 2030553318430066007}
+  m_Layer: 0
+  m_Name: GameObject (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8373761634136206939
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4367101562727422958}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 8115173029324090085}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &8415718843793139310
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4367101562727422958}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 18b31daf77bd6fe40923aab6615bab29, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SituationController: {fileID: 0}
+--- !u!65 &2030553318430066007
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4367101562727422958}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 8.26, y: 3.58, z: 1}
+  m_Center: {x: 5.44, y: 2.72, z: 0}
 --- !u!1 &5066688940378059351
 GameObject:
   m_ObjectHideFlags: 0
@@ -11,6 +69,7 @@ GameObject:
   - component: {fileID: 1481132551376257182}
   - component: {fileID: 7876177255665997880}
   - component: {fileID: 9088874153140480462}
+  - component: {fileID: 7513713045622492900}
   m_Layer: 0
   m_Name: GameObject
   m_TagString: Untagged
@@ -61,6 +120,19 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &7513713045622492900
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5066688940378059351}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ea740004399a0be4db3f583d1b13f43f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _parentLight: {fileID: 7260174526905621496}
 --- !u!1 &5099687792479803638
 GameObject:
   m_ObjectHideFlags: 0
@@ -95,6 +167,7 @@ Transform:
   m_LocalScale: {x: 0.7, y: 0.7, z: 0.7}
   m_Children:
   - {fileID: 1481132551376257182}
+  - {fileID: 8373761634136206939}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -177,7 +250,7 @@ MonoBehaviour:
   SameCrossRoadLights:
   - {fileID: 7260174526905621496}
   - {fileID: 0}
-  PauseLightCollider: {fileID: 7876177255665997880}
+  CheckTrafficLightPause: {fileID: 5066688940378059351}
 --- !u!54 &5081646294137792932
 Rigidbody:
   m_ObjectHideFlags: 0
