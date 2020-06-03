@@ -244,6 +244,8 @@ public class SituationController : MonoBehaviour
 
     private void CheckStop()
     {
+        _uiManager.UpdateExplanationText("Je bent vergeten te stoppen aan de stoeprand!");
+
         if (_fpsController.fps_Rigidbody.velocity == Vector3.zero)
         {
             _stopTimer += Time.deltaTime;
@@ -267,6 +269,7 @@ public class SituationController : MonoBehaviour
 
     private void CheckLookLeftRight()
     {
+        _uiManager.UpdateExplanationText("Je bent vergeten te kijken naar links en rechts!");
         ActivateCheck(_leftLookGO);
         ActivateCheck(_rightLookGO);
         RaycastHit hit;
@@ -318,6 +321,7 @@ public class SituationController : MonoBehaviour
 
     private void CheckLookCars()
     {
+        _uiManager.UpdateExplanationText("Je bent vergeten te kijken naar de auto's voor je!");
         ActivateCheck(_leftCarLookGO);
         ActivateCheck(_rightCarLookGO);
         RaycastHit hit;
@@ -367,6 +371,7 @@ public class SituationController : MonoBehaviour
 
     private void CheckLookFourWay()
     {
+        _uiManager.UpdateExplanationText("Je bent vergeten te kijken voor, achter, links en rechts van je!");
         ActivateCheck(_leftLookGO);
         ActivateCheck(_rightLookGO);
         ActivateCheck(_forwardLookGO);
@@ -447,6 +452,7 @@ public class SituationController : MonoBehaviour
 
     private void CheckLookOneWay()
     {
+        _uiManager.UpdateExplanationText("Je bent vergeten te kijken achter je!");
         ActivateCheck(_lookGO);
 
         RaycastHit hit;
@@ -483,6 +489,8 @@ public class SituationController : MonoBehaviour
 
     public void ResetSituation()
     {
+        _uiManager.UpdateExplanationText("Wat je nu doet is niet veilig! Je hebt de voorzorgsmaatregelen nog niet toegepast of moet ergens anders oversteken!");
+
         CorrectSequence = false;
 
         _scoreManager.AddScore(10, _uiManager);

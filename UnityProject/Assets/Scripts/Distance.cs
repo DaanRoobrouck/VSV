@@ -27,6 +27,7 @@ public class Distance : MonoBehaviour
             _scoreManager.SubtractScore(SituationController.Tries, _uiManager);
             Debug.Log("Blijf op het pad aub");
             _uiManager.UpdateExplanationText("Blijf op het voetpad, het is niet veilig om nu op straat te lopen!");
+            _uiManager.ShowExplanationText();
         }
     }
 }

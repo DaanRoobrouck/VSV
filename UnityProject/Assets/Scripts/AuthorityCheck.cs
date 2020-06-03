@@ -20,20 +20,26 @@ public class AuthorityCheck : MonoBehaviour
             {
                 SituationController.Tries++;
                 _scoreManager.SubtractScore(SituationController.Tries, _uiManager);
+
+                if (!SituationController.CorrectSequence)
+                {
+                    _uiManager.UpdateExplanationText("Je moet eerst de kaarten in de juiste volgorde selecteren voor je verder kan!");
+                }
             }
             else
             {
                 _scoreManager.SubtractScore(1, _uiManager);
                 Debug.Log(this.gameObject.name);
             }
-            _uiManager.UpdateExplanationText("Wat je nu doet is niet veilig! Je hebt de voorzorgsmaatregelen nog niet toegepast of moet ergens anders oversteken!");
+            _uiManager.ShowExplanationText();
         }
     }
+
     private void OnTriggerExit(Collider other)
     {
         if (other.CompareTag("Player"))
         {
-            Debug.Log("Terug op het goede pad");
+            _uiManager.UpdateExplanationText("Wat je nu doet is niet veilig! Je hebt de voorzorgsmaatregelen nog niet toegepast of moet ergens anders oversteken!");
         }
     }
 }

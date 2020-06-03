@@ -13889,6 +13889,21 @@ PrefabInstance:
       propertyPath: m_Name
       value: UIManager
       objectReference: {fileID: 0}
+    - target: {fileID: 4046033430589954427, guid: 9adf3e9615fff3048bddf971d0e37d02,
+        type: 3}
+      propertyPath: m_RenderMode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4046033430589954427, guid: 9adf3e9615fff3048bddf971d0e37d02,
+        type: 3}
+      propertyPath: m_PixelPerfect
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4046033430589954427, guid: 9adf3e9615fff3048bddf971d0e37d02,
+        type: 3}
+      propertyPath: m_SortingOrder
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7540256988458641696, guid: 9adf3e9615fff3048bddf971d0e37d02,
         type: 3}
       propertyPath: m_textInfo.characterCount
