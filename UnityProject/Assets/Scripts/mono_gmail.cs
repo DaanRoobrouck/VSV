@@ -22,7 +22,7 @@ public class mono_gmail : MonoBehaviour
         mail.From = new MailAddress("voetkaart@gmail.com");
         mail.To.Add(_inputFieldEmail.text);
         mail.Subject = $"Resultaat Verkeersspel {_inputFieldName}" ;
-        mail.Body = $"bla bla bla {ScoreManager._score}";
+        mail.Body = $"bla bla bla {ScoreManager._score.ToString()}";
 
         SmtpClient smtpServer = new SmtpClient("smtp.gmail.com");
         smtpServer.Port = 587;
