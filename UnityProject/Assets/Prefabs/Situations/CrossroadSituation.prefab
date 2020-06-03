@@ -1594,6 +1594,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 133131699372637647}
     m_Modifications:
+    - target: {fileID: 1401718811, guid: f57a783bf88b3634598c208ae8521e26, type: 3}
+      propertyPath: ScriptableCards.Array.data[1]
+      value: 
+      objectReference: {fileID: 11400000, guid: 69cd5e90cd8d277469fd70cb27c93d94,
+        type: 2}
+    - target: {fileID: 1614272000, guid: f57a783bf88b3634598c208ae8521e26, type: 3}
+      propertyPath: ScriptableCards.Array.data[1]
+      value: 
+      objectReference: {fileID: 11400000, guid: 69cd5e90cd8d277469fd70cb27c93d94,
+        type: 2}
     - target: {fileID: 234319326763719114, guid: f57a783bf88b3634598c208ae8521e26,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1734,6 +1744,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 133131699372637647}
     m_Modifications:
+    - target: {fileID: 1401718811, guid: f57a783bf88b3634598c208ae8521e26, type: 3}
+      propertyPath: ScriptableCards.Array.data[1]
+      value: 
+      objectReference: {fileID: 11400000, guid: 69cd5e90cd8d277469fd70cb27c93d94,
+        type: 2}
+    - target: {fileID: 1614272000, guid: f57a783bf88b3634598c208ae8521e26, type: 3}
+      propertyPath: ScriptableCards.Array.data[1]
+      value: 
+      objectReference: {fileID: 11400000, guid: 69cd5e90cd8d277469fd70cb27c93d94,
+        type: 2}
     - target: {fileID: 234319326763719114, guid: f57a783bf88b3634598c208ae8521e26,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1874,6 +1894,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 133131699372637647}
     m_Modifications:
+    - target: {fileID: 1401718811, guid: f57a783bf88b3634598c208ae8521e26, type: 3}
+      propertyPath: ScriptableCards.Array.data[1]
+      value: 
+      objectReference: {fileID: 11400000, guid: 69cd5e90cd8d277469fd70cb27c93d94,
+        type: 2}
+    - target: {fileID: 1614272000, guid: f57a783bf88b3634598c208ae8521e26, type: 3}
+      propertyPath: ScriptableCards.Array.data[1]
+      value: 
+      objectReference: {fileID: 11400000, guid: 69cd5e90cd8d277469fd70cb27c93d94,
+        type: 2}
     - target: {fileID: 234319326763719114, guid: f57a783bf88b3634598c208ae8521e26,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2014,6 +2044,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 133131699372637647}
     m_Modifications:
+    - target: {fileID: 1401718811, guid: f57a783bf88b3634598c208ae8521e26, type: 3}
+      propertyPath: ScriptableCards.Array.data[1]
+      value: 
+      objectReference: {fileID: 11400000, guid: 69cd5e90cd8d277469fd70cb27c93d94,
+        type: 2}
+    - target: {fileID: 1614272000, guid: f57a783bf88b3634598c208ae8521e26, type: 3}
+      propertyPath: ScriptableCards.Array.data[1]
+      value: 
+      objectReference: {fileID: 11400000, guid: 69cd5e90cd8d277469fd70cb27c93d94,
+        type: 2}
     - target: {fileID: 234319326763719114, guid: f57a783bf88b3634598c208ae8521e26,
         type: 3}
       propertyPath: m_LocalPosition.x

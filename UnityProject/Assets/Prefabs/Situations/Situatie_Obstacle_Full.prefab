@@ -5215,8 +5215,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 6.63249, y: 2.058907, z: 5.8808327}
-  m_Center: {x: -3.2679434, y: 0.5294535, z: 3.4352894}
+  m_Size: {x: 6.63249, y: 2.058907, z: 5.6648254}
+  m_Center: {x: -3.2679434, y: 0.5294535, z: 3.543293}
 --- !u!1 &6482428550953932841
 GameObject:
   m_ObjectHideFlags: 0
@@ -5634,6 +5634,7 @@ MonoBehaviour:
   _leftCarLookGO: {fileID: 0}
   _rightCarLookGO: {fileID: 0}
   _checkBoundaryGO: {fileID: 6482428550153784848}
+  _checkBoundary2GO: {fileID: 0}
   _distanceGO: {fileID: 6482428550953932841}
   _streetCollider: {fileID: 0}
   _particle: {fileID: 0}
@@ -5847,6 +5848,7 @@ MonoBehaviour:
   _leftCarLookGO: {fileID: 0}
   _rightCarLookGO: {fileID: 0}
   _checkBoundaryGO: {fileID: 6482428550153784848}
+  _checkBoundary2GO: {fileID: 0}
   _distanceGO: {fileID: 6482428550953932841}
   _streetCollider: {fileID: 0}
   _particle: {fileID: 0}

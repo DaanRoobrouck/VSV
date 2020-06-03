@@ -46,6 +46,7 @@ public class SituationController : MonoBehaviour
     [SerializeField] private GameObject _leftCarLookGO;
     [SerializeField] private GameObject _rightCarLookGO;
     [SerializeField] private GameObject _checkBoundaryGO;
+    [SerializeField] private GameObject _checkBoundary2GO;
     [SerializeField] private GameObject _distanceGO;
     [SerializeField] private BoxCollider _streetCollider;
     private Distance _distance;
@@ -76,12 +77,8 @@ public class SituationController : MonoBehaviour
         if (_checkBoundaryGO != null)
         {
             _authorityCheck.SituationController = this;
-            DeactivateCheck(_checkBoundaryGO);
+            //DeactivateCheck(_checkBoundaryGO);
         }
-        //if (_endGO != null)
-        //{
-        //    DeactivateCheck(_endGO);
-        //}
         if (_distanceGO != null)
         {
             _distance = _distanceGO.GetComponent<Distance>();
@@ -129,10 +126,10 @@ public class SituationController : MonoBehaviour
                 case Situation.PedestrianCrossing:
                     if (!_hasStopped)
                     {
-                        if (!_checkBoundaryGO.activeSelf)
+                        if (_checkBoundary2GO.activeSelf)
                         {
-                            ActivateCheck(_checkBoundaryGO);
-                        }       
+                            DeactivateCheck(_checkBoundary2GO);
+                        }
                         CheckStop();
                         return;
                     }
@@ -151,20 +148,12 @@ public class SituationController : MonoBehaviour
                         {
                             DeactivateCheck(_checkBoundaryGO);
                         }
-                        //if (!_endGO.activeSelf)
-                        //{
-                        //    ActivateCheck(_endGO);
-                        //}
                         return;
                     }
                     break;
                 case Situation.Obstacle:
                     if (!_hasStopped)
                     {
-                        if (!_checkBoundaryGO.activeSelf)
-                        {
-                            ActivateCheck(_checkBoundaryGO);
-                        }
                         CheckStop();
                         return;
                     }
@@ -183,20 +172,12 @@ public class SituationController : MonoBehaviour
                         {
                             ActivateCheck(_distanceGO);
                         }
-                        //if (!_endGO.activeSelf)
-                        //{
-                        //    ActivateCheck(_endGO);
-                        //}
                         return;
                     }
                     break;
                 case Situation.BetweenCars:
                     if (!_hasStopped)
                     {
-                        if (!_checkBoundaryGO.activeSelf)
-                        {
-                            ActivateCheck(_checkBoundaryGO);
-                        }
                         CheckStop();
                         return;
                     }
@@ -224,19 +205,15 @@ public class SituationController : MonoBehaviour
                         {
                             ActivateCheck(_distanceGO);
                         }
-                        //if (!_endGO.activeSelf)
-                        //{
-                        //    ActivateCheck(_endGO);
-                        //}
                         return;
                     }
                     break;
                 case Situation.Crossing:
                     if (!_hasStopped)
                     {
-                        if (!_checkBoundaryGO.activeSelf)
+                        if (_checkBoundary2GO.activeSelf)
                         {
-                            ActivateCheck(_checkBoundaryGO);
+                            DeactivateCheck(_checkBoundary2GO);
                         }
                         CheckStop();
                         return;
@@ -256,10 +233,6 @@ public class SituationController : MonoBehaviour
                         {
                             ActivateCheck(_distanceGO);
                         }
-                        //if (!_endGO.activeSelf)
-                        //{
-                        //    ActivateCheck(_endGO);
-                        //}
                         return;
                     }
                     break;
@@ -546,7 +519,11 @@ public class SituationController : MonoBehaviour
         Destroy(_cardController.HintCardGO);
 
         DeactivateCheck(_distanceGO);
-        DeactivateCheck(_checkBoundaryGO);
+        ActivateCheck(_checkBoundaryGO);
+        if (_checkBoundary2GO != null)
+        {
+            ActivateCheck(_checkBoundary2GO);
+        }     
     }
 
     public void EnableStartColliders()
