@@ -457,6 +457,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1040347630773846034, guid: 11abf4d45e422ea46b836092f1ddeb81,
         type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1040347630773846034, guid: 11abf4d45e422ea46b836092f1ddeb81,
+        type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 74460185}
@@ -464,6 +469,31 @@ PrefabInstance:
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: SendMail
+      objectReference: {fileID: 0}
+    - target: {fileID: 1040347630773846034, guid: 11abf4d45e422ea46b836092f1ddeb81,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1040347630773846034, guid: 11abf4d45e422ea46b836092f1ddeb81,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1040347630773846034, guid: 11abf4d45e422ea46b836092f1ddeb81,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 2122314946}
+    - target: {fileID: 1040347630773846034, guid: 11abf4d45e422ea46b836092f1ddeb81,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: ConfirmEmailSent
+      objectReference: {fileID: 0}
+    - target: {fileID: 1040347630773846034, guid: 11abf4d45e422ea46b836092f1ddeb81,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 1553175309282415801, guid: 11abf4d45e422ea46b836092f1ddeb81,
         type: 3}
@@ -684,6 +714,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: VerzendKnop
+      objectReference: {fileID: 0}
+    - target: {fileID: 7510089886535060788, guid: 11abf4d45e422ea46b836092f1ddeb81,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7636322319964598263, guid: 11abf4d45e422ea46b836092f1ddeb81,
         type: 3}
@@ -2637,8 +2672,8 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 1338400806}
-        m_MethodName: ResetScore
+      - m_Target: {fileID: 2122314946}
+        m_MethodName: ConfirmEmailSent
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -4465,6 +4500,7 @@ Transform:
   m_Children:
   - {fileID: 1762151065}
   - {fileID: 1792805623}
+  - {fileID: 1540963769}
   m_Father: {fileID: 1281122216}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -5153,7 +5189,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1338400805}
-  - component: {fileID: 1338400806}
   m_Layer: 0
   m_Name: ScoreScreen
   m_TagString: Untagged
@@ -5178,19 +5213,6 @@ Transform:
   m_Father: {fileID: 1281122216}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1338400806
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1338400804}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 950e3736e9e857746b8e43176a109503, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _scoreTextField: {fileID: 1015790772}
 --- !u!1001 &1340870220
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6224,6 +6246,99 @@ CanvasRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1533309659}
+  m_CullTransparentMesh: 0
+--- !u!1 &1540963768
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1540963769}
+  - component: {fileID: 1540963772}
+  - component: {fileID: 1540963771}
+  - component: {fileID: 1540963770}
+  m_Layer: 5
+  m_Name: EmailConfirmText
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!224 &1540963769
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1540963768}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: -6.0321274}
+  m_LocalScale: {x: 0.23382683, y: 0.19772398, z: 0.23382683}
+  m_Children: []
+  m_Father: {fileID: 1229528973}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 464, y: -307}
+  m_SizeDelta: {x: 1717.4, y: 440.3}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1540963770
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1540963768}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e19747de3f5aca642ab2be37e372fb86, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_EffectColor: {r: 0.3448291, g: 0.5943396, b: 0.3913459, a: 1}
+  m_EffectDistance: {x: 10.22, y: 12.5}
+  m_UseGraphicAlpha: 1
+--- !u!114 &1540963771
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1540963768}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0.7386507, g: 1, b: 0.44700003, a: 1}
+  m_RaycastTarget: 0
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_FontData:
+    m_Font: {fileID: 12800000, guid: 274efab44219d35488d96eb4d5e258c3, type: 3}
+    m_FontSize: 117
+    m_FontStyle: 0
+    m_BestFit: 0
+    m_MinSize: 1
+    m_MaxSize: 127
+    m_Alignment: 4
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1
+  m_Text: EMAIL VERZONDEN!
+--- !u!222 &1540963772
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1540963768}
   m_CullTransparentMesh: 0
 --- !u!1 &1548757621
 GameObject:
@@ -7992,6 +8107,52 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2110399147}
   m_CullTransparentMesh: 0
+--- !u!1 &2122314944
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2122314945}
+  - component: {fileID: 2122314946}
+  m_Layer: 0
+  m_Name: ScoreFunctionsObject
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2122314945
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2122314944}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 1, z: 89.89308}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 8
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2122314946
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2122314944}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 950e3736e9e857746b8e43176a109503, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _scoreTextField: {fileID: 1015790772}
+  _selfGradeSlider: {fileID: 858629525}
+  _emailConfirmationText: {fileID: 1540963768}
 --- !u!1 &2133638908
 GameObject:
   m_ObjectHideFlags: 0

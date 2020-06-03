@@ -16,15 +16,24 @@ public class mono_gmail : MonoBehaviour
     {
         MailMessage mail = new MailMessage();
 
-        if (_inputFieldEmail.text == null)
-            Debug.Log("marcheert niet");
-
         mail.From = new MailAddress("voetkaart@gmail.com");
         mail.To.Add(_inputFieldEmail.text);
-        mail.Subject = $"Resultaat Verkeersspel {_inputFieldName}" ;
-        mail.Body = $"bla bla bla {ScoreManager._score.ToString()}";
+        mail.Subject = $"Resultaat Verkeersspel {_inputFieldName.text}" ;
+        mail.Body = "Beste Mevrouw/Meneer,"
+            + Environment.NewLine +
+            $"{_inputFieldName.text} heeft zonet de TeVoetKaart game afgelegd en behaalde hierbij {ScoreManager._score.ToString()} punten!"
+            + Environment.NewLine +
+            $"Hij schatte zichzelf als volgt in: 'Ik denk dat ik een {ScoreLinkScript.SelfScore * 10} / 10 heb gehaald'"
+            + Environment.NewLine +
+            ""
+            + Environment.NewLine +
+            "Bedankt voor het spelen van ons spel en blijf veilig!"
+            + Environment.NewLine +
+            "   - Matisse, Daan, Briek, Ward en Maxim";
 
-        SmtpClient smtpServer = new SmtpClient("smtp.gmail.com");
+
+
+SmtpClient smtpServer = new SmtpClient("smtp.gmail.com");
         smtpServer.Port = 587;
         smtpServer.Credentials = new System.Net.NetworkCredential("voetkaart@gmail.com", "GamePr0t02") as ICredentialsByHost;
         smtpServer.EnableSsl = true;
