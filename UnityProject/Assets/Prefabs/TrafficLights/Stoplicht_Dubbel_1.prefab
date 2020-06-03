@@ -248,7 +248,7 @@ MonoBehaviour:
   LightState: 0
   _hasPedestrianLight: 1
   _isOnlyPedestrianLight: 0
-  _redAndGreenTimer: 20
+  _redAndGreenTimer: 15
   _orangeTimer: 3
   _currentLightMaterials: []
   SameCrossRoadLights:
