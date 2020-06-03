@@ -5,6 +5,8 @@ using UnityEngine;
 public class NextPhase : MonoBehaviour
 {
     [SerializeField] private GameObject _tutTxt;
+
+    [SerializeField] private GameObject _DestinationBoard;
     // Start is called before the first frame 
 
     private void OnCollisionEnter(Collision collider)
@@ -22,6 +24,10 @@ public class NextPhase : MonoBehaviour
             if (_tutTxt != null)
             {
                 _tutTxt.SetActive(true);
+                if (_DestinationBoard != null)
+                {
+                    _DestinationBoard.SetActive(true);
+                }
             }
         }
     }

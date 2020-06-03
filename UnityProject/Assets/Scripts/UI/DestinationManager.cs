@@ -25,6 +25,9 @@ public class DestinationManager : MonoBehaviour
     [SerializeField] private Material[] _highlightMaterials;
     [SerializeField] private Material[] _normalMaterials;
 
+    [SerializeField] private int _amountOfDestinations;
+    [SerializeField] private string _sceneName;
+
 
     // Start is called before the first frame update
     void Start()
@@ -32,14 +35,14 @@ public class DestinationManager : MonoBehaviour
         _trafficSigns = GameObject.FindGameObjectsWithTag("TrafficSign");
         this.UpdateDestination += (sender, args) => _uiListener.UpdateDestinationText(CurrentDestination);
         _random = new Random();
-        GetRandomDestinations(_destinations, 3);
+        GetRandomDestinations(_destinations, _amountOfDestinations);
         SetDestination();
     }
 
 
     private void GetRandomDestinations(BoxCollider[] destinations, int amountOfDestinations)
     {
-        CurrentDestinations = new BoxCollider[3];
+        CurrentDestinations = new BoxCollider[_amountOfDestinations];
         for (int i = 0; i < amountOfDestinations; i++)
         {
             int index = _random.Next(0, _destinations.Length);

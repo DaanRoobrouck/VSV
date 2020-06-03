@@ -33,7 +33,7 @@ public class UIFunctions : MonoBehaviour
     }
     public void OpenEndScreen()
     {
-        StartCoroutine(LoadingProcess("EndScene"));
+        StartCoroutine(LoadingProcess("TitleScreen"));
     }
     public void OpenSVSLink()
     {
