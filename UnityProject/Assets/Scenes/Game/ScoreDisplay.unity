@@ -98,7 +98,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 0
+  m_UseShadowmask: 1
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -228,6 +228,26 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 40382401}
   m_CullTransparentMesh: 0
+--- !u!1 &74460184 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7510089886535060788, guid: 11abf4d45e422ea46b836092f1ddeb81,
+    type: 3}
+  m_PrefabInstance: {fileID: 141179080}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &74460185
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 74460184}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e2f6d3f7651bd6244a882e8e3fbf8426, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _inputFieldName: {fileID: 1065858476}
+  _inputFieldEmail: {fileID: 2133638910}
 --- !u!1 &104791357
 GameObject:
   m_ObjectHideFlags: 0
@@ -435,6 +455,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1792805623}
     m_Modifications:
+    - target: {fileID: 1040347630773846034, guid: 11abf4d45e422ea46b836092f1ddeb81,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 74460185}
+    - target: {fileID: 1040347630773846034, guid: 11abf4d45e422ea46b836092f1ddeb81,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: SendMail
+      objectReference: {fileID: 0}
     - target: {fileID: 1553175309282415801, guid: 11abf4d45e422ea46b836092f1ddeb81,
         type: 3}
       propertyPath: m_Text
@@ -778,7 +808,7 @@ GameObject:
   - component: {fileID: 174354842}
   - component: {fileID: 174354841}
   m_Layer: 0
-  m_Name: Text
+  m_Name: TextOutputEmail
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6900,7 +6930,7 @@ GameObject:
   - component: {fileID: 1772337876}
   - component: {fileID: 1772337875}
   m_Layer: 0
-  m_Name: Text
+  m_Name: TextOutputName
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

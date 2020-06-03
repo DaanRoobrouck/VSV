@@ -9,15 +9,20 @@ using UnityEngine.UI;
 
 public class mono_gmail : MonoBehaviour
 {
-    [SerializeField] private InputField _inputField;
+    [SerializeField] private InputField _inputFieldName;
+    [SerializeField] private InputField _inputFieldEmail;
+
     public void SendMail()
     {
         MailMessage mail = new MailMessage();
 
+        if (_inputFieldEmail.text == null)
+            Debug.Log("marcheert niet");
+
         mail.From = new MailAddress("voetkaart@gmail.com");
-        mail.To.Add(_inputField.text);
-        mail.Subject = "Test Mail";
-        mail.Body = "Works";
+        mail.To.Add(_inputFieldEmail.text);
+        mail.Subject = $"Resultaat Verkeersspel {_inputFieldName}" ;
+        mail.Body = $"bla bla bla {ScoreManager._score}";
 
         SmtpClient smtpServer = new SmtpClient("smtp.gmail.com");
         smtpServer.Port = 587;
@@ -27,7 +32,6 @@ public class mono_gmail : MonoBehaviour
             delegate (object s, X509Certificate certificate, X509Chain chain, SslPolicyErrors sslPolicyErrors)
             { return true; };
         smtpServer.Send(mail);
-        Debug.Log("success");
 
     }
 }
