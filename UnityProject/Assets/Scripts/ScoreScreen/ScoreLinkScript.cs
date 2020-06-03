@@ -14,6 +14,9 @@ public class ScoreLinkScript : MonoBehaviour
     {
         _scoreTextField.text = ScoreManager._score.ToString();
 
+    }
+    public void ResetScore()
+    {
         ScoreManager.ResetScore();
     }
 }
