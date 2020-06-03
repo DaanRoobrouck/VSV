@@ -98,7 +98,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 1
+  m_UseShadowmask: 0
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -321,7 +321,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &32074832
 Transform:
   m_ObjectHideFlags: 0
@@ -5104,7 +5104,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1779506994
 Transform:
   m_ObjectHideFlags: 0
@@ -6230,18 +6230,18 @@ Avatar:
         m_X: []
     m_RootMotionSkeletonIndexArray: 
   m_TOS:
-    0: 
     3235608234: Image (5)
     1970604263: Image (8)
     2612594937: Text
     1819163046: Image (9)
     83635035: Image
-    2763502510: Image (1)
     3958777193: Image (6)
-    2525090092: Image (3)
-    3653257195: Image (4)
     4075623464: Image (7)
     2409291885: Image (2)
+    0: 
+    2763502510: Image (1)
+    2525090092: Image (3)
+    3653257195: Image (4)
   m_HumanDescription:
     serializedVersion: 3
     m_Human: []
