@@ -66,6 +66,8 @@ public class CardController : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
+            //_player.transform.LookAt(_endCollider.transform);
+
             foreach (GameObject indicationGO in Indications)
             {
                 indicationGO.SetActive(false);
