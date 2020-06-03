@@ -23,7 +23,7 @@ public class mono_gmail : MonoBehaviour
             + Environment.NewLine +
             $"{_inputFieldName.text} heeft zonet de TeVoetKaart game afgelegd en behaalde hierbij {ScoreManager._score.ToString()} punten!"
             + Environment.NewLine +
-            $"Hij schatte zichzelf als volgt in: 'Ik denk dat ik een {ScoreLinkScript.SelfScore * 10} / 10 heb gehaald'"
+            $"Hij schatte zichzelf als volgt in: 'Ik denk dat ik een {Math.Round((ScoreLinkScript.SelfScore * 10), 1)} / 10 heb gehaald'"
             + Environment.NewLine +
             ""
             + Environment.NewLine +
