@@ -248,14 +248,12 @@ MonoBehaviour:
   LightState: 0
   _hasPedestrianLight: 1
   _isOnlyPedestrianLight: 0
-  ButtonPressed: 0
   _redAndGreenTimer: 20
   _orangeTimer: 3
   _currentLightMaterials: []
   SameCrossRoadLights:
   - {fileID: 5944169118879936624}
   - {fileID: 0}
-  CheckTrafficLightPause: {fileID: 1376646244859437850}
 --- !u!65 &750614396948572527
 BoxCollider:
   m_ObjectHideFlags: 0
