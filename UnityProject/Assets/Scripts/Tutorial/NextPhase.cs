@@ -6,7 +6,7 @@ public class NextPhase : MonoBehaviour
 {
     [SerializeField] private GameObject _tutTxt;
 
-    [SerializeField] private GameObject _DestinationBoard;
+    [SerializeField] private GameObject _destinationBoard;
     // Start is called before the first frame 
 
     private void OnCollisionEnter(Collision collider)
@@ -24,9 +24,9 @@ public class NextPhase : MonoBehaviour
             if (_tutTxt != null)
             {
                 _tutTxt.SetActive(true);
-                if (_DestinationBoard != null)
+                if (_destinationBoard != null)
                 {
-                    _DestinationBoard.SetActive(true);
+                    _destinationBoard.SetActive(true);
                 }
             }
         }
