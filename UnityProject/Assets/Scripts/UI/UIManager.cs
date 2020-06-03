@@ -15,8 +15,12 @@ public class UIManager : MonoBehaviour
     [SerializeField] private AudioSource _audio;
     [SerializeField] private AudioClip[] _sounds;
 
+    private string _text;
+
     void Start()
     {
+        _text = "Wat je nu doet is niet veilig! Je hebt de voorzorgsmaatregelen nog niet toegepast of moet ergens anders oversteken!".ToUpper();
+
         _audio = GetComponent<AudioSource>();
         _explanationText = _explanationPanel.transform.GetChild(1).GetComponent<TextMeshProUGUI>();
         _player = FindObjectOfType<FirstPersonAIO>();
@@ -33,9 +37,14 @@ public class UIManager : MonoBehaviour
 
     public void UpdateExplanationText(String text)
     {
+        _text = text.ToUpper();
+    }
+
+    public void ShowExplanationText()
+    {
         Cursor.lockState = CursorLockMode.None; Cursor.visible = true;
-        _explanationText.text = text.ToUpper();
-       // _player.lockAndHideCursor = false;
+
+        _explanationText.text = _text;
         _player.playerCanMove = false;
         _player.enableCameraMovement = false;
         _audio.clip = _sounds[0];
@@ -49,8 +58,6 @@ public class UIManager : MonoBehaviour
         _explanationPanel.SetActive(false);
         _player.enableCameraMovement = true;
         _player.playerCanMove = true;
-
-        //_player.lockAndHideCursor = true;
     }
 
     public void UIPoints(int value, bool status)
