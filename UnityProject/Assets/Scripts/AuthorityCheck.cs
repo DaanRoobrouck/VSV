@@ -26,8 +26,12 @@ public class AuthorityCheck : MonoBehaviour
                     _uiManager.UpdateExplanationText("Je moet eerst de kaarten in de juiste volgorde selecteren voor je verder kan!");
                 }
             }
-            else
+            else if (transform.parent.CompareTag("Light"))
             {
+                _uiManager.UpdateExplanationText("Het licht staat op rood, je mag nu niet oversteken! Wacht tot het licht op groen springt!");
+            }
+            else
+            {           
                 _scoreManager.SubtractScore(1, _uiManager);
                 Debug.Log(this.gameObject.name);
             }

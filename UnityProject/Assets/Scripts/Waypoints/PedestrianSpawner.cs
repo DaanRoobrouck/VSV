@@ -8,7 +8,7 @@ public class PedestrianSpawner : MonoBehaviour
 
     private Animator _anim;
 
-    void Start()
+    void Awake()
     {
         StartCoroutine(Spawn());
     }
