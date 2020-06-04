@@ -25,11 +25,16 @@ public class UIFunctions : MonoBehaviour
 
     private Animator _anim;
 
-    
+
     private void Start()
     {
         _anim = this.GetComponent<Animator>();
         transitionScreen = GameObject.FindGameObjectWithTag("TransitionScreen");
+    }
+    public void LockCursor()
+    {
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
     }
     public void OpenEndScreen()
     {

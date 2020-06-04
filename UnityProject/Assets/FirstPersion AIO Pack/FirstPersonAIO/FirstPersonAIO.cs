@@ -396,12 +396,44 @@ public class BETA_SETTINGS{
 
         #endregion
 
-        //#region Custom Inputs - Update
-        //if (Input.GetKeyDown(KeyCode.Escape))
+        #region Custom Inputs - Update
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            //UIFunctions.OpenPauseScreen();
+            Cursor.lockState = CursorLockMode.None;
+            Cursor.visible = true;
+        }
+        ////Check if player clicks in game
+        //if (Input.GetMouseButtonDown(0))
         //{
-        //    UIFunctions.OpenPauseScreen();
+        //    RaycastHit hit;
+        //    // Does the ray intersect any objects excluding the player layer
+        //    if (Physics.Raycast(Camera.main.transform.position, transform.TransformDirection(Vector3.forward), out hit, Mathf.Infinity))
+        //    {
+        //        if (hit.transform.gameObject.layer == 5)
+        //        {
+        //            Debug.DrawRay(Camera.main.transform.position, transform.TransformDirection(Vector3.forward) * 1000, Color.white);
+        //            Debug.Log("Did not Hit");
+        //            Cursor.lockState = CursorLockMode.None;
+        //            Cursor.visible = true;
+        //            enableCameraMovement = false;
+        //        }
+        //        if (hit.transform.gameObject.layer == 0)
+        //        {
+        //            Debug.DrawRay(Camera.main.transform.position, transform.TransformDirection(Vector3.forward) * hit.distance, Color.yellow);
+        //            Debug.Log("Did Hit");
+        //            Cursor.lockState = CursorLockMode.Locked;
+        //            Cursor.visible = false;
+        //            enableCameraMovement = true;
+        //        }
+
+
+        //    }
         //}
-        //#endregion
+
+
+
+        #endregion
 
     }
 
