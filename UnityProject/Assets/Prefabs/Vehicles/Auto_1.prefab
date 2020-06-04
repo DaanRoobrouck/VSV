@@ -46,8 +46,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1.5621638, y: 0.66786385, z: 0.99999976}
-  m_Center: {x: 0.03823346, y: 0.82985353, z: -2.83}
+  m_Size: {x: 2.3406436, y: 0.66786385, z: 0.54709053}
+  m_Center: {x: 0.0382334, y: 0.82985353, z: -3.0564547}
 --- !u!65 &2685533703183111574
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -73,7 +73,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ad6e8127d9281364c84eafc99b7ae660, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentWaypoint: {fileID: 0}
+  NextWayPoint: {fileID: 0}
   _speed: 7.5
   _carBefore: {fileID: 0}
   _carAfter: {fileID: 0}

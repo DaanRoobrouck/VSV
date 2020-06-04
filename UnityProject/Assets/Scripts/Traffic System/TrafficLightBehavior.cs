@@ -62,17 +62,20 @@ public class TrafficLightBehavior : MonoBehaviour
     {
         if (other.CompareTag("Vehicle"))
         {
-           if (LightState == TrafficLightColor.Red)
-           {
-                if (other.GetComponent<CarNavigator>() != null)
-                {
-                    other.GetComponent<CarNavigator>().CanDrive = false;
-                }
-           }
-           else
-           {
-               other.GetComponent<CarNavigator>().CanDrive = true;
-           }
+            if (!_isOnlyPedestrianLight)
+            {
+               if (LightState == TrafficLightColor.Red)
+               {
+                    if (other.GetComponent<CarNavigator>() != null)
+                    {
+                        other.GetComponent<CarNavigator>().CanDrive = false;
+                    }
+               }
+               else
+               {
+                   other.GetComponent<CarNavigator>().CanDrive = true;
+               }
+            }
         }
     }
 
